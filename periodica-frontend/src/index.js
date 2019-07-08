@@ -24,7 +24,7 @@ function createElement (element) {
   
   atomic_number.textContent = `${element.atomicNumber}`
   symbol.textContent = `${element.symbol}`
-  details.textContent = `${element.name}<br />${element.atomicWeight}`
+  details.innerHTML = `${element.name}<br />${element.atomicWeight}`
 
   elementDiv.append(atomic_number, symbol, details)
   cell.append(elementDiv)
