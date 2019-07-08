@@ -24,7 +24,7 @@ function createElement (element) {
   
   atomic_number.textContent = `${element.atomicNumber}`
   symbol.textContent = `${element.symbol}`
-  details.textContent = `${element.name}<br />${element.atomicMass}`
+  details.textContent = `${element.name}<br />${element.atomicWeight}`
 
   elementDiv.append(atomic_number, symbol, details)
   cell.append(elementDiv)
@@ -42,7 +42,7 @@ function createElementDetails(element) {
   const details = document.createElement('p')
 
   h2.textContent = element.name
-  details.textContent = `${element.name} has an atomic number of ${element.atomicNumber}, an atomic mass of ${element.atomicMass}, and it is a part of the ${element.groupBlock} group.`
+  details.textContent = `${element.name} has an atomic number of ${element.atomicNumber}, an atomic mass of ${element.atomicWeight}, and it is a part of the ${element.classification.name} group.`
 
   div.append(h2, details);
 
@@ -123,8 +123,7 @@ function createTable(elements) {
       let gapNoElements = 0
       let lastElements = 0
 
-      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
-      elementNum += 1
+      div.appendChild(createRow([],firstElements,gapNoElements,lastElements));
 
     } else if (i === 1){
       firstElements = 1
@@ -163,7 +162,7 @@ function createTable(elements) {
       gapNoElements = 0
       lastElements = 0
 
-      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
+      div.appendChild(createRow([],firstElements,gapNoElements,lastElements));
       elementNum += (firstElements + lastElements)
 
     } else if (i === 9 || i === 10) {

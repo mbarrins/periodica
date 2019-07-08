@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_07_08_140011) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "classifications", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_07_08_140011) do
     t.string "name"
     t.string "symbol"
     t.integer "atomicNumber"
-    t.integer "classification_id"
+    t.bigint "classification_id"
     t.float "meltingPoint"
     t.float "boilingPoint"
     t.float "electronegativity"
@@ -33,4 +36,5 @@ ActiveRecord::Schema.define(version: 2019_07_08_140011) do
     t.index ["classification_id"], name: "index_elements_on_classification_id"
   end
 
+  add_foreign_key "elements", "classifications"
 end
