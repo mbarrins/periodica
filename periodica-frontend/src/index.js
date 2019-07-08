@@ -1,36 +1,46 @@
+const ELEMENTS_URL = 'http://localhost:3000/elements'
+
 window.addEventListener('DOMContentLoaded', () => {
-  createTable();
+  getElements().then(elements => createTable(elements));
 })
 
+function getElements() {
+  return fetch(ELEMENTS_URL).then(resp => resp.json())
+}
+
 function createElement (element) {
-  const div = document.createElement('div')
+  const cell = document.createElement('div')
   const elementDiv = document.createElement('div')
   const atomic_number = document.createElement('div')
   const symbol = document.createElement('div')
   const details = document.createElement('div')
 
-  div.className = 'cell'
+  cell.className = 'cell'
   elementDiv.className = 'element'
   atomic_number.className = 'at_num'
   symbol.className = 'symbol'
   details.className = 'at_details'
   
-  atomic_number.textContent = `${element}`
-  symbol.textContent = `${element}`
-  details.textContent = 'Hydrogen<br />1.008'
+  atomic_number.textContent = `${element.atomicNumber}`
+  symbol.textContent = `${element.symbol}`
+  details.textContent = `${element.name}<br />${element.atomicMass}`
 
   elementDiv.append(atomic_number, symbol, details)
-  div.append(elementDiv)
+  cell.append(elementDiv)
+  
+  cell.addEventListener('click', (e) => {
+    console.log(e.target)
+  })
 
-  return div;
+  return cell;
 }
 
-function createRow(first, blank, last) {
+function createRow(elements, first, blank, last) {
   const div = document.createElement('div')
   div.className = "periodic-row"
 
   for (let i = 0; i < first; i++) {
-    div.appendChild(createElement(i));
+    div.appendChild(createElement(elements[i]));
   }
 
   for (let i = 0; i < blank; i++) {
@@ -40,31 +50,69 @@ function createRow(first, blank, last) {
     div.appendChild(cellDiv);
   }
 
-  for (let i = 0; i < last; i++) {
-    div.appendChild(createElement(i));
+  for (let i = first; i < first + last; i++) {
+    div.appendChild(createElement(elements[i]));
   }
 
   return div;
 }
-function createTable() {
+function createTable(elements) {
   const container = document.querySelector('.container')
   const div = document.createElement('div')
   div.className = "periodic"
   container.appendChild(div);
 
+  let elementNum = 0
+
   for (let i = 1; i < 11; i++) {
     if (i === 1){
-      div.appendChild(createRow(1,16,1));
+      let firstElements = 1
+      let gapNoElements = 16
+      let lastElements = 1
+  
+      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
+      elementNum += (firstElements + lastElements)
+    
     } else if (i === 2 || i === 3) {
-      div.appendChild(createRow(2,10,6));
+      firstElements = 2
+      gapNoElements = 10
+      lastElements = 6
+
+      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
+      elementNum += (firstElements + lastElements)
+
     } else if (i === 4 || i === 5) {
-      div.appendChild(createRow(18,0,0));
+      firstElements = 18
+      gapNoElements = 0
+      lastElements = 0
+
+      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
+      elementNum += (firstElements + lastElements)
+
     } else if (i === 6 || i === 7) {
-      div.appendChild(createRow(2,1,15));
+      firstElements = 2
+      gapNoElements = 1
+      lastElements = 15
+
+      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
+      elementNum += (firstElements + lastElements)
+
     } else if (i === 8) {
-      div.appendChild(createRow(0,0,0));
+      firstElements = 0
+      gapNoElements = 0
+      lastElements = 0
+
+      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
+      elementNum += (firstElements + lastElements)
+
     } else if (i === 9 || i === 10) {
-      div.appendChild(createRow(0,3,15));
+      firstElements = 0
+      gapNoElements = 3
+      lastElements = 15
+
+      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
+      elementNum += (firstElements + lastElements)
+
     }
   }
 }
