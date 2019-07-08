@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  symbol: MyString
+  atomicNumber: 1
+  atomicMass: 1.5
+  classification: one
+  color: MyString
+  meltingPoint: 1.5
+  boilingPoint: 1.5
+  electronegativity: 1.5
+  discovered: 1
+
+two:
+  name: MyString
+  symbol: MyString
+  atomicNumber: 1
+  atomicMass: 1.5
+  classification: two
+  color: MyString
+  meltingPoint: 1.5
+  boilingPoint: 1.5
+  electronegativity: 1.5
+  discovered: 1
