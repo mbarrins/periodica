@@ -117,11 +117,19 @@ function createTable(elements) {
 
   let elementNum = 0
 
-  for (let i = 1; i < 11; i++) {
-    if (i === 1){
-      let firstElements = 1
-      let gapNoElements = 16
-      let lastElements = 1
+  for (let i = 0; i < 11; i++) {
+    if (i === 0){
+      let firstElements = 0
+      let gapNoElements = 0
+      let lastElements = 0
+
+      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
+      elementNum += 1
+
+    } else if (i === 1){
+      firstElements = 1
+      gapNoElements = 16
+      lastElements = 1
   
       div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
       elementNum += (firstElements + lastElements)
