@@ -1,3 +1,3 @@
 class Classification < ApplicationRecord
-    has_many :elements
+  has_many :elements
 end

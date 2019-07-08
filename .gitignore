@@ -5,23 +5,29 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-/.bundle
+periodica-backend/.bundle
 
 # Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
+periodica-backend/db/*.sqlite3
+periodica-backend/db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+periodica-frontend/log/*
+periodica-backend/log/*
+periodica-frontend/tmp/*
+periodica-backend/tmp/*
+periodica-frontend/t!/log/.keep
+periodica-backend/!/log/.keep
+periodica-frontend/t!/tmp/.keep
+periodica-backend/!/tmp/.keep
 
 # Ignore uploaded files in development
-/storage/*
-!/storage/.keep
+periodica-frontend/storage/*
+periodica-backend/storage/*
+periodica-frontend/!/storage/.keep
+periodica-backend/!/storage/.keep
 
-.byebug_history
+periodica-backend/.byebug_history
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+periodica-backend/config/master.key
