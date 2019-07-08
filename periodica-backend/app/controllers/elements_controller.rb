@@ -5,7 +5,7 @@ class ElementsController < ApplicationController
   def index
     @elements = Element.all
 
-    render json: @elements
+    render json: @elements, include: [{:classification => {except: [:id, :created_at, :updated_at]}}]
   end
 
   # GET /elements/1
