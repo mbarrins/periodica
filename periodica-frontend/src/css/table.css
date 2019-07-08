@@ -144,6 +144,18 @@ body {
   background-color: rgba(0, 96, 160, 0.9);
 }
 
+.periodic .periodic-row .cell.select .element {
+  background-color: rgba(48, 0, 138, 0.6);
+}
+
+.periodic .periodic-row .cell.select:hover .element {
+  background-color: rgba(48, 0, 138, 0.8);
+}
+
+.periodic .periodic-row .cell.select.selected .element {
+  background-color: rgba(48, 0, 138, 1.0);
+}
+
 /* hover state positioning
 left hand column */
 .cell:nth-child(1) .element {
