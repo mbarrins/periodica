@@ -147,14 +147,15 @@ function periodicTableLayout(elements, div, clickFunction, type) {
   let elementNum = 0
 
   for (let i = 0; i < 11; i++) {
-    if (i === 0){
-      let firstElements = 0
-      let gapNoElements = 0
-      let lastElements = 0
+    // if (i === 0){
+    //   let firstElements = 0
+    //   let gapNoElements = 0
+    //   let lastElements = 0
 
-      div.appendChild(createRow([],firstElements,gapNoElements,lastElements, clickFunction, type));
+    //   div.appendChild(createRow([],firstElements,gapNoElements,lastElements, clickFunction, type));
 
-    } else if (i === 1){
+    // } else 
+    if (i === 1){
       firstElements = 1
       gapNoElements = 16
       lastElements = 1
@@ -183,8 +184,8 @@ function periodicTableLayout(elements, div, clickFunction, type) {
       gapNoElements = 1
       lastElements = 15
 
-      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements, clickFunction, type));
-      elementNum += (firstElements + lastElements)
+      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements).concat(elements.slice(elementNum + firstElements + 15, elementNum + firstElements + lastElements + 15)),firstElements,gapNoElements,lastElements, clickFunction, type));
+      elementNum += (firstElements + lastElements + 15)
 
     } else if (i === 8) {
       firstElements = 0
@@ -195,6 +196,7 @@ function periodicTableLayout(elements, div, clickFunction, type) {
       elementNum += (firstElements + lastElements)
 
     } else if (i === 9 || i === 10) {
+      elementNum = ((i === 9) ? 56 : 88)
       firstElements = 0
       gapNoElements = 3
       lastElements = 15
