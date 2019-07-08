@@ -10545,3 +10545,1307 @@ Completed 200 OK in 13ms (Views: 0.9ms | ActiveRecord: 0.4ms)
   ↳ db/seeds.rb:36
   [1m[35m (133.1ms)[0m  [1m[36mcommit transaction[0m
   ↳ db/seeds.rb:36
+Started GET "/elements" for ::1 at 2019-07-08 16:39:33 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ElementsController#index as */*
+  [1m[36mElement Load (1.2ms)[0m  [1m[34mSELECT "elements".* FROM "elements"[0m
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.4ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.1ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.3ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.3ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.3ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+Completed 200 OK in 112ms (Views: 96.2ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/elements" for ::1 at 2019-07-08 16:58:23 +0100
+Processing by ElementsController#index as */*
+  [1m[36mElement Load (1.3ms)[0m  [1m[34mSELECT "elements".* FROM "elements"[0m
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.4ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.3ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.1ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.1ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+  [1m[36mCACHE Classification Load (0.0ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" WHERE "classifications"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/elements_controller.rb:8
+Completed 200 OK in 89ms (Views: 83.9ms | ActiveRecord: 4.5ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUsers (20190708162816)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (53.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190708162816_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708162816"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserTestElements (20190708162923)
+  [1m[35m (40.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserTestElements (20190708162923)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (47.2ms)[0m  [1m[35mCREATE TABLE "user_test_elements" ("id" bigserial primary key, "user_id" bigint, "element_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_dec4390844"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_9b029fbead"
+FOREIGN KEY ("element_id")
+  REFERENCES "elements" ("id")
+)[0m
+  ↳ db/migrate/20190708162923_create_user_test_elements.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_user_test_elements_on_user_id" ON "user_test_elements"  ("user_id")[0m
+  ↳ db/migrate/20190708162923_create_user_test_elements.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_user_test_elements_on_element_id" ON "user_test_elements"  ("element_id")[0m
+  ↳ db/migrate/20190708162923_create_user_test_elements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708162923"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "user1"], ["first_name", "First"], ["last_name", "Last"], ["created_at", "2019-07-08 16:32:11.267145"], ["updated_at", "2019-07-08 16:32:11.267145"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUserTestElement Load (0.5ms)[0m  [1m[34mSELECT  "user_test_elements".* FROM "user_test_elements" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mElement Load (41.8ms)[0m  [1m[34mSELECT  "elements".* FROM "elements" ORDER BY "elements"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserTestElement Create (1.5ms)[0m  [1m[32mINSERT INTO "user_test_elements" ("user_id", "element_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["element_id", 1], ["created_at", "2019-07-08 16:33:12.455854"], ["updated_at", "2019-07-08 16:33:12.455854"]]
+  [1m[35m (42.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserTestElement Load (0.5ms)[0m  [1m[34mSELECT  "user_test_elements".* FROM "user_test_elements" ORDER BY "user_test_elements"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUserTestElement Load (0.6ms)[0m  [1m[34mSELECT  "user_test_elements".* FROM "user_test_elements" ORDER BY "user_test_elements"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUserTestElement Load (0.3ms)[0m  [1m[34mSELECT  "user_test_elements".* FROM "user_test_elements" WHERE "user_test_elements"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserTestElements (20190708162923)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (44.8ms)[0m  [1m[35mDROP TABLE "user_test_elements"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708162923"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserTestElements (20190708162923)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "user_test_elements" ("id" bigserial primary key, "user_id" bigint, "element_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_dec4390844"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_9b029fbead"
+FOREIGN KEY ("element_id")
+  REFERENCES "elements" ("id")
+)[0m
+  ↳ db/migrate/20190708162923_create_user_test_elements.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_user_test_elements_on_user_id" ON "user_test_elements"  ("user_id")[0m
+  ↳ db/migrate/20190708162923_create_user_test_elements.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_user_test_elements_on_element_id" ON "user_test_elements"  ("element_id")[0m
+  ↳ db/migrate/20190708162923_create_user_test_elements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708162923"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateQuestions (20190708163540)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (49.3ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "question" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190708163540_create_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708163540"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserQuesHistories (20190708163711)
+  [1m[35m (39.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "user_ques_histories" ("id" bigserial primary key, "user_id" bigint, "question_id" bigint, "user_answer" character varying, "correct_answer" character varying, "result" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b6f790b56b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_4ac770d3d5"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+)[0m
+  ↳ db/migrate/20190708163711_create_user_ques_histories.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_user_ques_histories_on_user_id" ON "user_ques_histories"  ("user_id")[0m
+  ↳ db/migrate/20190708163711_create_user_ques_histories.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_user_ques_histories_on_question_id" ON "user_ques_histories"  ("question_id")[0m
+  ↳ db/migrate/20190708163711_create_user_ques_histories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708163711"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserQuesHistories (20190708163711)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE "user_ques_histories"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708163711"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (45.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateQuestions (20190708163540)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE "questions"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708163540"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (46.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserTestElements (20190708162923)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE "user_test_elements"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708162923"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (41.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUsers (20190708162816)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708162816"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (42.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUsers (20190708162816)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190708162816_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708162816"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserTestElements (20190708162923)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "user_test_elements" ("id" bigserial primary key, "user_id" bigint, "element_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_dec4390844"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_9b029fbead"
+FOREIGN KEY ("element_id")
+  REFERENCES "elements" ("id")
+)[0m
+  ↳ db/migrate/20190708162923_create_user_test_elements.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_user_test_elements_on_user_id" ON "user_test_elements"  ("user_id")[0m
+  ↳ db/migrate/20190708162923_create_user_test_elements.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_user_test_elements_on_element_id" ON "user_test_elements"  ("element_id")[0m
+  ↳ db/migrate/20190708162923_create_user_test_elements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708162923"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateQuestions (20190708163540)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "question" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190708163540_create_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708163540"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateTests (20190708170727)
+  [1m[35m (40.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "tests" ("id" bigserial primary key, "user_id" bigint, "status" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e0c5eb5e4a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190708170727_create_tests.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_tests_on_user_id" ON "tests"  ("user_id")[0m
+  ↳ db/migrate/20190708170727_create_tests.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708170727"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserQuestions (20190708170934)
+  [1m[35m (40.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "user_questions" ("id" bigserial primary key, "user_id" bigint, "question_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_65de0e5ca4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_234d43ec7e"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+)[0m
+  ↳ db/migrate/20190708170934_create_user_questions.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_user_questions_on_user_id" ON "user_questions"  ("user_id")[0m
+  ↳ db/migrate/20190708170934_create_user_questions.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_user_questions_on_question_id" ON "user_questions"  ("question_id")[0m
+  ↳ db/migrate/20190708170934_create_user_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708170934"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateTestQuestions (20190708171023)
+  [1m[35m (40.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "test_questions" ("id" bigserial primary key, "test_id" bigint, "question_id" bigint, "user_answer" character varying, "correct_answer" character varying, "result" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_13e2124a19"
+FOREIGN KEY ("test_id")
+  REFERENCES "tests" ("id")
+, CONSTRAINT "fk_rails_733d15d143"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+)[0m
+  ↳ db/migrate/20190708171023_create_test_questions.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_test_questions_on_test_id" ON "test_questions"  ("test_id")[0m
+  ↳ db/migrate/20190708171023_create_test_questions.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_test_questions_on_question_id" ON "test_questions"  ("question_id")[0m
+  ↳ db/migrate/20190708171023_create_test_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708171023"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateTestQuestions (20190708171023)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE "test_questions"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708171023"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserQuestions (20190708170934)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE "user_questions"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708170934"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateTests (20190708170727)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "tests"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708170727"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateQuestions (20190708163540)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE "questions"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708163540"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserTestElements (20190708162923)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE "user_test_elements"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708162923"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserQuizElements (20190708162923)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (44.3ms)[0m  [1m[35mCREATE TABLE "user_quiz_elements" ("id" bigserial primary key, "user_id" bigint, "element_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b3ab9a1fc4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_4743a14629"
+FOREIGN KEY ("element_id")
+  REFERENCES "elements" ("id")
+)[0m
+  ↳ db/migrate/20190708162923_create_user_quiz_elements.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_user_quiz_elements_on_user_id" ON "user_quiz_elements"  ("user_id")[0m
+  ↳ db/migrate/20190708162923_create_user_quiz_elements.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_user_quiz_elements_on_element_id" ON "user_quiz_elements"  ("element_id")[0m
+  ↳ db/migrate/20190708162923_create_user_quiz_elements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708162923"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateQuestions (20190708163540)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "question" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190708163540_create_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708163540"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateQuizes (20190708170727)
+  [1m[35m (26.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "quizes" ("id" bigserial primary key, "user_id" bigint, "status" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_1ec4d29db6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190708170727_create_quizes.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_quizes_on_user_id" ON "quizes"  ("user_id")[0m
+  ↳ db/migrate/20190708170727_create_quizes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708170727"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserQuestions (20190708170934)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "user_questions" ("id" bigserial primary key, "user_id" bigint, "question_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_65de0e5ca4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_234d43ec7e"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+)[0m
+  ↳ db/migrate/20190708170934_create_user_questions.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_user_questions_on_user_id" ON "user_questions"  ("user_id")[0m
+  ↳ db/migrate/20190708170934_create_user_questions.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_user_questions_on_question_id" ON "user_questions"  ("question_id")[0m
+  ↳ db/migrate/20190708170934_create_user_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708170934"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateTestQuestions (20190708171023)
+  [1m[35m (39.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateQuizQuestions (20190708171023)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (40.7ms)[0m  [1m[35mCREATE TABLE "quiz_questions" ("id" bigserial primary key, "quiz_id" bigint, "question_id" bigint, "user_answer" character varying, "correct_answer" character varying, "result" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c723d3feef"
+FOREIGN KEY ("quiz_id")
+  REFERENCES "quizzes" ("id")
+, CONSTRAINT "fk_rails_389bec88e4"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+)[0m
+  ↳ db/migrate/20190708171023_create_quiz_questions.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserQuestions (20190708170934)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE "user_questions"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708170934"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateQuizes (20190708170727)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE "quizes"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708170727"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (42.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateQuestions (20190708163540)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "questions"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708163540"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserQuizElements (20190708162923)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (44.1ms)[0m  [1m[35mDROP TABLE "user_quiz_elements"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708162923"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUsers (20190708162816)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708162816"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to RemoveDiscoveredFromElements (20190708140011)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "elements" ADD "discovered" integer[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190708140011"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to RemoveDiscoveredFromElements (20190708140011)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "elements" DROP COLUMN "discovered"[0m
+  ↳ db/migrate/20190708140011_remove_discovered_from_elements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708140011"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (22.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUsers (20190708162816)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190708162816_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708162816"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserQuizElements (20190708162923)
+  [1m[35m (26.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "user_quiz_elements" ("id" bigserial primary key, "user_id" bigint, "element_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b3ab9a1fc4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_4743a14629"
+FOREIGN KEY ("element_id")
+  REFERENCES "elements" ("id")
+)[0m
+  ↳ db/migrate/20190708162923_create_user_quiz_elements.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_user_quiz_elements_on_user_id" ON "user_quiz_elements"  ("user_id")[0m
+  ↳ db/migrate/20190708162923_create_user_quiz_elements.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_user_quiz_elements_on_element_id" ON "user_quiz_elements"  ("element_id")[0m
+  ↳ db/migrate/20190708162923_create_user_quiz_elements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708162923"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateQuestions (20190708163540)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "question" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190708163540_create_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708163540"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateQuizzes (20190708170727)
+  [1m[35m (39.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" bigserial primary key, "user_id" bigint, "status" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_7a0b1343a8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190708170727_create_quizzes.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_quizzes_on_user_id" ON "quizzes"  ("user_id")[0m
+  ↳ db/migrate/20190708170727_create_quizzes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708170727"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserQuestions (20190708170934)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "user_questions" ("id" bigserial primary key, "user_id" bigint, "question_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_65de0e5ca4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_234d43ec7e"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+)[0m
+  ↳ db/migrate/20190708170934_create_user_questions.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_user_questions_on_user_id" ON "user_questions"  ("user_id")[0m
+  ↳ db/migrate/20190708170934_create_user_questions.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_user_questions_on_question_id" ON "user_questions"  ("question_id")[0m
+  ↳ db/migrate/20190708170934_create_user_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708170934"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateQuizQuestions (20190708171023)
+  [1m[35m (25.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "quiz_questions" ("id" bigserial primary key, "quiz_id" bigint, "question_id" bigint, "user_answer" character varying, "correct_answer" character varying, "result" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c723d3feef"
+FOREIGN KEY ("quiz_id")
+  REFERENCES "quizzes" ("id")
+, CONSTRAINT "fk_rails_389bec88e4"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+)[0m
+  ↳ db/migrate/20190708171023_create_quiz_questions.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_quiz_questions_on_quiz_id" ON "quiz_questions"  ("quiz_id")[0m
+  ↳ db/migrate/20190708171023_create_quiz_questions.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_quiz_questions_on_question_id" ON "quiz_questions"  ("question_id")[0m
+  ↳ db/migrate/20190708171023_create_quiz_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708171023"]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbarrins/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mElement Load (1.1ms)[0m  [1m[34mSELECT  "elements".* FROM "elements" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mClassification Load (0.6ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" LIMIT $1[0m  [["LIMIT", 11]]
