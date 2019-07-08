@@ -1,0 +1,153 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:4
+  [1m[35m (357.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (136.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateClassifications (20190708105838)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "classifications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190708105838_create_classifications.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190708105838"]]
+  ↳ bin/rails:4
+  [1m[35m (112.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-08 11:11:24.418279"], ["updated_at", "2019-07-08 11:11:24.418279"]]
+  ↳ bin/rails:4
+  [1m[35m (112.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mClassification Create (1.0ms)[0m  [1m[32mINSERT INTO "classifications" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Alkali Metals"], ["description", "This 'group 1' of metals occupies the far left column of the periodic table. They are all soft, yet solid metals at room temperature, and are all highly reactive, for instance in contact with water."], ["created_at", "2019-07-08 11:11:31.242903"], ["updated_at", "2019-07-08 11:11:31.242903"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (165.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mClassification Create (2.1ms)[0m  [1m[32mINSERT INTO "classifications" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Alkaline Earth Metals"], ["description", "The elements in this series are silver-white metals at room temperature. These metals are named after their oxides whose dated names were beryllia, magnesia, lime, strontia and baryta (these oxides are alkaline when combined with water)."], ["created_at", "2019-07-08 11:11:31.412676"], ["updated_at", "2019-07-08 11:11:31.412676"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (113.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mClassification Create (1.7ms)[0m  [1m[32mINSERT INTO "classifications" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lanthanides"], ["description", "This group is named after the first element in the series - Lanthanum. It occupies one of the two rows appended at the foot of the periodic table.  Lanthanides along with the chemically similar elements Scandium and Yttrium are collectively called Rare Earth Elements. "], ["created_at", "2019-07-08 11:11:31.532442"], ["updated_at", "2019-07-08 11:11:31.532442"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (120.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mClassification Create (1.6ms)[0m  [1m[32mINSERT INTO "classifications" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Actinides"], ["description", "Named after the first element in the series - Actinium. Occupying the second row appended at the foot of the table, actinides are all highly radioactive."], ["created_at", "2019-07-08 11:11:31.658133"], ["updated_at", "2019-07-08 11:11:31.658133"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (127.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mClassification Create (1.6ms)[0m  [1m[32mINSERT INTO "classifications" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Transition Metals"], ["description", "The elements of groups 4-6 are generally recognized as Transition Metals including Scandium and Yttrium from Group 3, while Zinc, Cadmium and Mercury from group 12 are generally excluded. It is, however, often convenient include elements of group 12 in a dicussion of the transition elements. Chemically, this series shows variable valency amongst its elements with properties such as being less reactive than alkali metals and generally good conductors of heat and electrical current."], ["created_at", "2019-07-08 11:11:31.790981"], ["updated_at", "2019-07-08 11:11:31.790981"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (131.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mClassification Create (1.7ms)[0m  [1m[32mINSERT INTO "classifications" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Post-Transition Metals"], ["description", "Lying in a region to the right of the transition metals, this series roughly forms a triangular shape. The elements in this series are soft with low melting and boiling points. They also include mercury which is liquid at room temperature."], ["created_at", "2019-07-08 11:11:31.928323"], ["updated_at", "2019-07-08 11:11:31.928323"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (124.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mClassification Create (1.7ms)[0m  [1m[32mINSERT INTO "classifications" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Metalloids"], ["description", "This series consists of elements whose properties are intermediate between those of metals and nonmetals leading to their use in semiconductor electronics; they're also sometimes referred to as semimetals."], ["created_at", "2019-07-08 11:11:32.058297"], ["updated_at", "2019-07-08 11:11:32.058297"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (118.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mClassification Create (1.2ms)[0m  [1m[32mINSERT INTO "classifications" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Other non-metals"], ["description", "In addition to halogens and noble gases, there is a collection of elements that are simply classified as 'other non-metals'. This series includes the first element (Carbon) from group 14, first two elements (Nitrogen and Phosphorus) from group 15, and the first 3 elements (Oxygen, Sulfur and Selenium) from group 16. They show a wide range of chemical properties and reactivities, and are generally poor conductors of heat and electricity. Most non-metals have the ability to gain electrons easily."], ["created_at", "2019-07-08 11:11:32.181179"], ["updated_at", "2019-07-08 11:11:32.181179"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (131.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mClassification Create (1.6ms)[0m  [1m[32mINSERT INTO "classifications" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Halogens"], ["description", "The term 'halogens' means 'salt-former' and compounds containing halogens are called salts. It is the only group to contain the three main states of matter at room temperature: gas (flourine and chlorine), liquid (bromine) and solid (iodine and astatine) - all non-metals."], ["created_at", "2019-07-08 11:11:32.316650"], ["updated_at", "2019-07-08 11:11:32.316650"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (135.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mClassification Create (1.7ms)[0m  [1m[32mINSERT INTO "classifications" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Noble Gases"], ["description", "Sometimes referred to as aerogens, this group consists of gases that are, under standard conditions, colorless, odorless, monatomic gases with very low chemical reactivity."], ["created_at", "2019-07-08 11:11:32.456976"], ["updated_at", "2019-07-08 11:11:32.456976"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (128.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mClassification Create (1.5ms)[0m  [1m[32mINSERT INTO "classifications" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Unknown Chemical Properties"], ["description", "This is a label reserved for synthetic elements with atomic numbers between and including 109 and 111, and 113 and 118, they typically do not occur naturally on Earth and can only be created artificially. Due to the rare and unusual nature of these elements a conclusive categorization has not yet been possible."], ["created_at", "2019-07-08 11:11:32.590467"], ["updated_at", "2019-07-08 11:11:32.590467"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (111.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mClassification Load (2.2ms)[0m  [1m[34mSELECT  "classifications".* FROM "classifications" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2019-07-08 12:14:59 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (7.2ms)
+Completed 200 OK in 47ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/classifications" for ::1 at 2019-07-08 12:15:04 +0100
+Processing by ClassificationsController#index as HTML
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT "classifications".* FROM "classifications"[0m
+  ↳ app/controllers/classifications_controller.rb:8
+Completed 200 OK in 18ms (Views: 12.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/classifications" for ::1 at 2019-07-08 12:18:25 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ClassificationsController#index as HTML
+  [1m[36mClassification Load (0.3ms)[0m  [1m[34mSELECT "classifications".* FROM "classifications"[0m
+  ↳ app/controllers/classifications_controller.rb:8
+Completed 200 OK in 25ms (Views: 19.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2019-07-08 12:18:26 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/classifications" for ::1 at 2019-07-08 12:18:48 +0100
+Processing by ClassificationsController#index as HTML
+  [1m[36mClassification Load (0.2ms)[0m  [1m[34mSELECT "classifications".* FROM "classifications"[0m
+  ↳ app/controllers/classifications_controller.rb:8
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 0.8ms)
+
+

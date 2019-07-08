@@ -4,3 +4,6 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+task :console do
+  sh "irb -rubygems -I lib -r whois.rb"
+end
