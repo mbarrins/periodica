@@ -21,18 +21,51 @@ classifications.each do |name, description|
     Classification.create(name: name, description: description)
 end
 
-# path = Rails.root.join('lib', 'seeds', 'elements.csv')
+filepath = Rails.root.join('lib', 'seeds', 'elements.csv')
 
-# CSV.foreach(path, :headers => true, encoding: 'UTF-8') do |row|
-#     # Element.create(row.to_hash)
-#     puts row.inspect
+CSV.foreach(filepath, headers: true) do |row| 
+    Element.create({
+        name: row[0], 
+        symbol: row[1], 
+        atomicNumber: row[2].to_i, 
+        atomicWeight: row[3].to_f, 
+        classification_id: Classification.find_by(name: row[4]).id, 
+        meltingPoint: row[5].to_f, 
+        boilingPoint: row[6].to_f, 
+        electronegativity: row[7].to_f
+    })
+end
+
+# plaintext = File.read(filepath)
+
+# parsedText = CSV.parse(plaintext, :headers => true)
+
+# # puts parsedText.inspect
+
+# parsedText.each do |row|
+#     Element.create({
+#         name: row['name'], 
+#         symbol: row['symbol'], 
+#         atomicNumber: row['atomicNumber'].to_i, 
+#         atomicWeight: row['atomicWeight'].to_f, 
+#         classification_id: Classification.find_by(name: row['classification_id']).id, 
+#         meltingPoint: row['meltingPoint'].to_f, 
+#         boilingPoint: row['boilingPoint'].to_f, 
+#         electronegativity: row['electronegativity'].to_f
+#     })
 # end
 
-data = CSV.read('lib/seeds/elements.csv')
+# data = CSV.read('lib/seeds/elements.csv')
 
-# puts data[1..-1].inspect
-
-data[1..-1].each do |row| 
-    element = Element.create({name: row[0], symbol: row[1], atomicNumber: row[2].to_i, atomicWeight: row[3].to_f, classification_id: Classification.find_by(name: row[4]).id, meltingPoint: row[5].to_f, boilingPoint: row[6].to_f, electronegativity: row[7].to_f})
-    # puts elements.inspect
-end
+# data[1..-1].each do |row| 
+#     element = Element.create({
+#         name: row[0], 
+#         symbol: row[1], 
+#         atomicNumber: row[2].to_i, 
+#         atomicWeight: row[3].to_f, 
+#         classification_id: Classification.find_by(name: row[4]).id, 
+#         meltingPoint: row[5].to_f, 
+#         boilingPoint: row[6].to_f, 
+#         electronegativity: row[7].to_f})
+#     # puts elements.inspect
+# end
