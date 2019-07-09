@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_124240) do
+ActiveRecord::Schema.define(version: 2019_07_09_132704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,9 @@ ActiveRecord::Schema.define(version: 2019_07_09_124240) do
     t.boolean "result"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "element_id"
+    t.string "question_string"
+    t.index ["element_id"], name: "index_quiz_questions_on_element_id"
     t.index ["question_id"], name: "index_quiz_questions_on_question_id"
     t.index ["quiz_id"], name: "index_quiz_questions_on_quiz_id"
   end
@@ -92,6 +95,7 @@ ActiveRecord::Schema.define(version: 2019_07_09_124240) do
   end
 
   add_foreign_key "elements", "classifications"
+  add_foreign_key "quiz_questions", "elements"
   add_foreign_key "quiz_questions", "questions"
   add_foreign_key "quiz_questions", "quizzes"
   add_foreign_key "quizzes", "users"
