@@ -55,8 +55,8 @@ end
 questions = [
     {question: 'What is the atomic number for XXFIELDXX?', quiz_field: 'atomicNumber', question_field: 'name', answer_field: 'atomicNumber'},
     {question: 'Which element has an atomic number of XXFIELDXX?', quiz_field: 'atomicNumber', question_field: 'atomicNumber', answer_field: 'name'},
-    {question: 'Which element has the symbol: XXFIELD?', quiz_field: 'symbol', question_field: 'symbol', answer_field: 'name'},
-    {question: 'What is the symbol for XXFIELD?', quiz_field: 'symbol', question_field: 'name', answer_field: 'symbol'},
+    {question: 'Which element has the symbol: XXFIELDXX?', quiz_field: 'symbol', question_field: 'symbol', answer_field: 'name'},
+    {question: 'What is the symbol for XXFIELDXX?', quiz_field: 'symbol', question_field: 'name', answer_field: 'symbol'},
     {question: "Which group does XXFIELDXX belong to?", quiz_field: 'classification', question_field: 'name', answer_field: 'classification_name'}
 ]
 
