@@ -1,22 +1,28 @@
 const ELEMENTS_URL = 'http://localhost:3000/elements'
+const USER_ID = 1
 
 window.addEventListener('DOMContentLoaded', () => {
   createNavbar();
-  getElements().then(elements => createTable(elements));
+  getElements().then(elements => createLearnTable(elements));
 })
 
 function getElements() {
   return fetch(ELEMENTS_URL).then(resp => resp.json())
 }
 
-function createElement (element) {
+function createElement (element, clickFunction, type) {
   const cell = document.createElement('div')
   const elementDiv = document.createElement('div')
   const atomic_number = document.createElement('div')
   const symbol = document.createElement('div')
   const details = document.createElement('div')
 
-  cell.className = 'cell'
+  if (type === 'select') {
+    cell.className = 'cell select'
+  } else {
+    cell.className = 'cell'
+  }
+
   elementDiv.className = 'element'
   atomic_number.className = 'at_num'
   symbol.className = 'symbol'
@@ -24,13 +30,13 @@ function createElement (element) {
   
   atomic_number.textContent = `${element.atomicNumber}`
   symbol.textContent = `${element.symbol}`
-  details.textContent = `${element.name}<br />${element.atomicWeight}`
+  details.innerHTML = `${element.name}<br />${element.atomicWeight}`
 
   elementDiv.append(atomic_number, symbol, details)
   cell.append(elementDiv)
   
   cell.addEventListener('click', (e) => {
-    showElementDetails(e, element);
+    clickFunction(e, element, cell, USER_ID);
   })
 
   return cell;
@@ -42,7 +48,7 @@ function createElementDetails(element) {
   const details = document.createElement('p')
 
   h2.textContent = element.name
-  details.textContent = `${element.name} has an atomic number of ${element.atomicNumber}, an atomic mass of ${element.atomicWeight}, and it is a part of the ${element.classification.name} group.`
+  details.textContent = `${element.name} has an atomic number of ${element.atomicNumber}, an atomic mass of ${element.atomicWeight}, and it is a part of the ${element.classification_name} group.`
 
   div.append(h2, details);
 
@@ -51,8 +57,6 @@ function createElementDetails(element) {
 
 function showElementDetails(e, element) {
   const body = document.querySelector('body')
-  console.log(e.target);
-  console.log(element);
 
   const modal = document.createElement('div')
   modal.className = 'modal'
@@ -84,12 +88,12 @@ function showElementDetails(e, element) {
   }
 }
 
-function createRow(elements, first, blank, last) {
+function createRow(elements, first, blank, last, clickFunction, type) {
   const div = document.createElement('div')
   div.className = "periodic-row"
 
   for (let i = 0; i < first; i++) {
-    div.appendChild(createElement(elements[i]));
+    div.appendChild(createElement(elements[i], clickFunction, type));
   }
 
   for (let i = 0; i < blank; i++) {
@@ -100,12 +104,12 @@ function createRow(elements, first, blank, last) {
   }
 
   for (let i = first; i < first + last; i++) {
-    div.appendChild(createElement(elements[i]));
+    div.appendChild(createElement(elements[i], clickFunction, type));
   }
 
   return div;
 }
-function createTable(elements) {
+function createLearnTable(elements) {
   const container = document.querySelector('.container')
   const div = document.createElement('div')
   div.className = "periodic"
@@ -115,22 +119,48 @@ function createTable(elements) {
   }
   container.appendChild(div);
 
+  periodicTableLayout(elements, div, showElementDetails);
+}
+
+function createSelectTable(elements) {
+  const container = document.querySelector('.container')
+  const div = document.createElement('div')
+  div.className = "periodic"
+
+  while (container.lastChild) {
+    container.removeChild(container.lastChild);
+  }
+  container.appendChild(div);
+
+  periodicTableLayout(elements, div, selectUserElement, 'select');
+}
+
+function selectUserElement(e, element, cell, user_id) {
+  if (cell.classList.contains('selected')) {
+    cell.classList.remove('selected');
+  } else {
+    cell.classList.add('selected');
+  }
+}
+
+function periodicTableLayout(elements, div, clickFunction, type) {
   let elementNum = 0
 
   for (let i = 0; i < 11; i++) {
-    if (i === 0){
-      let firstElements = 0
-      let gapNoElements = 0
-      let lastElements = 0
+    // if (i === 0){
+    //   let firstElements = 0
+    //   let gapNoElements = 0
+    //   let lastElements = 0
 
-      div.appendChild(createRow([],firstElements,gapNoElements,lastElements));
+    //   div.appendChild(createRow([],firstElements,gapNoElements,lastElements, clickFunction, type));
 
-    } else if (i === 1){
+    // } else 
+    if (i === 1){
       firstElements = 1
       gapNoElements = 16
       lastElements = 1
   
-      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
+      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements, clickFunction, type));
       elementNum += (firstElements + lastElements)
     
     } else if (i === 2 || i === 3) {
@@ -138,7 +168,7 @@ function createTable(elements) {
       gapNoElements = 10
       lastElements = 6
 
-      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
+      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements, clickFunction, type));
       elementNum += (firstElements + lastElements)
 
     } else if (i === 4 || i === 5) {
@@ -146,7 +176,7 @@ function createTable(elements) {
       gapNoElements = 0
       lastElements = 0
 
-      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
+      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements, clickFunction, type));
       elementNum += (firstElements + lastElements)
 
     } else if (i === 6 || i === 7) {
@@ -154,23 +184,24 @@ function createTable(elements) {
       gapNoElements = 1
       lastElements = 15
 
-      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
-      elementNum += (firstElements + lastElements)
+      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements).concat(elements.slice(elementNum + firstElements + 15, elementNum + firstElements + lastElements + 15)),firstElements,gapNoElements,lastElements, clickFunction, type));
+      elementNum += (firstElements + lastElements + 15)
 
     } else if (i === 8) {
       firstElements = 0
       gapNoElements = 0
       lastElements = 0
 
-      div.appendChild(createRow([],firstElements,gapNoElements,lastElements));
+      div.appendChild(createRow([],firstElements,gapNoElements,lastElements, clickFunction, type));
       elementNum += (firstElements + lastElements)
 
     } else if (i === 9 || i === 10) {
+      elementNum = ((i === 9) ? 56 : 88)
       firstElements = 0
       gapNoElements = 3
       lastElements = 15
 
-      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements));
+      div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements, clickFunction, type));
       elementNum += (firstElements + lastElements)
 
     }
@@ -186,13 +217,13 @@ function createNavbar() {
   const li1 = document.createElement('li');
   li1.textContent = 'Home';
   li1.addEventListener('click', (e) => {
-    getElements().then(elements => createTable(elements));
+    getElements().then(elements => createLearnTable(elements));
   })
 
   const li2 = document.createElement('li');
-  li2.textContent = 'Link';
+  li2.textContent = 'Select Elements for Quiz';
   li2.addEventListener('click', (e) => {
-    console.log(e.target)
+    getElements().then(elements => createSelectTable(elements));
   })
 
   const li3 = document.createElement('li');

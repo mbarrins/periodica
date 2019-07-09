@@ -36,25 +36,6 @@ CSV.foreach(filepath, headers: true) do |row|
     })
 end
 
-# plaintext = File.read(filepath)
-
-# parsedText = CSV.parse(plaintext, :headers => true)
-
-# # puts parsedText.inspect
-
-# parsedText.each do |row|
-#     Element.create({
-#         name: row['name'], 
-#         symbol: row['symbol'], 
-#         atomicNumber: row['atomicNumber'].to_i, 
-#         atomicWeight: row['atomicWeight'].to_f, 
-#         classification_id: Classification.find_by(name: row['classification_id']).id, 
-#         meltingPoint: row['meltingPoint'].to_f, 
-#         boilingPoint: row['boilingPoint'].to_f, 
-#         electronegativity: row['electronegativity'].to_f
-#     })
-# end
-
 # data = CSV.read('lib/seeds/elements.csv')
 
 # data[1..-1].each do |row| 
