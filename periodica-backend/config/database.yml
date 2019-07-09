@@ -18,7 +18,7 @@ development:
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
-  password: deus15899ex
+  password: secret
   database: development_db
   timeout: 5000
 
@@ -30,7 +30,7 @@ test:
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
-  password: deus15899ex
+  password: secret
   database: test_db
   timeout: 5000
 
@@ -39,6 +39,6 @@ production:
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
-  password: deus15899ex
+  password: 
   database: production_db
   timeout: 5000
