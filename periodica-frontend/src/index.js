@@ -1,5 +1,6 @@
 const ELEMENTS_URL = 'http://localhost:3000/elements'
 const USER_QUIZ_ELEMENTS_URL = 'http://localhost:3000/user_quiz_elements'
+const QUIZ_URL = 'http://localhost:3000/quizzes'
 const USER_ID = 1
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -26,7 +27,6 @@ function getElement(element_id, user_id) {
 function postUserElement(body) {
   return fetch(USER_QUIZ_ELEMENTS_URL, {
     method: 'POST',
-    mode: 'cors',
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json'
@@ -39,6 +39,29 @@ function deleteUserElement(user_quiz_element_id) {
   return fetch(`${USER_QUIZ_ELEMENTS_URL}/${user_quiz_element_id}`, {
     method: 'DELETE'
   }).then(resp => resp.json());
+}
+
+function getQuizes(user_id) {
+  if (user_id) {
+    return fetch(`${QUIZ_URL}?user_id=${user_id}`).then(resp => resp.json())
+  } else {
+    return fetch(QUIZ_URL).then(resp => resp.json())
+  }
+}
+
+function getQuiz(quiz_id) {
+  return fetch(`${QUIZ_URL}/${quiz_id}`).then(resp => resp.json())
+}
+
+function postQuiz(body) {
+  return fetch(QUIZ_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    },
+    body: JSON.stringify(body)
+  }).then(resp => resp.json())
 }
 
 function createElement (element, clickFunction, type) {
@@ -274,9 +297,9 @@ function createNavbar() {
   })
 
   const li3 = document.createElement('li');
-  li3.textContent = 'Link';
-  li3.addEventListener('click', (e) => {
-    console.log(e.target)
+  li3.textContent = 'Quiz Me!';
+  li3.addEventListener('click', () => {
+    createQuiz(USER_ID);
   })
 
   const li4 = document.createElement('li');
@@ -288,4 +311,48 @@ function createNavbar() {
 
   ul.append(li1, li2, li3, li4);
   body.insertBefore(ul, container);
+}
+
+function createQuiz(user_id) {
+  console.log(event.target)
+  getQuiz(3).then(quiz => displayQuiz(quiz))
+}
+
+function displayQuiz(quiz) {
+  const container = document.querySelector('.container')
+  const div = document.createElement('div')
+  div.className = "quiz"
+
+  while (container.lastChild) {
+    container.removeChild(container.lastChild);
+  }
+
+  container.appendChild(div);
+
+  console.log(quiz.quiz_questions)
+
+  quiz.quiz_questions.forEach((question, index) => {
+    div.appendChild(createQuizQuestion(question, index));
+  })
+
+  const submit = document.createElement('button')
+  submit.textContent = 'Submit'
+
+  div.appendChild(submit);
+}
+
+function createQuizQuestion(question, index) {
+  const div = document.createElement('div')
+  const h3 = document.createElement('h3')
+  const p = document.createElement('p')
+  const input = document.createElement('input')
+  const hr = document.createElement('hr')
+
+  h3.textContent = `Question ${index+1}`
+  p.textContent = question.question_string
+
+  div.append(h3, p, input, hr);
+
+  return div;
+  
 }
