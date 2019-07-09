@@ -1,13 +1,44 @@
 const ELEMENTS_URL = 'http://localhost:3000/elements'
+const USER_QUIZ_ELEMENTS_URL = 'http://localhost:3000/user_quiz_elements'
 const USER_ID = 1
 
 window.addEventListener('DOMContentLoaded', () => {
   createNavbar();
-  getElements().then(elements => createLearnTable(elements));
+  getElements(USER_ID).then(elements => createLearnTable(elements));
 })
 
-function getElements() {
-  return fetch(ELEMENTS_URL).then(resp => resp.json())
+function getElements(user_id) {
+  if (user_id) {
+    return fetch(`${ELEMENTS_URL}?user_id=${user_id}`).then(resp => resp.json())
+  } else {
+    return fetch(`${ELEMENTS_URL}`).then(resp => resp.json())
+  } 
+}
+
+function getElement(element_id, user_id) {
+  if (user_id){
+    return fetch(`${ELEMENTS_URL}/${element_id}?user_id=${user_id}`).then(resp => resp.json())
+  } else {
+    return fetch(`${ELEMENTS_URL}/${element_id}`).then(resp => resp.json())
+  }
+}
+
+function postUserElement(body) {
+  return fetch(USER_QUIZ_ELEMENTS_URL, {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    },
+    body: JSON.stringify(body)
+  }).then(resp => resp.json())
+}
+
+function deleteUserElement(user_quiz_element_id) {
+  return fetch(`${USER_QUIZ_ELEMENTS_URL}/${user_quiz_element_id}`, {
+    method: 'DELETE'
+  }).then(resp => resp.json());
 }
 
 function createElement (element, clickFunction, type) {
@@ -19,6 +50,7 @@ function createElement (element, clickFunction, type) {
 
   if (type === 'select') {
     cell.className = 'cell select'
+    if (element.selected) cell.classList.add('selected') 
   } else {
     cell.className = 'cell'
   }
@@ -86,6 +118,8 @@ function showElementDetails(e, element) {
       body.removeChild(modal);
     }
   }
+
+  return element;
 }
 
 function createRow(elements, first, blank, last, clickFunction, type) {
@@ -137,9 +171,22 @@ function createSelectTable(elements) {
 
 function selectUserElement(e, element, cell, user_id) {
   if (cell.classList.contains('selected')) {
-    cell.classList.remove('selected');
+    deleteUserElement(element.user_quiz_element_id)
+      .then(returnedElement => {
+        element = returnedElement
+        cell.classList.remove('selected')
+        console.log(element)
+        return element;
+      })
   } else {
-    cell.classList.add('selected');
+    return postUserElement({user_id: user_id, element_id: element.id})
+      .then(userElement => {
+        console.log(userElement)
+        element.user_quiz_element_id = userElement.id
+        element.selected = true
+        cell.classList.add('selected');
+        return element;
+      })
   }
 }
 
@@ -217,13 +264,13 @@ function createNavbar() {
   const li1 = document.createElement('li');
   li1.textContent = 'Home';
   li1.addEventListener('click', (e) => {
-    getElements().then(elements => createLearnTable(elements));
+    getElements(USER_ID).then(elements => createLearnTable(elements));
   })
 
   const li2 = document.createElement('li');
   li2.textContent = 'Select Elements for Quiz';
   li2.addEventListener('click', (e) => {
-    getElements().then(elements => createSelectTable(elements));
+    getElements(USER_ID).then(elements => createSelectTable(elements));
   })
 
   const li3 = document.createElement('li');

@@ -11,7 +11,7 @@ class ElementsController < ApplicationController
 
   # GET /elements/1
   def show
-    render json: @element
+    render json: @element, serializer: ElementSerializer, user_id: params[:user_id]
   end
 
   private
