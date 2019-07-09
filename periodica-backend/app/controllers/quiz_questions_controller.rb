@@ -9,7 +9,7 @@ class QuizQuestionsController < ApplicationController
       @quiz_questions = QuizQuestion.all
     end
 
-    render json: @quiz_questions
+    render json: @quiz_questions, each_serializer: QuizQuestionsSerializer
   end
 
   # GET /quiz_questions/1

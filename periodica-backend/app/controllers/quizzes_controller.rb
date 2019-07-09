@@ -9,12 +9,12 @@ class QuizzesController < ApplicationController
       @quizzes = Quiz.all
     end
 
-    render json: @quizzes, include: :quiz_questions
+    render json: @quizzes, include: :quiz_questions, each_serializer: QuizzesSerializer
   end
 
   # GET /quizzes/1
   def show
-    render json: @quiz, include: :quiz_questions
+    render json: @quiz, include: :quiz_questions, serializer: QuizzesSerializer
   end
 
   # POST /quizzes
