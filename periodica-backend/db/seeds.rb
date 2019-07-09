@@ -2,6 +2,7 @@ require 'csv'
 
 Classification.destroy_all
 Element.destroy_all
+Question.destroy_all
 
 classifications = [
     ["Alkali Metals", "This 'group 1' of metals occupies the far left column of the periodic table. They are all soft, yet solid metals at room temperature, and are all highly reactive, for instance in contact with water."],
@@ -50,3 +51,14 @@ end
 #         electronegativity: row[7].to_f})
 #     # puts elements.inspect
 # end
+
+questions = [
+    {question: 'What is the atomic number for XXFIELDXX?', quiz_field: 'atomicNumber', question_field: 'name', answer_field: 'atomicNumber'},
+    {question: 'Which element has an atomic number of XXFIELDXX?', quiz_field: 'atomicNumber', question_field: 'atomicNumber', answer_field: 'name'},
+    {question: 'Which element has the symbol: XXFIELD?', quiz_field: 'symbol', question_field: 'symbol', answer_field: 'name'},
+    {question: 'What is the symbol for XXFIELD?', quiz_field: 'symbol', question_field: 'name', answer_field: 'symbol'},
+    {question: "Which group does XXFIELDXX belong to?", quiz_field: 'classification', question_field: 'name', answer_field: 'classification_name'}
+]
+
+questions.each{|question| Question.create(question)}
+    
