@@ -5,7 +5,7 @@ class ElementsController < ApplicationController
   def index
     @elements = Element.all
 
-    render json: @elements, include: [{:user_quiz_elements => {only: [:user_id]}}, {:classification => {except: [:id, :created_at, :updated_at]}}]
+    render json: @elements, each_serializer: ElementSerializer, user_id: params[:user_id]
 
   end
 
