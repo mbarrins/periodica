@@ -48,7 +48,7 @@ function createElementDetails(element) {
   const details = document.createElement('p')
 
   h2.textContent = element.name
-  details.textContent = `${element.name} has an atomic number of ${element.atomicNumber}, an atomic mass of ${element.atomicWeight}, and it is a part of the ${element.classification.name} group.`
+  details.textContent = `${element.name} has an atomic number of ${element.atomicNumber}, an atomic mass of ${element.atomicWeight}, and it is a part of the ${element.classification_name} group.`
 
   div.append(h2, details);
 

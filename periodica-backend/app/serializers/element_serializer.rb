@@ -3,6 +3,9 @@ class ElementSerializer < ActiveModel::Serializer
       :meltingPoint, :boilingPoint, :electronegativity, 
       :atomicWeight, :classification_id
 
+  attribute :classification_name do
+    self.object.classification.name
+  end
 
   attribute :classification_description do
     self.object.classification.description
