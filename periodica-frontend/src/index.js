@@ -9,6 +9,14 @@ window.addEventListener('DOMContentLoaded', () => {
   getElements(USER_ID).then(elements => createLearnTable(elements));
 })
 
+function clearContainer() {
+  const container = document.querySelector('.container')
+  while (container.lastChild) {
+    container.removeChild(container.lastChild);
+  }
+  return container
+}
+
 function getElements(user_id) {
   if (user_id) {
     return fetch(`${ELEMENTS_URL}?user_id=${user_id}`).then(resp => resp.json())
@@ -66,9 +74,6 @@ function postQuiz(body) {
 }
 
 function updateUserAnswer(question, answer) {
-  console.log(question)
-  console.log(answer)
-  // debugger
   return fetch(`${QUIZ_QUESTIONS_URL}/${question.id}`, {
     method: 'PATCH',
     headers: {
@@ -76,7 +81,7 @@ function updateUserAnswer(question, answer) {
       'Accept': 'application/json'
     },
     body: JSON.stringify({user_answer: answer})
-  }).then(resp => resp.json()).then(console.log)
+  }).then(resp => resp.json())
 }
 
 function createElement (element, clickFunction, type) {
@@ -182,26 +187,20 @@ function createRow(elements, first, blank, last, clickFunction, type) {
   return div;
 }
 function createLearnTable(elements) {
-  const container = document.querySelector('.container')
+  const container = clearContainer();
   const div = document.createElement('div')
   div.className = "periodic"
 
-  while (container.lastChild) {
-    container.removeChild(container.lastChild);
-  }
   container.appendChild(div);
 
   periodicTableLayout(elements, div, showElementDetails);
 }
 
 function createSelectTable(elements) {
-  const container = document.querySelector('.container')
+  const container = clearContainer();
   const div = document.createElement('div')
   div.className = "periodic"
 
-  while (container.lastChild) {
-    container.removeChild(container.lastChild);
-  }
   container.appendChild(div);
 
   periodicTableLayout(elements, div, selectUserElement, 'select');
@@ -213,13 +212,11 @@ function selectUserElement(e, element, cell, user_id) {
       .then(returnedElement => {
         element = returnedElement
         cell.classList.remove('selected')
-        console.log(element)
         return element;
       })
   } else {
     return postUserElement({user_id: user_id, element_id: element.id})
       .then(userElement => {
-        console.log(userElement)
         element.user_quiz_element_id = userElement.id
         element.selected = true
         cell.classList.add('selected');
@@ -335,38 +332,42 @@ function createNavbar() {
 }
 
 function createQuiz(user_id) {
-  console.log(event.target)
   postQuiz({user_id: user_id, ques_no: 10})
     .then(quiz => {
-      console.log(quiz)
       getQuiz(quiz.id).then(quiz => displayQuiz(quiz))
     })
 }
 
 function displayQuiz(quiz) {
-  const container = document.querySelector('.container')
+  const container = clearContainer();
   const div = document.createElement('div')
   div.className = "quiz"
 
-  while (container.lastChild) {
-    container.removeChild(container.lastChild);
-  }
-
   container.appendChild(div);
 
-  console.log(quiz.quiz_questions)
-
   quiz.quiz_questions.forEach((question, index) => {
-    div.appendChild(createQuizQuestion(question, index));
+    div.appendChild(createQuizQuestion(question, index, quiz));
   })
 
-  const submit = document.createElement('button')
-  submit.textContent = 'Submit'
+  if (quiz.status !== 'completed') {
+    const submit = document.createElement('button')
+    submit.textContent = 'Submit'
 
-  div.appendChild(submit);
+    submit.addEventListener('click', () => {
+      submitQuiz(quiz)
+    })
+
+    div.appendChild(submit);
+  }
+  
+  return div;
 }
 
-function createQuizQuestion(question, index) {
+function submitQuiz(quiz) {
+  console.log(quiz)
+}
+
+function createQuizQuestion(question, index, quiz) {
   const div = document.createElement('div')
   const h3 = document.createElement('h3')
   const p = document.createElement('p')
@@ -374,10 +375,11 @@ function createQuizQuestion(question, index) {
   const answer = document.createElement('input')
   if (question.user_answer) answer.value = question.user_answer
   answer.addEventListener('change', e => {
-    console.log(answer.value)
-    updateUserAnswer(question, answer.value);
+    updateUserAnswer(question, answer.value)
+      .then(returnedQuestion => {
+        quiz.quiz_questions[index] = returnedQuestion
+      });
   })
-
 
   if (question.result) answer.readOnly;
 
@@ -391,19 +393,14 @@ function createQuizQuestion(question, index) {
 }
 
 function displayQuizzes() {
-  const container = document.querySelector('.container')
+  const container = clearContainer();
   const div = document.createElement('div')
   div.className = "quiz-list"
-
-  while (container.lastChild) {
-    container.removeChild(container.lastChild);
-  }
 
   container.appendChild(div);
 
   getQuizes(USER_ID)
     .then(quizzes => {
-      console.log(quizzes)
       quizzes.forEach((quiz, index) => {
         div.appendChild(createQuizInfo(quiz, index));
       })

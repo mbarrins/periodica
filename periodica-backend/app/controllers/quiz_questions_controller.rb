@@ -20,7 +20,7 @@ class QuizQuestionsController < ApplicationController
   # PATCH/PUT /quiz_questions/1
   def update
     if @quiz_question.update(quiz_question_params)
-      render json: @quiz_question
+      render json: @quiz_question, serializer: QuizQuestionsSerializer
     else
       render json: @quiz_question.errors, status: :unprocessable_entity
     end
