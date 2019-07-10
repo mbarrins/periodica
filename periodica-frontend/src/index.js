@@ -6,7 +6,7 @@ const USER_ID = 1
 
 window.addEventListener('DOMContentLoaded', () => {
   createNavbar();
-  getElements(USER_ID).then(elements => createLearnTable(elements));
+  getElements().then(elements => createLearnTable(elements));
 })
 
 function clearContainer() {
@@ -213,7 +213,7 @@ function createSelectTable(elements) {
   div.className = "periodic"
 
   container.appendChild(div);
-
+  
   periodicTableLayout(elements, div, selectUserElement, 'select');
 }
 
@@ -252,7 +252,7 @@ function periodicTableLayout(elements, div, clickFunction, type) {
       firstElements = 1
       gapNoElements = 16
       lastElements = 1
-  
+      
       div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements, clickFunction, type));
       elementNum += (firstElements + lastElements)
     
@@ -310,7 +310,7 @@ function createNavbar() {
   const li1 = document.createElement('li');
   li1.textContent = 'Home';
   li1.addEventListener('click', (e) => {
-    getElements(USER_ID).then(elements => createLearnTable(elements));
+    getElements().then(elements => createLearnTable(elements));
   })
 
   const li2 = document.createElement('li');
