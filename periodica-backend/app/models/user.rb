@@ -6,24 +6,40 @@ class User < ApplicationRecord
   has_many :quizzes
 
   def quiz_questions
-    if (self.user_questions.exists?)
-      questions = self.user_questions.map{|uq| Question.find(uq.question_id)}
-    else
-      questions = Question.all
-    end
+    self.user_questions.exists? ? self.questions : Question.all
+  end
+
+  def quiz_question_types 
+    self.quiz_questions.map{|question| question.quiz_field}.uniq
   end
 
   def quiz_elements
-    if (self.user_quiz_elements.exists?)
-      self.user_quiz_elements.map{|uqe| Element.find(uqe.element_id)}
-    else
-      Element.all
+    self.user_quiz_elements.exists? ? self.elements : Element.all
+  end
+
+  def question_set(no)
+    element_ques = []
+
+    questions = self.quiz_questions
+    question_fields = self.quiz_question_types
+    elements = self.elements_selection(no)
+    question_selection = self.ques_selection(no)
+
+    elements.each_with_index do |element, index|
+      question_fields_selected = question_fields.sample(question_selection[index])
+      question_fields_selected.each do |quiz_field|
+        question = questions.select{|question| question.quiz_field == quiz_field}.sample
+        element_ques << [element, question]
+      end
     end
+
+    element_ques.shuffle
+
   end
 
   def elements_selection(no)
     elements = self.quiz_elements
-    elements.length > no ? elements.sample(no) : elements.shuffle
+    elements.length > no ? elements.sample(no).shuffle : elements.shuffle
   end
 
   def ques_selection(no)

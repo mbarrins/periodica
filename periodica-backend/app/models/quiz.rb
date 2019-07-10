@@ -7,16 +7,9 @@ class Quiz < ApplicationRecord
   # Returns the created quiz
   def self.createWithQuestions(user, no)
     quiz = Quiz.create({user_id: user.id, status: 'created'})
-    questions = user.quiz_questions
-    question_fields = Question.question_fields
-    elements = user.elements_selection(no)
-    question_selection = user.ques_selection(no)
-    
+    question_set = user.question_set(no)
 
-    elements.each_with_index do |element, index|
-      question_fields_selected = question_fields.sample(question_selection[index])
-      question_fields_selected.each do |quiz_field|
-        question = questions.select{|question| question.quiz_field == quiz_field}.sample
+    question_set.each do |element, question|
         quiz_question = {
           quiz_id: quiz.id,
           question_id: question.id,
@@ -25,9 +18,7 @@ class Quiz < ApplicationRecord
           correct_answer: element.send(question.answer_field).to_s
         }
         QuizQuestion.create(quiz_question);
-      end
     end
-
     quiz
   end
 end

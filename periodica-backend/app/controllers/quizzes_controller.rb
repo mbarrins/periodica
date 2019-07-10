@@ -4,7 +4,7 @@ class QuizzesController < ApplicationController
   # GET /quizzes
   def index
     if params[:user_id]
-      @quizzes = Quiz.find_by(user_id: params[:user_id])
+      @quizzes = Quiz.where(user_id: params[:user_id])
     else
       @quizzes = Quiz.all
     end

@@ -14,7 +14,7 @@ class QuizQuestionsController < ApplicationController
 
   # GET /quiz_questions/1
   def show
-    render json: @quiz_question
+    render json: @quiz_question, serializer: QuizQuestionsSerializer
   end
 
   # PATCH/PUT /quiz_questions/1

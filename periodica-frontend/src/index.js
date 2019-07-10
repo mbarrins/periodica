@@ -1,6 +1,7 @@
 const ELEMENTS_URL = 'http://localhost:3000/elements'
 const USER_QUIZ_ELEMENTS_URL = 'http://localhost:3000/user_quiz_elements'
-const QUIZ_URL = 'http://localhost:3000/quizzes'
+const QUIZZES_URL = 'http://localhost:3000/quizzes'
+const QUIZ_QUESTIONS_URL = 'http://localhost:3000/quiz_questions'
 const USER_ID = 1
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -43,25 +44,37 @@ function deleteUserElement(user_quiz_element_id) {
 
 function getQuizes(user_id) {
   if (user_id) {
-    return fetch(`${QUIZ_URL}?user_id=${user_id}`).then(resp => resp.json())
+    return fetch(`${QUIZZES_URL}?user_id=${user_id}`).then(resp => resp.json())
   } else {
-    return fetch(QUIZ_URL).then(resp => resp.json())
+    return fetch(QUIZZES_URL).then(resp => resp.json())
   }
 }
 
 function getQuiz(quiz_id) {
-  return fetch(`${QUIZ_URL}/${quiz_id}`).then(resp => resp.json())
+  return fetch(`${QUIZZES_URL}/${quiz_id}`).then(resp => resp.json())
 }
 
 function postQuiz(body) {
-  return fetch(QUIZ_URL, {
+  return fetch(QUIZZES_URL, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json'
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify(body)
   }).then(resp => resp.json())
+}
+
+function updateUserAnswer(question, answer) {
+  console.log(question)
+  console.log(answer)
+  debugger
+  return fetch(`${QUIZ_QUESTIONS_URL}/${question.id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({user_answer: answer})
+  })
 }
 
 function createElement (element, clickFunction, type) {
@@ -303,13 +316,19 @@ function createNavbar() {
   })
 
   const li4 = document.createElement('li');
-  li4.textContent = 'Link';
-  li4.style = 'float:right';
-  li4.addEventListener('click', (e) => {
+  li4.textContent = 'Quiz History';
+  li4.addEventListener('click', () => {
+    displayQuizzes(USER_ID);
+  })
+
+  const li10 = document.createElement('li');
+  li10.textContent = 'Link';
+  li10.style = 'float:right';
+  li10.addEventListener('click', (e) => {
     console.log(e.target)
   })
 
-  ul.append(li1, li2, li3, li4);
+  ul.append(li1, li2, li3, li4, li10);
   body.insertBefore(ul, container);
 }
 
@@ -345,14 +364,72 @@ function createQuizQuestion(question, index) {
   const div = document.createElement('div')
   const h3 = document.createElement('h3')
   const p = document.createElement('p')
-  const input = document.createElement('input')
   const hr = document.createElement('hr')
+  const answer = document.createElement('input')
+  answer.addEventListener('change', e => {
+    console.log(answer.value)
+    updateUserAnswer(question, answer.value);
+  })
+
+
+  if (question.result) answer.readOnly;
 
   h3.textContent = `Question ${index+1}`
   p.textContent = question.question_string
 
-  div.append(h3, p, input, hr);
+  div.append(h3, p, answer, hr);
 
   return div;
   
+}
+
+function displayQuizzes() {
+  const container = document.querySelector('.container')
+  const div = document.createElement('div')
+  div.className = "quiz-list"
+
+  while (container.lastChild) {
+    container.removeChild(container.lastChild);
+  }
+
+  container.appendChild(div);
+
+  getQuizes(USER_ID)
+    .then(quizzes => {
+      console.log(quizzes)
+      quizzes.forEach((quiz, index) => {
+        div.appendChild(createQuizInfo(quiz, index));
+      })
+    })
+}
+
+function createQuizInfo(quiz, index) {
+  const questions = quiz.quiz_questions.length
+  // const quesAnswered = quiz.quiz_questions.reduce((total, question) => total + (question.user_answer ? 1 : 0))
+  const quesCorrect = quiz.quiz_questions.map((ques) => ques.result ? 1 : 0).reduce((total, score) => total + score)
+  const score = Math.round(quesCorrect/questions * 100**2) / 100
+  // const quiz_created = new Date(quiz.created_at)
+  const quiz_updated = new Date(quiz.updated_at)
+
+  const div = document.createElement('div')
+  const quiz_info = document.createElement('p')
+  
+  div.appendChild(quiz_info)
+
+  quiz_info.textContent = `Quiz ${index+1}: ${questions} Questions, ${quiz.status} on ${quiz_updated.toLocaleDateString()}`
+
+  if (quiz.status === 'completed') {
+    const quiz_result = document.createElement('p')
+    quiz_result.textContent = `Score ${score}%`
+    div.appendChild(quiz_result)
+  }
+
+  const button = document.createElement('button')
+  button.textContent = (quiz.status === 'completed') ? 'Review' : 'Resume'
+  button.addEventListener('click', () => {
+    displayQuiz(quiz);
+  })
+  div.appendChild(button)
+  
+  return div
 }
