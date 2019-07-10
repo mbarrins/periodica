@@ -19,8 +19,10 @@ class QuizzesController < ApplicationController
 
   # POST /quizzes
   def create
-    @quiz = Quiz.new(user_quiz_element_params)
-    if @quiz.save
+    user = User.find(params[:user_id])
+    @quiz = Quiz.createWithQuestions(user, params[:ques_no])
+
+    if @quiz.errors.empty?
       render json: @quiz, status: :created, location: @quiz
     else
       render json: @quiz.errors, status: :unprocessable_entity
@@ -29,7 +31,7 @@ class QuizzesController < ApplicationController
 
   # PATCH/PUT /quizzes/1
   def update
-    if @quiz.update(user_quiz_element_params)
+    if @quiz.update(quiz_params)
       render json: @quiz
     else
       render json: @quiz.errors, status: :unprocessable_entity

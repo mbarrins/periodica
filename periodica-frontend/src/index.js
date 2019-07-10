@@ -58,7 +58,8 @@ function postQuiz(body) {
   return fetch(QUIZZES_URL, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
     },
     body: JSON.stringify(body)
   }).then(resp => resp.json())
@@ -67,14 +68,15 @@ function postQuiz(body) {
 function updateUserAnswer(question, answer) {
   console.log(question)
   console.log(answer)
-  debugger
+  // debugger
   return fetch(`${QUIZ_QUESTIONS_URL}/${question.id}`, {
     method: 'PATCH',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
     },
     body: JSON.stringify({user_answer: answer})
-  })
+  }).then(resp => resp.json()).then(console.log)
 }
 
 function createElement (element, clickFunction, type) {
@@ -334,7 +336,11 @@ function createNavbar() {
 
 function createQuiz(user_id) {
   console.log(event.target)
-  getQuiz(3).then(quiz => displayQuiz(quiz))
+  postQuiz({user_id: user_id, ques_no: 10})
+    .then(quiz => {
+      console.log(quiz)
+      getQuiz(quiz.id).then(quiz => displayQuiz(quiz))
+    })
 }
 
 function displayQuiz(quiz) {
@@ -366,6 +372,7 @@ function createQuizQuestion(question, index) {
   const p = document.createElement('p')
   const hr = document.createElement('hr')
   const answer = document.createElement('input')
+  if (question.user_answer) answer.value = question.user_answer
   answer.addEventListener('change', e => {
     console.log(answer.value)
     updateUserAnswer(question, answer.value);
