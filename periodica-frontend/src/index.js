@@ -1,12 +1,15 @@
-const ELEMENTS_URL = 'http://localhost:3000/elements'
-const USER_QUIZ_ELEMENTS_URL = 'http://localhost:3000/user_quiz_elements'
-const QUIZZES_URL = 'http://localhost:3000/quizzes'
-const QUIZ_QUESTIONS_URL = 'http://localhost:3000/quiz_questions'
-const USER_ID = 1
+const ELEMENTS_URL = 'http://localhost:3000/elements';
+const USER_QUIZ_ELEMENTS_URL = 'http://localhost:3000/user_quiz_elements';
+const QUIZZES_URL = 'http://localhost:3000/quizzes';
+const QUIZ_QUESTIONS_URL = 'http://localhost:3000/quiz_questions';
+const CLASSIFICATIONS_URL = 'http://localhost:3000/classifications';
+const USER_ID = 1;
+const GROUPS = [];
 
 window.addEventListener('DOMContentLoaded', () => {
   createNavbar();
   getElements().then(elements => createLearnTable(elements));
+  getClassifications();
 })
 
 function clearContainer() {
@@ -93,6 +96,15 @@ function updateUserAnswer(question, answer) {
     },
     body: JSON.stringify({user_answer: answer})
   }).then(resp => resp.json())
+}
+
+function getClassifications() {
+  return fetch(`${CLASSIFICATIONS_URL}`)
+    .then(resp => resp.json())
+    .then(classifications => classifications.forEach((group) => {
+      GROUPS.push(group.name);
+      GROUPS.sort();
+    }))
 }
 
 function createElement (element, clickFunction, type) {
@@ -375,9 +387,7 @@ function displayQuiz(quizWithQuestions) {
 }
 
 function scoreQuiz(quiz) {
-  console.log(quiz)
   submitQuiz(quiz).then(returnedQuiz => {
-    console.log(returnedQuiz)
     quiz = returnedQuiz
     displayQuiz(quiz)
   });
@@ -388,23 +398,18 @@ function createQuizQuestion(question, index, quiz) {
   const h3 = document.createElement('h3')
   const p = document.createElement('p')
   const hr = document.createElement('hr')
-  const answer = document.createElement('input')
+  let answer
 
-  if (question.user_answer) answer.value = question.user_answer
-  answer.addEventListener('change', e => {
-    updateUserAnswer(question, answer.value)
-      .then(returnedQuestion => {
-        quiz.quiz_questions[index] = returnedQuestion
-      });
-  })
-
+  
   h3.textContent = `Question ${index+1}`
   p.textContent = question.question_string
 
-  div.append(h3, p, answer);
-
+  div.append(h3, p);
+  
   if (typeof(question.result) !== "undefined") {
+    answer = document.createElement('input')
     answer.readOnly = true;
+    div.appendChild(answer);
 
     if (question.result === true) {
       answer.classList.add('success')
@@ -414,8 +419,54 @@ function createQuizQuestion(question, index, quiz) {
       correct.textContent = `  The correct answer is ${question.correct_answer}.`
       div.appendChild(correct);
     }    
+
+  } else {
+    switch (question.question_on) {
+      case 'atomicNumber':
+        answer = document.createElement('input')
+        if (isNaN(question.correct_answer)) {
+          answer.type = 'text'
+        } else {
+          answer.type = 'number'
+          answer.min = 1
+          answer.max = 118
+        }
+        break;
+
+      case 'symbol':
+        answer = document.createElement('input')
+        answer.type = 'text'
+        break;
+
+      case 'classification':
+        answer = document.createElement('select')
+        const option = document.createElement('option')
+        option.disabled = true
+        option.selected = true
+        option.textContent = ' -- select an option -- '
+        answer.appendChild(option);
+        
+        GROUPS.forEach((group) => {
+          const option = document.createElement('option');
+          option.textContent = group;
+          option.value = group;
+          answer.appendChild(option);
+        })
+        break;
+    }
+    answer.required = true
+    div.appendChild(answer);
+
+    answer.addEventListener('change', e => {
+      updateUserAnswer(question, answer.value)
+        .then(returnedQuestion => {
+          quiz.quiz_questions[index] = returnedQuestion
+        });
+    })    
   }
-  
+
+  if (question.user_answer) answer.value = question.user_answer
+
   div.appendChild(hr);
   
   return div;
