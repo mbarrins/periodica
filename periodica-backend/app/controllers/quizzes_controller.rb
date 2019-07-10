@@ -9,12 +9,12 @@ class QuizzesController < ApplicationController
       @quizzes = Quiz.all
     end
 
-    render json: @quizzes, include: :quiz_questions, each_serializer: QuizzesSerializer
+    render json: @quizzes, each_serializer: QuizzesSerializer, incl_ques: params[:incl_ques]
   end
 
   # GET /quizzes/1
   def show
-    render json: @quiz, include: :quiz_questions, serializer: QuizzesSerializer
+    render json: @quiz, include: :quiz_questions, serializer: QuizzesSerializer, incl_ques: params[:incl_ques]
   end
 
   # POST /quizzes
@@ -23,7 +23,7 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.createWithQuestions(user, params[:ques_no])
 
     if @quiz.errors.empty?
-      render json: @quiz, status: :created, location: @quiz, serializer: QuizzesSerializer
+      render json: @quiz, status: :created, location: @quiz, serializer: QuizzesSerializer, incl_ques: params[:incl_ques]
     else
       render json: @quiz.errors, status: :unprocessable_entity
     end
@@ -31,10 +31,17 @@ class QuizzesController < ApplicationController
 
   # PATCH/PUT /quizzes/1
   def update
-    if @quiz.update(quiz_params)
-      render json: @quiz, serializer: QuizzesSerializer
+    if params[:submit_quiz] == 'true'
+      @quiz.score
+      @quiz.status = 'completed'
+      @quiz.save
+      render json: @quiz, serializer: QuizzesSerializer, incl_ques: params[:incl_ques]
     else
-      render json: @quiz.errors, status: :unprocessable_entity
+      if @quiz.update(quiz_params)
+        render json: @quiz, serializer: QuizzesSerializer, incl_ques: params[:incl_ques]
+      else
+        render json: @quiz.errors, status: :unprocessable_entity
+      end
     end
   end
 

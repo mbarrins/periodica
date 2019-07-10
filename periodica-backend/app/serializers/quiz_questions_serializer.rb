@@ -8,7 +8,7 @@ class QuizQuestionsSerializer < ActiveModel::Serializer
       hash[:user_answer] = self.object.user_answer
     end
 
-    if self.object.result
+    if !self.object.result.nil?
       hash[:result] = self.object.result
     end
 

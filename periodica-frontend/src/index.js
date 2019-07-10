@@ -50,7 +50,7 @@ function deleteUserElement(user_quiz_element_id) {
   }).then(resp => resp.json());
 }
 
-function getQuizes(user_id) {
+function getQuizzes(user_id) {
   if (user_id) {
     return fetch(`${QUIZZES_URL}?user_id=${user_id}`).then(resp => resp.json())
   } else {
@@ -59,17 +59,28 @@ function getQuizes(user_id) {
 }
 
 function getQuiz(quiz_id) {
-  return fetch(`${QUIZZES_URL}/${quiz_id}`).then(resp => resp.json())
+  return fetch(`${QUIZZES_URL}/${quiz_id}?incl_ques=true`).then(resp => resp.json())
 }
 
 function postQuiz(body) {
-  return fetch(QUIZZES_URL, {
+  return fetch(`${QUIZZES_URL}?incl_ques=true`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json'
     },
     body: JSON.stringify(body)
+  }).then(resp => resp.json())
+}
+
+function submitQuiz(quiz) {
+  return fetch(`${QUIZZES_URL}/${quiz.id}?submit_quiz=true&incl_ques=true`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    },
+    body: JSON.stringify(quiz)
   }).then(resp => resp.json())
 }
 
@@ -338,23 +349,23 @@ function createQuiz(user_id) {
     })
 }
 
-function displayQuiz(quiz) {
+function displayQuiz(quizWithQuestions) {
   const container = clearContainer();
   const div = document.createElement('div')
   div.className = "quiz"
 
   container.appendChild(div);
 
-  quiz.quiz_questions.forEach((question, index) => {
-    div.appendChild(createQuizQuestion(question, index, quiz));
+  quizWithQuestions.quiz_questions.forEach((question, index) => {
+    div.appendChild(createQuizQuestion(question, index, quizWithQuestions));
   })
 
-  if (quiz.status !== 'completed') {
+  if (quizWithQuestions.status !== 'completed') {
     const submit = document.createElement('button')
     submit.textContent = 'Submit'
 
     submit.addEventListener('click', () => {
-      submitQuiz(quiz)
+      scoreQuiz(quizWithQuestions)
     })
 
     div.appendChild(submit);
@@ -363,8 +374,13 @@ function displayQuiz(quiz) {
   return div;
 }
 
-function submitQuiz(quiz) {
+function scoreQuiz(quiz) {
   console.log(quiz)
+  submitQuiz(quiz).then(returnedQuiz => {
+    console.log(returnedQuiz)
+    quiz = returnedQuiz
+    displayQuiz(quiz)
+  });
 }
 
 function createQuizQuestion(question, index, quiz) {
@@ -373,6 +389,7 @@ function createQuizQuestion(question, index, quiz) {
   const p = document.createElement('p')
   const hr = document.createElement('hr')
   const answer = document.createElement('input')
+
   if (question.user_answer) answer.value = question.user_answer
   answer.addEventListener('change', e => {
     updateUserAnswer(question, answer.value)
@@ -381,13 +398,26 @@ function createQuizQuestion(question, index, quiz) {
       });
   })
 
-  if (question.result) answer.readOnly;
-
   h3.textContent = `Question ${index+1}`
   p.textContent = question.question_string
 
-  div.append(h3, p, answer, hr);
+  div.append(h3, p, answer);
 
+  if (typeof(question.result) !== "undefined") {
+    answer.readOnly = true;
+
+    if (question.result === true) {
+      answer.classList.add('success')
+    } else {
+      answer.classList.add('error')
+      const correct = document.createElement('label')
+      correct.textContent = `  The correct answer is ${question.correct_answer}.`
+      div.appendChild(correct);
+    }    
+  }
+  
+  div.appendChild(hr);
+  
   return div;
   
 }
@@ -399,7 +429,7 @@ function displayQuizzes() {
 
   container.appendChild(div);
 
-  getQuizes(USER_ID)
+  getQuizzes(USER_ID)
     .then(quizzes => {
       quizzes.forEach((quiz, index) => {
         div.appendChild(createQuizInfo(quiz, index));
@@ -408,11 +438,7 @@ function displayQuizzes() {
 }
 
 function createQuizInfo(quiz, index) {
-  const questions = quiz.quiz_questions.length
-  // const quesAnswered = quiz.quiz_questions.reduce((total, question) => total + (question.user_answer ? 1 : 0))
-  const quesCorrect = quiz.quiz_questions.map((ques) => ques.result ? 1 : 0).reduce((total, score) => total + score)
-  const score = Math.round(quesCorrect/questions * 100**2) / 100
-  // const quiz_created = new Date(quiz.created_at)
+  const score = Math.round(quiz.correct/quiz.questions * 100**2) / 100
   const quiz_updated = new Date(quiz.updated_at)
 
   const div = document.createElement('div')
@@ -420,7 +446,7 @@ function createQuizInfo(quiz, index) {
   
   div.appendChild(quiz_info)
 
-  quiz_info.textContent = `Quiz ${index+1}: ${questions} Questions, ${quiz.status} on ${quiz_updated.toLocaleDateString()}`
+  quiz_info.textContent = `Quiz ${index+1}: ${quiz.questions} Questions, ${quiz.status} on ${quiz_updated.toLocaleDateString()}`
 
   if (quiz.status === 'completed') {
     const quiz_result = document.createElement('p')
@@ -431,7 +457,7 @@ function createQuizInfo(quiz, index) {
   const button = document.createElement('button')
   button.textContent = (quiz.status === 'completed') ? 'Review' : 'Resume'
   button.addEventListener('click', () => {
-    displayQuiz(quiz);
+    getQuiz(quiz.id).then(quizWithQuestions => displayQuiz(quizWithQuestions));
   })
   div.appendChild(button)
   

@@ -21,4 +21,8 @@ class Quiz < ApplicationRecord
     end
     quiz
   end
+
+  def score
+    self.quiz_questions.each{|question| question.add_result}
+  end
 end
