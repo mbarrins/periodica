@@ -2,26 +2,20 @@ class Quiz < ApplicationRecord
   belongs_to :user
   has_many :quiz_questions
 
-  def self.createWithQuestions(user)
+  # Creates a quiz and attaches questions
+  # Takes in a user and the number of quiz questions to create
+  # Returns the created quiz
+  def self.createWithQuestions(user, no)
     quiz = Quiz.create({user_id: user.id, status: 'created'})
+    questions = user.quiz_questions
+    question_fields = Question.question_fields
+    elements = user.elements_selection(no)
+    question_selection = user.ques_selection(no)
+    
 
-    # Create quiz questions
-    if (user.user_questions.exists?)
-      questions = user.user_questions.map{|uq| Question.find(uq.question_id)}
-    else
-      questions = Question.all
-    end
-
-    question_fields = questions.map{|question| question.quiz_field}.uniq
-
-    if (user.user_quiz_elements.exists?)
-      elements = user.user_quiz_elements.map{|uqe| Element.find(uqe.element_id)}
-    else
-      elements = Element.all
-    end
-
-    elements.each do |element|
-      question_fields.each do |quiz_field|
+    elements.each_with_index do |element, index|
+      question_fields_selected = question_fields.sample(question_selection[index])
+      question_fields_selected.each do |quiz_field|
         question = questions.select{|question| question.quiz_field == quiz_field}.sample
         quiz_question = {
           quiz_id: quiz.id,
