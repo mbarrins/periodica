@@ -382,7 +382,7 @@ function createNavbar() {
   item2.classList.add('nav-item', 'nav-link')
   item2.innerText = 'Test Elements';
   item2.addEventListener('click', (e) => {
-    getElements().then(elements => createSelectTable(elements));
+    getElements(USER_ID).then(elements => createSelectTable(elements));
   })
 
   // const li3 = document.createElement('li');
