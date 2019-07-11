@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :questions, through: :user_questions
   has_many :quizzes
 
+  validates :username, uniqueness: true
+
   def quiz_questions
     self.user_questions.exists? ? self.questions : Question.all
   end

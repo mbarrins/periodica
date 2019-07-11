@@ -20,8 +20,13 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.create(user_params)
-    render json: @user
+    user = User.create(user_params)
+
+    if user.valid?
+      render json: user
+    else
+      render json: {error: user.errors.full_messages, status: :could_not_create}
+    end
   end
 
   # PATCH /users/1
@@ -37,7 +42,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-    def users_params
-      params.require(:users).permit(:username, :first_name, :last_name)
+    def user_params
+      params.require(:user).permit(:username, :first_name, :last_name)
     end
 end

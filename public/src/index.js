@@ -93,8 +93,7 @@ function updateUserAnswer(question, answer) {
   return fetch(`${QUIZ_QUESTIONS_URL}/${question.id}`, {
     method: 'PATCH',
     headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({user_answer: answer})
   }).then(resp => resp.json())
@@ -109,18 +108,68 @@ function getClassifications() {
     }))
 }
 
+function getUsers(username) {
+  if (username) {
+    return fetch(`${USERS_URL}?username=${username}`)
+      .then(resp => resp.json())
+  } else {
+    return fetch(`${USERS_URL}`)
+      .then(resp => resp.json())
+  }
+}
+
 function signInUser(username) {
-  return fetch(`${USERS_URL}?username=${username}`)
-    .then(resp => resp.json())
+  getUsers(username)
     .then(returnedUser => {
       if (returnedUser) {
-        user = returnedUser
-        addUserNav();
-        getElements().then(elements => createLearnTable(elements))
+        logInUser(returnedUser);
       } else {
-        console.log('add message user does not exist, sign up')
+        displayErrorMessage('That username does not exist. Please check your details or click to Sign Up below.');
       }
     })
+}
+
+function displayErrorMessage(errorMessage){
+  const h1 = document.querySelector('h1')
+  const div = h1.parentNode
+
+  if (div.querySelector('.error')) {
+    const p = div.querySelector('.error')
+    p.textContent = errorMessage
+  } else {
+    const p = document.createElement('p')
+    p.className = 'error has-text-danger has-text-weight-bold'
+    p.textContent = errorMessage
+    h1.parentNode.insertBefore(p,h1)
+  }
+}
+
+function logInUser(returnedUser) {
+  user = returnedUser
+  addUserNav();
+  getElements().then(elements => createLearnTable(elements))
+
+  return user;
+}
+
+function postUser(body) {
+  return fetch(USERS_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  }).then(resp => resp.json())
+}
+
+function signUpUser(body) {
+  postUser(body).then(returnedUser => {
+    if (returnedUser.error) {
+      displayErrorMessage(returnedUser.error.join('\r\n'));
+    } else {
+      logInUser(returnedUser);
+    }
+  })
 }
 
 
@@ -636,7 +685,6 @@ function createLogIn() {
 
   form.addEventListener('submit', () => {
     event.preventDefault();
-    console.log('submit')
     signInUser(event.target[0].value);
   })
 
@@ -648,7 +696,6 @@ function createLogIn() {
 
   signUp.addEventListener('click', () => {
     event.preventDefault();
-    console.log('Sign Up')
     createSignUp();
   })
 
@@ -768,15 +815,12 @@ function createSignUp() {
 
   form.addEventListener('submit', () => {
     event.preventDefault();
-    console.log('submit')
-    console.log(event.target)
     const body = {
       username: event.target[0].value,
       first_name: event.target[1].value,
       last_name: event.target[2].value
     }
-    console.log(body)
-    // signInUser(event.target[0].value);
+    signUpUser(body);
   })
 
   column.append(username, firstName, lastName, buttons);
