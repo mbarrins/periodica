@@ -435,13 +435,13 @@ function createNavbar() {
   brandDiv.className = 'navbar-brand'
 
   const brand = document.createElement('a');
-  brand.classList.add('navbar-item');
+  brand.classList.add('navbar-item','is-size-2');
   brand.innerText = 'Periodica';
 
   brandDiv.appendChild(brand);
 
   const navDiv = document.createElement('div');
-  navDiv.classList.add('navbar-menu');
+  navDiv.classList.add('navbar-menu', 'is-size-5');
 
   nav.append(brandDiv, navDiv)
   body.insertBefore(nav, container);
@@ -457,9 +457,6 @@ function removeUserNav() {
 
 function addUserNav() {
   const navDiv = document.querySelector('.navbar-menu')
-
-  const navStart = document.createElement('div')
-  navStart.className = 'navbar-start'
 
   const navEnd = document.createElement('div')
   navEnd.className = 'navbar-end'
@@ -569,7 +566,7 @@ function addUserNav() {
 
   const signOut = document.createElement('a');
   signOut.classList.add('navbar-item');
-  signOut.innerText = 'Sign Out';
+  signOut.innerText = 'Sign out';
   signOut.addEventListener('click', () => {
     currentUser = undefined;
     removeUserNav();
@@ -577,7 +574,7 @@ function addUserNav() {
   })
 
   navEnd.append(home, quiz, userMenu, signOut)
-  navDiv.append(navStart,navEnd)
+  navDiv.append(navEnd)
 }
 
 function createQuiz(user_id) {
