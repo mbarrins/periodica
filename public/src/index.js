@@ -428,7 +428,7 @@ function createNavbar() {
   const container = document.querySelector('.container')
 
   const nav = document.createElement('nav');
-  nav.classList.add('navbar', 'is-dark', 'is-spaced');
+  nav.classList.add('navbar', 'is-dark');
   nav.style = 'min-height: 100px'
 
   const brandDiv = document.createElement('div')
