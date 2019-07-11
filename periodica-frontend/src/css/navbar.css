@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -17,7 +17,7 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
+} */
 
 /* .navbar li a {
   display: block;
@@ -28,7 +28,7 @@
 } */
 
 /* Change the link color to #111 (black) on hover */
-.navbar li a:hover {
+/* .navbar li a:hover {
   background-color: #111;
 }
 
@@ -37,4 +37,4 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-}
+} */

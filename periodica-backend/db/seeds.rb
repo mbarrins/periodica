@@ -1,5 +1,3 @@
-require 'csv'
-
 Classification.destroy_all
 Element.destroy_all
 
@@ -24,6 +22,7 @@ end
 filepath = Rails.root.join('lib', 'seeds', 'elements.csv')
 
 CSV.foreach(filepath, headers: true) do |row| 
+    # puts row.inspect
     Element.create({
         name: row[0], 
         symbol: row[1], 
@@ -32,7 +31,9 @@ CSV.foreach(filepath, headers: true) do |row|
         classification_id: Classification.find_by(name: row[4]).id, 
         meltingPoint: row[5].to_f, 
         boilingPoint: row[6].to_f, 
-        electronegativity: row[7].to_f
+        electronegativity: row[7].to_f,
+        about: row[8],
+        imgurl: row[9]
     })
 end
 

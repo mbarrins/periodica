@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_08_171023) do
+ActiveRecord::Schema.define(version: 2019_07_10_153649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2019_07_08_171023) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "atomicWeight"
+    t.string "about"
+    t.string "imgurl"
     t.index ["classification_id"], name: "index_elements_on_classification_id"
   end
 

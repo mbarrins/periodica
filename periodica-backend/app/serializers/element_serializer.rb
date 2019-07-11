@@ -1,5 +1,5 @@
 class ElementSerializer < ActiveModel::Serializer
-  attributes :id, :name, :symbol, :atomicNumber, 
+  attributes :id, :imgurl, :name, :symbol, :atomicNumber, :about, 
       :meltingPoint, :boilingPoint, :electronegativity, 
       :atomicWeight, :classification_id
 

@@ -1,5 +1,6 @@
 const ELEMENTS_URL = 'http://localhost:3000/elements'
 const USER_ID = 1
+// const tableContainer = document.getElementById('main-container')
 
 window.addEventListener('DOMContentLoaded', () => {
   createNavbar();
@@ -7,20 +8,23 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 function getElements() {
-  return fetch(ELEMENTS_URL).then(resp => resp.json())
+  return fetch(ELEMENTS_URL)
+    .then(resp => resp.json())
 }
+
 
 function createElement (element, clickFunction, type) {
   const cell = document.createElement('div')
+  cell.setAttribute('data-toggle', 'modal');
   const elementDiv = document.createElement('div')
   const atomic_number = document.createElement('div')
   const symbol = document.createElement('div')
   const details = document.createElement('div')
 
   if (type === 'select') {
-    cell.className = 'cell select'
+    cell.classList.add('cell', 'select')
   } else {
-    cell.className = 'cell'
+    cell.classList.add('cell')
   }
 
   elementDiv.className = 'element'
@@ -30,13 +34,14 @@ function createElement (element, clickFunction, type) {
   
   atomic_number.textContent = `${element.atomicNumber}`
   symbol.textContent = `${element.symbol}`
-  details.innerHTML = `${element.name}<br />${element.atomicWeight}`
+  details.innerHTML = `${element.atomicWeight}`
 
   elementDiv.append(atomic_number, symbol, details)
   cell.append(elementDiv)
   
   cell.addEventListener('click', (e) => {
     clickFunction(e, element, cell, USER_ID);
+    // showElementDetails(e, element)
   })
 
   return cell;
@@ -44,48 +49,80 @@ function createElement (element, clickFunction, type) {
 
 function createElementDetails(element) {
   const div = document.createElement('div')
-  const h2 = document.createElement('h2')
-  const details = document.createElement('p')
+  const details = document.createElement('p');
+  details.classList.add('about-section');
+  details.textContent = `${element.about}`;
+  const properties = document.createElement('ul');
+  properties.classList.add('list-group');
 
-  h2.textContent = element.name
-  details.textContent = `${element.name} has an atomic number of ${element.atomicNumber}, an atomic mass of ${element.atomicWeight}, and it is a part of the ${element.classification_name} group.`
+  const aboutSection = document.createElement('p');
+  aboutSection.classList.add('about-header');
+  aboutSection.innerText = 'About: '
 
-  div.append(h2, details);
+  const anum = document.createElement('li');
+  anum.classList.add('list-group-item');
+  anum.innerText = `Atomic Number: ${element.atomicNumber}`;
+
+  const aweight = document.createElement('li');
+  aweight.classList.add('list-group-item');
+  aweight.innerText = `Atomic Weight: ${element.atomicWeight}`
+
+  properties.append(anum, aweight)
+  div.append(properties, aboutSection, details);
 
   return div;
 }
 
 function showElementDetails(e, element) {
+  console.log(element.name);
+  
   const body = document.querySelector('body')
 
   const modal = document.createElement('div')
-  modal.className = 'modal'
+  modal.classList.add('modal');
 
-  const modalContent = document.createElement('div')
-  modalContent.className = 'modal-content'
+  const card = document.createElement('div');
+  card.classList.add('modal-card');
 
-  const span = document.createElement('span')
-  span.className = 'close'
-  span.innerHTML = '&times;'
+  const header = document.createElement('header');
+  header.classList.add('modal-card-head');
+
+  const elementName = document.createElement('p');
+  elementName.classList.add('modal-card-title');
+  elementName.innerText = element.name;
+
+  const image = document.createElement('img');
+  image.classList.add('modal-card-image');
+  image.src = element.imgurl;
+
+  const close = document.createElement('button');
+  close.classList.add('delete');
+
+  const cardBody = document.createElement('section');
+  cardBody.className = 'modal-card-body';
 
   const div = createElementDetails(element);
 
-  modalContent.append(span, div);
-  modal.appendChild(modalContent);
+  cardBody.append(div);
+  header.append(elementName, close);
+  card.append(header, image, cardBody);
+  modal.appendChild(card);
 
   body.appendChild(modal);
 
-  // When the user clicks on <span> (x), remove the modal
-  span.onclick = function() {
+  // // When the user clicks on <span> (x), remove the modal
+  close.onclick = function () {
     body.removeChild(modal);
   }
 
   // When the user clicks anywhere outside of the modal, remove it
-  window.onclick = function(event) {
+  window.onclick = function (event) {
     if (event.target == modal) {
       body.removeChild(modal);
     }
   }
+
+  return element;
 }
 
 function createRow(elements, first, blank, last, clickFunction, type) {
@@ -109,6 +146,7 @@ function createRow(elements, first, blank, last, clickFunction, type) {
 
   return div;
 }
+
 function createLearnTable(elements) {
   const container = document.querySelector('.container')
   const div = document.createElement('div')
@@ -211,34 +249,67 @@ function periodicTableLayout(elements, div, clickFunction, type) {
 function createNavbar() {
   const body = document.querySelector('body')
   const container = document.querySelector('.container')
+
+  const nav = document.createElement('nav');
+  nav.classList.add('navbar', 'navbar-expand-lg', 'bg-dark');
+
+  const brand = document.createElement('a');
+  brand.href = '#'
+  brand.classList.add('navbar-brand');
+  brand.innerText = 'Periodica';
+
+  const navDiv = document.createElement('div');
+  navDiv.classList.add('collapse', 'navbar-collapse');
+
+
   const ul = document.createElement('ul');
-  ul.className = 'navbar'
+  ul.classList.add('navbar-nav', 'ml-auto')
 
   const li1 = document.createElement('li');
-  li1.textContent = 'Home';
-  li1.addEventListener('click', (e) => {
+  li1.classList.add('nav-item', 'active')
+  const a1 = document.createElement('a');
+  a1.href = '#'
+  a1.classList.add('nav-link');
+  a1.innerText = 'Home';
+  a1.addEventListener('click', (e) => {
     getElements().then(elements => createLearnTable(elements));
   })
 
-  const li2 = document.createElement('li');
-  li2.textContent = 'Select Elements for Quiz';
-  li2.addEventListener('click', (e) => {
+  const span1 = document.createElement('span');
+  span1.classList.add('sr-only');
+  span1.innerHTML = '(current)';
+
+
+  const item2 = document.createElement('li');
+  item2.classList.add('nav-item')
+
+  const a2 = document.createElement('a');
+  a2.href = '#'
+  a2.classList.add('nav-link');
+  a2.innerText = 'Test Elements';
+  a2.addEventListener('click', (e) => {
     getElements().then(elements => createSelectTable(elements));
   })
 
-  const li3 = document.createElement('li');
-  li3.textContent = 'Link';
-  li3.addEventListener('click', (e) => {
-    console.log(e.target)
-  })
+  // const li3 = document.createElement('li');
+  // // li3.classList.add('')
+  // li3.textContent = 'Learn Mode';
+  // li3.addEventListener('click', (e) => {
+  //   console.log(e.target)
+  // })
 
-  const li4 = document.createElement('li');
-  li4.textContent = 'Link';
-  li4.style = 'float:right';
-  li4.addEventListener('click', (e) => {
-    console.log(e.target)
-  })
+  // const li4 = document.createElement('li');
+  // li4.textContent = 'Link';
+  // li4.style = 'float:right';
+  // li4.addEventListener('click', (e) => {
+  //   console.log(e.target)
+  // })
 
-  ul.append(li1, li2, li3, li4);
-  body.insertBefore(ul, container);
+  a1.append(span1)
+  li1.append(a1);
+  item2.append(a2);
+  ul.append(li1, item2)//, li2, li3, li4);
+  navDiv.append(ul)
+  nav.append(brand, navDiv)
+  body.insertBefore(nav, container);
 }
