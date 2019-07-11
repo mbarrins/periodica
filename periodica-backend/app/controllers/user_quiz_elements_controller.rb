@@ -20,6 +20,7 @@ class UserQuizElementsController < ApplicationController
   # POST /user_quiz_elements
   def create
     @user_quiz_element = UserQuizElement.new(user_quiz_element_params)
+    # byebug
     if @user_quiz_element.save
       render json: @user_quiz_element, status: :created, location: @user_quiz_element
     else

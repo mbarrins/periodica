@@ -1,119 +1,119 @@
-﻿name,symbol,atomicNumber,atomicWeight,classification_id,meltingPoint,boilingPoint,electronegativity
-Hydrogen,H,1,1.00794,Alkali Metals,14.01,20.28,2.2
-Helium,He,2,4.002602,Noble Gases,,4.22,
-Lithium,Li,3,6.941,Alkali Metals,453.69,1560,0.98
-Beryllium,Be,4,9.012182,Alkaline Earth Metals,1560,2742,1.57
-Boron,B,5,10.8111,Metalloids,2349,4200,2.04
-Carbon,C,6,12.0107,Other Non-Metals,3800,4300,2.55
-Nitrogen,N,7,14.00672,Other Non-Metals,63.15,77.36,3.04
-Oxygen,O,8,15.9994,Other Non-Metals,54.36,90.2,3.44
-Fluorine,F,9,18.9984032,Halogens,53.53,85.03,3.98
-Neon,Ne,10,20.1797,Noble Gases,24.56,27.07,
-Sodium,Na,11,22.98977,Alkali Metals,370.87,1156,0.93
-Magnesium,Mg,12,24.305,Alkaline Earth Metals,923,1363,1.31
-Aluminum,Al,13,26.981,Post-Transition Metals,933.47,2792,1.61
-Silicon,Si,14,28.0855,Metalloids,1687,3538,1.9
-Phosphorus,P,15,30.973762,Other Non-Metals,317.3,550,2.19
-Sulfur,S,16,32.066,Other Non-Metals,388.36,717.87,2.58
-Chlorine,Cl,17,35.453,Halogens,171.6,239.11,3.16
-Argon,Ar,18,39.948,Noble Gases,83.8,87.3,
-Potassium,K,19,39.0983,Alkali Metals,336.53,1032,0.82
-Calcium,Ca,20,40.078,Alkaline Earth Metals,1115,1757,1
-Scandium,Sc,21,44.955912,Transition Metals,1814,3109,1.36
-Titanium,Ti,22,47.867,Transition Metals,1941,3560,1.54
-Vanadium,V,23,50.9415,Transition Metals,2183,3680,1.63
-Chromium,Cr,24,51.9961,Transition Metals,2180,2944,1.66
-Manganese,Mn,25,54.938049,Transition Metals,1519,2334,1.55
-Iron,Fe,26,55.845,Transition Metals,1811,3134,1.83
-Cobalt,Co,27,58.9332,Transition Metals,1768,3200,1.88
-Nickel,Ni,28,58.6934,Transition Metals,1728,3186,1.91
-Copper,Cu,29,63.546,Transition Metals,1357.77,2835,1.9
-Zinc,Zn,30,65.409,Transition Metals,692.88,1180,1.65
-Gallium,Ga,31,69.723,Post-Transition Metals,302.9146,2673,1.81
-Germanium,Ge,32,72.631,Metalloids,1211.4,3106,2.01
-Arsenic,As,33,74.9216,Metalloids,1090,887,2.18
-Selenium,Se,34,78.96,Other Non-Metals,453,958,2.55
-Bromine,Br,35,79.904,Halogens,265.8,332,2.96
-Krypton,Kr,36,83.798,Noble Gases,115.79,119.93,3
-Rubidium,Rb,37,85.4678,Alkali Metals,312.46,961,0.82
-Strontium,Sr,38,87.62,Alkaline Earth Metals,1050,1655,0.95
-Yttrium,Y,39,88.90585,Transition Metals,1799,3609,1.22
-Zirconium,Zr,40,91.224,Transition Metals,2128,4682,1.33
-Niobium,Nb,41,92.90638,Transition Metals,2750,5017,1.6
-Molybdenum,Mo,42,95.94,Transition Metals,2896,4912,2.16
-Technetium,Tc,43,98,Transition Metals,2430,4538,1.9
-Ruthenium,Ru,44,101.07,Transition Metals,2607,4423,2.2
-Rhodium,Rh,45,102.9055,Transition Metals,2237,3968,2.28
-Palladium,Pd,46,106.42,Transition Metals,1828.05,3236,2.2
-Silver,Ag,47,107.8682,Transition Metals,1234.93,2435,1.93
-Cadmium,Cd,48,112.411,Transition Metals,594.22,1040,1.69
-Indium,In,49,114.818,Post-Transition Metals,429.75,2345,1.78
-Tin,Sn,50,118.71,Post-Transition Metals,505.08,2875,1.96
-Antimony,Sb,51,121.76,Metalloids,903.78,1860,2.05
-Tellurium,Te,52,127.6,Metalloids,722.66,1261,2.1
-Iodine,I,53,126.90447,Halogens,386.85,457.4,2.66
-Xenon,Xe,54,131.29,Noble Gases,161.4,165.03,2.6
-Cesium,Cs,55,132.90545,Alkali Metals,301.59,944,0.79
-Barium,Ba,56,137.327,Alkaline Earth Metals,1000,2170,0.89
-Lanthanum,La,57,138.90547,Lanthanides,1193,3737,1.1
-Cerium,Ce,58,140.116,Lanthanides,1068,3716,1.12
-Praseodymium,Pr,59,140.90765,Lanthanides,1208,3793,1.13
-Neodymium,Nd,60,144.242,Lanthanides,1297,3347,1.14
-Promethium,Pm,61,145,Lanthanides,1315,3273,1.13
-Samarium,Sm,62,150.36,Lanthanides,1345,2067,1.17
-Europium,Eu,63,151.964,Lanthanides,1099,1802,1.2
-Gadolinium,Gd,64,157.25,Lanthanides,1585,3546,1.2
-Terbium,Tb,65,158.92535,Lanthanides,1629,3503,1.2
-Dysprosium,Dy,66,162.5,Lanthanides,1680,2840,1.22
-Holmium,Ho,67,164.93032,Lanthanides,1734,2993,1.23
-Erbium,Er,68,167.259,Lanthanides,1802,3141,1.24
-Thulium,Tm,69,168.93421,Lanthanides,1818,2223,1.25
-Ytterbium,Yb,70,173.054,Lanthanides,1097,1469,1.1
-Lutetium,Lu,71,174.9668,Lanthanides,1925,3675,1.27
-Hafnium,Hf,72,178.49,Transition Metals,2506,4876,1.3
-Tantalum,Ta,73,180.9479,Transition Metals,3290,5731,1.5
-Tungsten,W,74,183.84,Transition Metals,3695,5828,2.36
-Rhenium,Re,75,186.207,Transition Metals,3459,5869,1.9
-Osmium,Os,76,190.23,Transition Metals,3306,5285,2.2
-Iridium,Ir,77,192.217,Transition Metals,2719,4701,2.2
-Platinum,Pt,78,195.078,Transition Metals,2041.4,4098,2.28
-Gold,Au,79,196.96655,Transition Metals,1337.33,3129,2.54
-Mercury,Hg,80,200.59,Transition Metals,234.43,629.88,2
-Thallium,Tl,81,204.3833,Post-Transition Metals,577,1746,1.62
-Lead,Pb,82,207.2,Post-Transition Metals,600.61,2022,1.87
-Bismuth,Bi,83,208.9804,Post-Transition Metals,544.7,1837,2.02
-Polonium,Po,84,209,Metalloids,527,1235,2
-Astatine,At,85,210,Halogens,null,500,2.2
-Radon,Rn,86,222,Noble Gases,202,211.3,2.2
-Francium,Fr,87,223,Alkali Metals,300,950,0.7
-Radium,Ra,88,226,Alkaline Earth Metals,973,2010,0.9
-Actinium,Ac,89,227,Actinides,1323,3471,1.1
-Thorium,Th,90,232.0381,Actinides,2115,5061,1.3
-Protactinium,Pa,91,231.03588,Actinides,1841,4300,1.5
-Uranium,U,92,238.02891,Actinides,1405.3,4404,1.38
-Neptunium,Np,93,237,Actinides,917,4273,1.36
-Plutonium,Pu,94,244,Actinides,912.5,3501,1.28
-Americium,Am,95,243,Actinides,1449,2880,1.13
-Curium,Cm,96,247,Actinides,1613,3383,1.28
-Berkelium,Bk,97,247,Actinides,1259,2900,1.3
-Californium,Cf,98,251,Actinides,1173,1743,1.3
-Einsteinium,Es,99,252,Actinides,1133,1269,1.3
-Fermium,Fm,100,257,Actinides,1125,,1.3
-Mendelevium,Md,101,258,Actinides,1100,,1.3
-Nobelium,No,102,259,Actinides,1100,,1.3
-Lawrencium,Lr,103,262,Transition Metals,1900,,1.3
-Rutherfordium,Rf,104,267,Transition Metals,2400,5800,
-Dubnium,Db,105,268,Transition Metals,,,
-Seaborgium,Sg,106,269,Transition Metals,,,
-Bohrium,Bh,107,270,Transition Metals,,,
-Hassium,Hs,108,270,Transition Metals,,,
-Meitnerium,Mt,109,278,Unknown Chemical Properties,,,
-Darmstadtium,Ds,110,281,Unknown Chemical Properties,,,
-Roentgenium,Rg,111,282,Unknown Chemical Properties,,,
-Copernicium,Cn,112,285,Post-Transition Metals,,,
-Nihonium,Nh,113,286,Unknown Chemical Properties,700,1400,
-Flerovium,Fl,114,289,Unknown Chemical Properties,,,
-Moscovium,Mc,115,290,Unknown Chemical Properties,700,1400,
-Livermorium,Lv,116,293,Unknown Chemical Properties,709,1085,
-Tennessine,Ts,117,294,Unknown Chemical Properties,723,883,
-Oganesson,Og,118,294,Unknown Chemical Properties,,350,
+﻿name,symbol,atomicNumber,atomicWeight,classification_id,meltingPoint,boilingPoint,electronegativity,about,imgurl
+Hydrogen,H,1,1.00794,Alkali Metals,14.01,20.28,2.2,Hydrogen is the lightest element in the periodic table and it constitutes roughly 75% of all baryonic mass in the observable universe making it the most abundant substance that we know of. It is what non-remnant stars use as fuel to keep the fusion reactions within their cores going for billions of years.,https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hydrogen_discharge_tube.jpg/1920px-Hydrogen_discharge_tube.jpg
+Helium,He,2,4.002602,Noble Gases,,4.22,,"Helium is a colorless, odorless, tasteless, non-toxic, inert and monatomic gas, the first in the group of noble gases. It is the second lightest of all elements and has the lowest boiling point. It is the second most abundant element in the observable universe making its mass more than 12 times the mass of all the heavier elements combined.",https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Helium_discharge_tube.jpg/1920px-Helium_discharge_tube.jpg
+Lithium,Li,3,6.941,Alkali Metals,453.69,1560,0.98,"Lithium is a silvery-white alkali metal, and under standard conditions, it is the lightest metal and the lights amongst the solid elements. Like all Alkali Metals, it is highly reactive and flammable and it must be stored in mineral oil.",https://upload.wikimedia.org/wikipedia/commons/b/ba/Lithium_element.jpg
+Beryllium,Be,4,9.012182,Alkaline Earth Metals,1560,2742,1.57,,
+Boron,B,5,10.8111,Metalloids,2349,4200,2.04,,
+Carbon,C,6,12.0107,Other Non-Metals,3800,4300,2.55,,
+Nitrogen,N,7,14.00672,Other Non-Metals,63.15,77.36,3.04,,
+Oxygen,O,8,15.9994,Other Non-Metals,54.36,90.2,3.44,,
+Fluorine,F,9,18.9984032,Halogens,53.53,85.03,3.98,,
+Neon,Ne,10,20.1797,Noble Gases,24.56,27.07,,,
+Sodium,Na,11,22.98977,Alkali Metals,370.87,1156,0.93,,
+Magnesium,Mg,12,24.305,Alkaline Earth Metals,923,1363,1.31,,
+Aluminum,Al,13,26.981,Post-Transition Metals,933.47,2792,1.61,,
+Silicon,Si,14,28.0855,Metalloids,1687,3538,1.9,,
+Phosphorus,P,15,30.973762,Other Non-Metals,317.3,550,2.19,,
+Sulfur,S,16,32.066,Other Non-Metals,388.36,717.87,2.58,,
+Chlorine,Cl,17,35.453,Halogens,171.6,239.11,3.16,,
+Argon,Ar,18,39.948,Noble Gases,83.8,87.3,,,
+Potassium,K,19,39.0983,Alkali Metals,336.53,1032,0.82,,
+Calcium,Ca,20,40.078,Alkaline Earth Metals,1115,1757,1,,
+Scandium,Sc,21,44.955912,Transition Metals,1814,3109,1.36,,
+Titanium,Ti,22,47.867,Transition Metals,1941,3560,1.54,,
+Vanadium,V,23,50.9415,Transition Metals,2183,3680,1.63,,
+Chromium,Cr,24,51.9961,Transition Metals,2180,2944,1.66,,
+Manganese,Mn,25,54.938049,Transition Metals,1519,2334,1.55,,
+Iron,Fe,26,55.845,Transition Metals,1811,3134,1.83,,
+Cobalt,Co,27,58.9332,Transition Metals,1768,3200,1.88,,
+Nickel,Ni,28,58.6934,Transition Metals,1728,3186,1.91,,
+Copper,Cu,29,63.546,Transition Metals,1357.77,2835,1.9,,
+Zinc,Zn,30,65.409,Transition Metals,692.88,1180,1.65,,
+Gallium,Ga,31,69.723,Post-Transition Metals,302.9146,2673,1.81,,
+Germanium,Ge,32,72.631,Metalloids,1211.4,3106,2.01,,
+Arsenic,As,33,74.9216,Metalloids,1090,887,2.18,,
+Selenium,Se,34,78.96,Other Non-Metals,453,958,2.55,,
+Bromine,Br,35,79.904,Halogens,265.8,332,2.96,,
+Krypton,Kr,36,83.798,Noble Gases,115.79,119.93,3,,
+Rubidium,Rb,37,85.4678,Alkali Metals,312.46,961,0.82,,
+Strontium,Sr,38,87.62,Alkaline Earth Metals,1050,1655,0.95,,
+Yttrium,Y,39,88.90585,Transition Metals,1799,3609,1.22,,
+Zirconium,Zr,40,91.224,Transition Metals,2128,4682,1.33,,
+Niobium,Nb,41,92.90638,Transition Metals,2750,5017,1.6,,
+Molybdenum,Mo,42,95.94,Transition Metals,2896,4912,2.16,,
+Technetium,Tc,43,98,Transition Metals,2430,4538,1.9,,
+Ruthenium,Ru,44,101.07,Transition Metals,2607,4423,2.2,,
+Rhodium,Rh,45,102.9055,Transition Metals,2237,3968,2.28,,
+Palladium,Pd,46,106.42,Transition Metals,1828.05,3236,2.2,,
+Silver,Ag,47,107.8682,Transition Metals,1234.93,2435,1.93,,
+Cadmium,Cd,48,112.411,Transition Metals,594.22,1040,1.69,,
+Indium,In,49,114.818,Post-Transition Metals,429.75,2345,1.78,,
+Tin,Sn,50,118.71,Post-Transition Metals,505.08,2875,1.96,,
+Antimony,Sb,51,121.76,Metalloids,903.78,1860,2.05,,
+Tellurium,Te,52,127.6,Metalloids,722.66,1261,2.1,,
+Iodine,I,53,126.90447,Halogens,386.85,457.4,2.66,,
+Xenon,Xe,54,131.29,Noble Gases,161.4,165.03,2.6,,
+Cesium,Cs,55,132.90545,Alkali Metals,301.59,944,0.79,,
+Barium,Ba,56,137.327,Alkaline Earth Metals,1000,2170,0.89,,
+Lanthanum,La,57,138.90547,Lanthanides,1193,3737,1.1,,
+Cerium,Ce,58,140.116,Lanthanides,1068,3716,1.12,,
+Praseodymium,Pr,59,140.90765,Lanthanides,1208,3793,1.13,,
+Neodymium,Nd,60,144.242,Lanthanides,1297,3347,1.14,,
+Promethium,Pm,61,145,Lanthanides,1315,3273,1.13,,
+Samarium,Sm,62,150.36,Lanthanides,1345,2067,1.17,,
+Europium,Eu,63,151.964,Lanthanides,1099,1802,1.2,,
+Gadolinium,Gd,64,157.25,Lanthanides,1585,3546,1.2,,
+Terbium,Tb,65,158.92535,Lanthanides,1629,3503,1.2,,
+Dysprosium,Dy,66,162.5,Lanthanides,1680,2840,1.22,,
+Holmium,Ho,67,164.93032,Lanthanides,1734,2993,1.23,,
+Erbium,Er,68,167.259,Lanthanides,1802,3141,1.24,,
+Thulium,Tm,69,168.93421,Lanthanides,1818,2223,1.25,,
+Ytterbium,Yb,70,173.054,Lanthanides,1097,1469,1.1,,
+Lutetium,Lu,71,174.9668,Lanthanides,1925,3675,1.27,,
+Hafnium,Hf,72,178.49,Transition Metals,2506,4876,1.3,,
+Tantalum,Ta,73,180.9479,Transition Metals,3290,5731,1.5,,
+Tungsten,W,74,183.84,Transition Metals,3695,5828,2.36,,
+Rhenium,Re,75,186.207,Transition Metals,3459,5869,1.9,,
+Osmium,Os,76,190.23,Transition Metals,3306,5285,2.2,,
+Iridium,Ir,77,192.217,Transition Metals,2719,4701,2.2,,
+Platinum,Pt,78,195.078,Transition Metals,2041.4,4098,2.28,,
+Gold,Au,79,196.96655,Transition Metals,1337.33,3129,2.54,,
+Mercury,Hg,80,200.59,Transition Metals,234.43,629.88,2,,
+Thallium,Tl,81,204.3833,Post-Transition Metals,577,1746,1.62,,
+Lead,Pb,82,207.2,Post-Transition Metals,600.61,2022,1.87,,
+Bismuth,Bi,83,208.9804,Post-Transition Metals,544.7,1837,2.02,,
+Polonium,Po,84,209,Metalloids,527,1235,2,,
+Astatine,At,85,210,Halogens,null,500,2.2,,
+Radon,Rn,86,222,Noble Gases,202,211.3,2.2,,
+Francium,Fr,87,223,Alkali Metals,300,950,0.7,,
+Radium,Ra,88,226,Alkaline Earth Metals,973,2010,0.9,,
+Actinium,Ac,89,227,Actinides,1323,3471,1.1,,
+Thorium,Th,90,232.0381,Actinides,2115,5061,1.3,,
+Protactinium,Pa,91,231.03588,Actinides,1841,4300,1.5,,
+Uranium,U,92,238.02891,Actinides,1405.3,4404,1.38,,
+Neptunium,Np,93,237,Actinides,917,4273,1.36,,
+Plutonium,Pu,94,244,Actinides,912.5,3501,1.28,,
+Americium,Am,95,243,Actinides,1449,2880,1.13,,
+Curium,Cm,96,247,Actinides,1613,3383,1.28,,
+Berkelium,Bk,97,247,Actinides,1259,2900,1.3,,
+Californium,Cf,98,251,Actinides,1173,1743,1.3,,
+Einsteinium,Es,99,252,Actinides,1133,1269,1.3,,
+Fermium,Fm,100,257,Actinides,1125,,1.3,,
+Mendelevium,Md,101,258,Actinides,1100,,1.3,,
+Nobelium,No,102,259,Actinides,1100,,1.3,,
+Lawrencium,Lr,103,262,Transition Metals,1900,,1.3,,
+Rutherfordium,Rf,104,267,Transition Metals,2400,5800,,,
+Dubnium,Db,105,268,Transition Metals,,,,,
+Seaborgium,Sg,106,269,Transition Metals,,,,,
+Bohrium,Bh,107,270,Transition Metals,,,,,
+Hassium,Hs,108,270,Transition Metals,,,,,
+Meitnerium,Mt,109,278,Unknown Chemical Properties,,,,,
+Darmstadtium,Ds,110,281,Unknown Chemical Properties,,,,,
+Roentgenium,Rg,111,282,Unknown Chemical Properties,,,,,
+Copernicium,Cn,112,285,Post-Transition Metals,,,,,
+Nihonium,Nh,113,286,Unknown Chemical Properties,700,1400,,,
+Flerovium,Fl,114,289,Unknown Chemical Properties,,,,,
+Moscovium,Mc,115,290,Unknown Chemical Properties,700,1400,,,
+Livermorium,Lv,116,293,Unknown Chemical Properties,709,1085,,,
+Tennessine,Ts,117,294,Unknown Chemical Properties,723,883,,,
+Oganesson,Og,118,294,Unknown Chemical Properties,,350,,,

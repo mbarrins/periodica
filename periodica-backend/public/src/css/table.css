@@ -25,6 +25,47 @@ body {
   .transform(translateZ(0)); /* prevent flashing */
 }
 
+nav {
+  position: relative;
+  height: 8vh;
+}
+
+.nav-item {
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+}
+
+nav .navbar-nav li a {
+  float: right;
+  font-size: 20px;
+  color: white !important;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  color: white;
+}
+
+.modal-card {
+  margin-top: 10vh;
+}
+
+.list-group {
+  margin: 5px 5px 20px 5px;
+
+}
+
+.about-header {
+  margin: 10px 10px 5px 10px;
+  font-weight: bold;
+}
+
+.about-section {
+  margin: 10px 10px 20px 10px;
+  text-align: justify;
+}
+
 .periodic {
   position: relative;
   height: 200px;
@@ -42,9 +83,15 @@ body {
   position: relative;
   width: 5.55%;
   height: 100%;
+  border-radius: 12%
+}
+
+.cell:not(:empty) {
+  cursor: pointer;
 }
 
 .element {
+  border-radius: 12%;
   position: absolute;
   top: 0;
   left: 0;
@@ -58,7 +105,7 @@ body {
   pointer-events: none;
   .transition(all 200ms ease);
   
-  background-color: rgba(0, 128, 128, 0.6);
+  background-color: rgba(0, 128, 128, 0.75);
 }
 
 .cell:hover .element {
@@ -69,10 +116,18 @@ body {
   background-color: rgba(0, 128, 128, 0.9);
 }
 
+.select:not(.is-multiple) {
+  height: 100%;
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+  display: none;
+}
+
 .at_num,
 .at_details {
   position: absolute;
-  font-size: 4px;
+  /* font-size: 2rem; */
   color: rgba(255,255,255,0.5);
   opacity: 0;
 }
@@ -145,11 +200,11 @@ body {
 }
 
 .periodic .periodic-row .cell.select .element {
-  background-color: rgba(48, 0, 138, 0.6);
+  background-color: rgba(48, 0, 138, 0.8);
 }
 
 .periodic .periodic-row .cell.select:hover .element {
-  background-color: rgba(48, 0, 138, 0.8);
+  background-color: rgba(48, 0, 138, 0.9);
 }
 
 .periodic .periodic-row .cell.select.selected .element {
@@ -158,38 +213,42 @@ body {
 
 /* hover state positioning
 left hand column */
-.cell:nth-child(1) .element {
+/* .cell:nth-child(1) .element {
   .transform-origin(0 50%);
-}
+} */
 
 /* right hand column */
-.cell:nth-child(18) .element {
+/* .cell:nth-child(18) .element {
   .transform-origin(100% 50%);
-}
+} */
 
 /* bottom row */
-.periodic-row:nth-child(10) .cell .element {
+/* .periodic-row:nth-child(10) .cell .element {
   .transform-origin(50% 100%);
-}
+} */
 
 /* top left corner */
-.periodic-row:nth-child(1) .cell:nth-child(1) .element {
+/* .periodic-row:nth-child(1) .cell:nth-child(1) .element {
   .transform-origin(0 0);
-}
+} */
 
 /* top right corner */
-.periodic-row:nth-child(1) .cell:nth-child(18) .element {
+/* .periodic-row:nth-child(1) .cell:nth-child(18) .element {
   .transform-origin(100% 0);
-}
+} */
 
 /* bottom right corner */
-.periodic-row:nth-child(10) .cell:nth-child(18) .element {
+/* .periodic-row:nth-child(10) .cell:nth-child(18) .element {
   .transform-origin(100% 100%);
-}
+} */
 
 /* Media queries to change size of table
 small tablet portrait */
 @media (min-width: 600px) {
+  .container {
+    max-width: 80vw;
+    margin-top: 3rem;
+  }
   .periodic {
     height: 460px;
     margin-right: -2px;
@@ -202,7 +261,7 @@ small tablet portrait */
   
   .at_num,
   .at_details {
-    font-size: 4px;
+    font-size: 20px;
     opacity: 1;
   }
 
@@ -219,6 +278,9 @@ small tablet portrait */
 
 /* tablet landscape or small laptop */
 @media (min-width: 800px) {
+  .container {
+    max-width: 80vw;
+  }
   .periodic {
     height: 540px;
   }
@@ -230,13 +292,20 @@ small tablet portrait */
 
 /* normal screen */
 @media (min-width: 992px) {
+  .container {
+    max-width: 80vw;
+    margin-top: 3rem;
+  }
   .periodic {
     height: 680px;
   }
   
-  .at_num,
+  .at_num {
+    font-size: 15px;
+  }
+
   .at_details {
-    font-size: 5px;
+    font-size: 10px;
   }
 
   .symbol {
@@ -246,13 +315,20 @@ small tablet portrait */
 
 /* large screen */
 @media (min-width: 1200px) {
+  .container {
+    max-width: 80vw;
+    margin-top: 3rem;
+  }
   .periodic {
     height: 800px;
   }
   
-  .at_num,
+  .at_num {
+    font-size: 15px;
+  }
+
   .at_details {
-    font-size: 6px;
+    font-size: 10px;
   }
 
   .symbol {
