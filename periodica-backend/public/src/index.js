@@ -363,27 +363,28 @@ function createQuiz(user_id) {
 
 function displayQuiz(quizWithQuestions) {
   const container = clearContainer();
-  const div = document.createElement('div')
-  div.className = "quiz"
+  const form = document.createElement('form')
+  form.className = "quiz"
 
-  container.appendChild(div);
+  container.appendChild(form);
 
   quizWithQuestions.quiz_questions.forEach((question, index) => {
-    div.appendChild(createQuizQuestion(question, index, quizWithQuestions));
+    form.appendChild(createQuizQuestion(question, index, quizWithQuestions));
   })
 
   if (quizWithQuestions.status !== 'completed') {
     const submit = document.createElement('button')
     submit.textContent = 'Submit'
 
-    submit.addEventListener('click', () => {
-      scoreQuiz(quizWithQuestions)
+    form.addEventListener('submit', () => {
+      event.preventDefault();
+      scoreQuiz(quizWithQuestions);
     })
 
-    div.appendChild(submit);
+    form.appendChild(submit);
   }
   
-  return div;
+  return form;
 }
 
 function scoreQuiz(quiz) {
@@ -443,6 +444,7 @@ function createQuizQuestion(question, index, quiz) {
         const option = document.createElement('option')
         option.disabled = true
         option.selected = true
+        option.value = ''
         option.textContent = ' -- select an option -- '
         answer.appendChild(option);
         
