@@ -3,12 +3,14 @@ const USER_QUIZ_ELEMENTS_URL = 'http://localhost:3000/user_quiz_elements';
 const QUIZZES_URL = 'http://localhost:3000/quizzes';
 const QUIZ_QUESTIONS_URL = 'http://localhost:3000/quiz_questions';
 const CLASSIFICATIONS_URL = 'http://localhost:3000/classifications';
-const USER_ID = 1;
+const USERS_URL = 'http://localhost:3000/users';
+// let USER_ID = 1;
+let user;
 const GROUPS = [];
 
 window.addEventListener('DOMContentLoaded', () => {
   createNavbar();
-  getElements().then(elements => createLearnTable(elements));
+  createLogIn();
   getClassifications();
 })
 
@@ -107,6 +109,20 @@ function getClassifications() {
     }))
 }
 
+function signInUser(username) {
+  return fetch(`${USERS_URL}?username=${username}`)
+    .then(resp => resp.json())
+    .then(returnedUser => {
+      if (returnedUser) {
+        user = returnedUser
+        addUserNav();
+        getElements().then(elements => createLearnTable(elements))
+      } else {
+        console.log('add message user does not exist, sign up')
+      }
+    })
+}
+
 
 function createElement (element, clickFunction, type) {
   const cell = document.createElement('div')
@@ -136,7 +152,7 @@ function createElement (element, clickFunction, type) {
   cell.append(elementDiv)
   
   cell.addEventListener('click', (e) => {
-    clickFunction(e, element, cell, USER_ID);
+    clickFunction(e, element, cell, user.id);
     // showElementDetails(e, element)
   })
 
@@ -355,13 +371,43 @@ function createNavbar() {
   nav.classList.add('navbar', 'navbar-expand-lg', 'bg-dark');
 
   const brand = document.createElement('a');
-  brand.href = '#'
+  brand.href = ''
   brand.classList.add('navbar-brand');
   brand.innerText = 'Periodica';
 
   const navDiv = document.createElement('div');
   navDiv.classList.add('collapse', 'navbar-collapse');
 
+  nav.append(brand, navDiv)
+  body.insertBefore(nav, container);
+
+  // const li2 = document.createElement('li');
+  // li2.textContent = 'Select Elements for Quiz';
+  // li2.addEventListener('click', (e) => {
+  //   getElements(user.id).then(elements => createSelectTable(elements));
+  // })
+
+
+
+  // const li4 = document.createElement('li');
+  // li4.textContent = 'Quiz History';
+  // li4.addEventListener('click', () => {
+  //   displayQuizzes(user.id);
+  // })
+
+  // const li10 = document.createElement('li');
+  // li10.textContent = 'Link';
+  // li10.style = 'float:right';
+  // li10.addEventListener('click', (e) => {
+  //   console.log(e.target)
+  // })
+
+  // ul.append(li1, li2, li3, li4, li10);
+  // body.insertBefore(ul, container);
+}
+
+function addUserNav() {
+  const navDiv = document.querySelector('.collapse.navbar-collapse')
 
   const ul = document.createElement('ul');
   ul.classList.add('navbar-nav', 'ml-auto')
@@ -377,12 +423,11 @@ function createNavbar() {
   span1.classList.add('sr-only');
   span1.innerHTML = '(current)';
 
-
   const item2 = document.createElement('li');
   item2.classList.add('nav-item', 'nav-link')
   item2.innerText = 'Test Elements';
   item2.addEventListener('click', (e) => {
-    getElements(USER_ID).then(elements => createSelectTable(elements));
+    getElements(user.id).then(elements => createSelectTable(elements));
   })
 
   // const li3 = document.createElement('li');
@@ -395,7 +440,7 @@ function createNavbar() {
   item3.classList.add('nav-item', 'nav-link');
   item3.innerText = 'Quiz Me!';
   item3.addEventListener('click', () => {
-    createQuiz(USER_ID);
+    createQuiz(user.id);
   })
 
   // const li4 = document.createElement('li');
@@ -411,31 +456,6 @@ function createNavbar() {
   // item3.append(a3);
   ul.append(li1, item2, item3)//, li2, item3, li4);
   navDiv.append(ul)
-  nav.append(brand, navDiv)
-  body.insertBefore(nav, container);
-  // const li2 = document.createElement('li');
-  // li2.textContent = 'Select Elements for Quiz';
-  // li2.addEventListener('click', (e) => {
-  //   getElements(USER_ID).then(elements => createSelectTable(elements));
-  // })
-
-
-
-  // const li4 = document.createElement('li');
-  // li4.textContent = 'Quiz History';
-  // li4.addEventListener('click', () => {
-  //   displayQuizzes(USER_ID);
-  // })
-
-  // const li10 = document.createElement('li');
-  // li10.textContent = 'Link';
-  // li10.style = 'float:right';
-  // li10.addEventListener('click', (e) => {
-  //   console.log(e.target)
-  // })
-
-  // ul.append(li1, li2, li3, li4, li10);
-  // body.insertBefore(ul, container);
 }
 
 function createQuiz(user_id) {
@@ -566,7 +586,7 @@ function displayQuizzes() {
 
   container.appendChild(div);
 
-  getQuizzes(USER_ID)
+  getQuizzes(user.id)
     .then(quizzes => {
       quizzes.forEach((quiz, index) => {
         div.appendChild(createQuizInfo(quiz, index));
@@ -599,4 +619,168 @@ function createQuizInfo(quiz, index) {
   div.appendChild(button)
   
   return div
+}
+
+function createLogIn() {
+  const container = clearContainer();
+  const columns = document.createElement('div')
+  const form = document.createElement('form');
+  const column = document.createElement('column')
+  const h1 = document.createElement('h1');
+  const username = createInput('username', 'Enter your username', 'Username');
+  const div = document.createElement('div')
+
+  div.appendChild(createButton('submit', 'Sign In'))
+
+  h1.textContent = 'Sign In';
+
+  form.addEventListener('submit', () => {
+    event.preventDefault();
+    console.log('submit')
+    signInUser(event.target[0].value);
+  })
+
+  const signUp = document.createElement('p')
+  const br = document.createElement('br')
+
+  signUp.textContent = 'Not registered? Sign up here.'
+  signUp.className = 'clickable'
+
+  signUp.addEventListener('click', () => {
+    event.preventDefault();
+    console.log('Sign Up')
+    createSignUp();
+  })
+
+
+  column.append(username, div);
+  form.append(column, br, signUp);
+  columns.append(h1, form)
+  container.appendChild(columns);
+}
+
+function createInput(name, placeholder, label_name) {
+  const field = document.createElement('div')
+  const fieldLabel = document.createElement('div')
+  const label = document.createElement('label')
+  const fieldBody = document.createElement('div')
+  const control = document.createElement('div')
+  const input = document.createElement('input')
+
+  field.className = 'field is-horizontal'
+  fieldLabel.className = 'field-label'
+  fieldBody.className = 'field-body'
+
+  label.className = 'label'
+  label.textContent = label_name
+  label.for = name
+  fieldLabel.appendChild(label)
+
+  control.className = 'control'
+
+  input.className = 'input'
+  input.placeholder = placeholder
+  input.type = 'text'
+  input.id = name
+  input.name = name
+  input.required = true
+
+  control.appendChild(input)
+  fieldBody.appendChild(control)
+
+  field.append(fieldLabel, fieldBody)
+
+  return field;
+
+}
+
+function createButton(type, text) {
+  const field = document.createElement('div')
+  const fieldLabel = document.createElement('div')
+  const fieldBody = document.createElement('div')
+  const fieldButton = document.createElement('div')
+  const control = document.createElement('control')
+  const button = document.createElement('button');
+
+  field.className = 'field'
+  fieldLabel.className = 'field-label'
+  fieldBody.className = 'field-body'
+  fieldButton.className = 'field'
+  control.className = 'control'
+
+  button.className = 'button is-link'
+  button.type = type
+  button.textContent = text
+
+  control.appendChild(button);
+  fieldButton.appendChild(control);
+  fieldBody.appendChild(fieldButton)
+
+  field.append(fieldLabel, fieldBody);
+
+  return field
+}
+
+function createSubmitCancelGroup(form) {
+  const field = document.createElement('div')
+  field.className = 'field is-grouped'
+
+  const submitControl = document.createElement('p')
+  submitControl.className = 'control'
+
+  const submitButton = document.createElement('button');
+  submitButton.className = 'button is-primary'
+  submitButton.textContent = 'Submit'
+
+  const cancelControl = document.createElement('p')
+  cancelControl.className = 'control'
+
+  const cancelButton = document.createElement('a');
+  cancelButton.className = 'button is-light'
+  cancelButton.textContent = 'Cancel'
+
+  submitControl.appendChild(submitButton);
+  cancelControl.appendChild(cancelButton);
+  field.append(submitControl, cancelControl)
+
+  cancelButton.addEventListener('click', () => {
+    createLogIn();
+  });
+
+  return field;
+}
+
+function createSignUp() {
+  const container = clearContainer();
+
+  const columns = document.createElement('div')
+  const form = document.createElement('form');
+  const column = document.createElement('column')
+  const h1 = document.createElement('h1');
+  const username = createInput('username', 'Enter your username', 'Username');
+  const firstName = createInput('first_name', 'Enter your first name', 'First Name');
+  const lastName = createInput('last_name', 'Enter your last name', 'Last Name');
+
+  const buttons = document.createElement('div')
+  buttons.appendChild(createSubmitCancelGroup());
+
+  h1.textContent = 'Sign Up';
+
+  form.addEventListener('submit', () => {
+    event.preventDefault();
+    console.log('submit')
+    console.log(event.target)
+    const body = {
+      username: event.target[0].value,
+      first_name: event.target[1].value,
+      last_name: event.target[2].value
+    }
+    console.log(body)
+    // signInUser(event.target[0].value);
+  })
+
+  column.append(username, firstName, lastName, buttons);
+  form.append(column);
+  columns.append(h1, form)
+  container.appendChild(columns);
 }

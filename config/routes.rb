@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :quiz_questions
   resources :user_quiz_elements
   resources :quizzes, only: [:show, :index, :create, :update]
+  resources :users, only: [:show, :index, :create, :update]
 
   get '*other', to: 'static#index'
 
