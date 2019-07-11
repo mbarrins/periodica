@@ -63,3 +63,5 @@ questions = [
 
 questions.each{|question| Question.create(question)}
     
+
+User.create(username: "newUser", first_name: "john", last_name: "doe");
