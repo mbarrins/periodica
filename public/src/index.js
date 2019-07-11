@@ -929,7 +929,7 @@ function createUpdateUserDetails() {
   buttons.appendChild(createSubmitCancelGroup(createUpdateUserDetails));
 
   h1.textContent = 'User Details';
-  p.textContent = 'To update, enter the changes below and click submit.'
+  p.textContent = 'To update your details, enter the changes below and click Submit.'
 
   form.addEventListener('submit', () => {
     event.preventDefault();
@@ -938,7 +938,12 @@ function createUpdateUserDetails() {
       first_name: event.target[1].value,
       last_name: event.target[2].value
     }
-    signUpUser(body);
+    
+    patchUser(user.id, body)
+      .then(returnedUser => {
+        user = returnedUser
+        createUpdateUserDetails();
+      })
   })
 
   column.append(username, firstName, lastName, buttons);

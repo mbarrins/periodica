@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_element, only: [:show]
+  before_action :set_user, only: [:show, :update]
 
   # GET /users
   def index
