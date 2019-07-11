@@ -3,12 +3,13 @@ const USER_QUIZ_ELEMENTS_URL = 'http://localhost:3000/user_quiz_elements';
 const QUIZZES_URL = 'http://localhost:3000/quizzes';
 const QUIZ_QUESTIONS_URL = 'http://localhost:3000/quiz_questions';
 const CLASSIFICATIONS_URL = 'http://localhost:3000/classifications';
-const USER_ID = 1;
+const USERS_URL = 'http://localhost:3000/users';
+// let USER_ID = 1;
+let user;
 const GROUPS = [];
 
 window.addEventListener('DOMContentLoaded', () => {
   createNavbar();
-  // getElements().then(elements => createLearnTable(elements));  
   createLogIn();
   getClassifications();
 })
@@ -108,6 +109,19 @@ function getClassifications() {
     }))
 }
 
+function signInUser(username) {
+  return fetch(`${USERS_URL}?username=${username}`)
+    .then(resp => resp.json())
+    .then(returnedUser => {
+      if (returnedUser) {
+        user = returnedUser
+        getElements().then(elements => createLearnTable(elements))
+      } else {
+        console.log('add message user does not exist, sign up')
+      }
+    })
+}
+
 
 function createElement (element, clickFunction, type) {
   const cell = document.createElement('div')
@@ -137,7 +151,7 @@ function createElement (element, clickFunction, type) {
   cell.append(elementDiv)
   
   cell.addEventListener('click', (e) => {
-    clickFunction(e, element, cell, USER_ID);
+    clickFunction(e, element, cell, user.id);
     // showElementDetails(e, element)
   })
 
@@ -383,7 +397,7 @@ function createNavbar() {
   item2.classList.add('nav-item', 'nav-link')
   item2.innerText = 'Test Elements';
   item2.addEventListener('click', (e) => {
-    getElements(USER_ID).then(elements => createSelectTable(elements));
+    getElements(user.id).then(elements => createSelectTable(elements));
   })
 
   // const li3 = document.createElement('li');
@@ -396,7 +410,7 @@ function createNavbar() {
   item3.classList.add('nav-item', 'nav-link');
   item3.innerText = 'Quiz Me!';
   item3.addEventListener('click', () => {
-    createQuiz(USER_ID);
+    createQuiz(user.id);
   })
 
   // const li4 = document.createElement('li');
@@ -417,7 +431,7 @@ function createNavbar() {
   // const li2 = document.createElement('li');
   // li2.textContent = 'Select Elements for Quiz';
   // li2.addEventListener('click', (e) => {
-  //   getElements(USER_ID).then(elements => createSelectTable(elements));
+  //   getElements(user.id).then(elements => createSelectTable(elements));
   // })
 
 
@@ -425,7 +439,7 @@ function createNavbar() {
   // const li4 = document.createElement('li');
   // li4.textContent = 'Quiz History';
   // li4.addEventListener('click', () => {
-  //   displayQuizzes(USER_ID);
+  //   displayQuizzes(user.id);
   // })
 
   // const li10 = document.createElement('li');
@@ -567,7 +581,7 @@ function displayQuizzes() {
 
   container.appendChild(div);
 
-  getQuizzes(USER_ID)
+  getQuizzes(user.id)
     .then(quizzes => {
       quizzes.forEach((quiz, index) => {
         div.appendChild(createQuizInfo(quiz, index));
@@ -618,9 +632,7 @@ function createLogIn() {
   form.addEventListener('submit', () => {
     event.preventDefault();
     console.log('submit')
-    // fetch user details - if exists show home page
-    // if doesn't add message user does not exist
-    // please check or sign up
+    signInUser(event.target[0].value);
   })
 
   const signUp = document.createElement('p')
