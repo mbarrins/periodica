@@ -4,8 +4,7 @@ const QUIZZES_URL = 'http://localhost:3000/quizzes';
 const QUIZ_QUESTIONS_URL = 'http://localhost:3000/quiz_questions';
 const CLASSIFICATIONS_URL = 'http://localhost:3000/classifications';
 const USERS_URL = 'http://localhost:3000/users';
-// let USER_ID = 1;
-let user;
+let currentUser;
 const GROUPS = [];
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -156,12 +155,12 @@ function displayErrorMessage(errorMessage){
 }
 
 function logInUser(returnedUser) {
-  user = returnedUser
+  currentUser = returnedUser
   displayErrorMessage('Please wait. Page loading...');
   getElements().then(elements => createLearnTable(elements))
   addUserNav();
 
-  return user;
+  return currentUser;
 }
 
 function postUser(body) {
@@ -213,7 +212,7 @@ function createElement (element, clickFunction, type) {
   cell.append(elementDiv)
   
   cell.addEventListener('click', (e) => {
-    clickFunction(e, element, cell, user.id);
+    clickFunction(e, element, cell, currentUser.id);
     // showElementDetails(e, element)
   })
 
@@ -487,7 +486,7 @@ function addUserNav() {
   quizMenu1.textContent = 'Create New Quiz'
 
   quizMenu1.addEventListener('click', (e) => {
-    createQuiz(user.id);
+    createQuiz(currentUser.id);
   })
 
   const quizMenu2 = document.createElement('a')
@@ -506,7 +505,8 @@ function addUserNav() {
   quizMenu3.textContent = 'Select Elements for Quiz'
 
   quizMenu3.addEventListener('click', (e) => {
-    getElements(user.id).then(elements => createSelectTable(elements));
+    getElements(currentUser.id)
+      .then(elements => createSelectTable(elements));
   })
 
   // const quizMenu4 = document.createElement('a')
@@ -571,7 +571,7 @@ function addUserNav() {
   signOut.classList.add('navbar-item');
   signOut.innerText = 'Sign Out';
   signOut.addEventListener('click', () => {
-    user = undefined;
+    currentUser = undefined;
     removeUserNav();
     createLogIn();
   })
@@ -708,7 +708,7 @@ function displayQuizzes() {
 
   container.appendChild(div);
 
-  getQuizzes(user.id)
+  getQuizzes(currentUser.id)
     .then(quizzes => {
       if (quizzes.length === 0) {
         const p = document.createElement('p')
@@ -921,9 +921,9 @@ function createUpdateUserDetails() {
   const column = document.createElement('column')
   const h1 = document.createElement('h1');
   const p = document.createElement('p')
-  const username = createInput('username', 'Enter your username', 'Username', user);
-  const firstName = createInput('first_name', 'Enter your first name', 'First Name', user);
-  const lastName = createInput('last_name', 'Enter your last name', 'Last Name', user);
+  const username = createInput('username', 'Enter your username', 'Username', currentUser);
+  const firstName = createInput('first_name', 'Enter your first name', 'First Name', currentUser);
+  const lastName = createInput('last_name', 'Enter your last name', 'Last Name', currentUser);
 
   const buttons = document.createElement('div')
   buttons.appendChild(createSubmitCancelGroup(createUpdateUserDetails));
@@ -939,9 +939,9 @@ function createUpdateUserDetails() {
       last_name: event.target[2].value
     }
     
-    patchUser(user.id, body)
+    patchUser(currentUser.id, body)
       .then(returnedUser => {
-        user = returnedUser
+        currentUser = returnedUser
         createUpdateUserDetails();
       })
   })
