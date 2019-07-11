@@ -18,41 +18,18 @@
           transform-origin: @args;
 }
 
-
 /* Styles */
 body {
   font-family: Arial;
   .transform(translateZ(0)); /* prevent flashing */
 }
 
-nav {
-  position: relative;
-  height: 8vh;
-}
-
-.nav-item {
-  cursor: pointer;
-  color: white;
-  font-size: 20px;
-}
-
 .clickable {
   cursor: pointer;
 }
 
-nav .navbar-nav li a {
-  float: right;
-  font-size: 20px;
-  color: white !important;
-}
-
-.navbar-brand {
-  font-size: 2rem;
-  color: white;
-}
-
 .modal-card {
-  margin-top: 10vh;
+  margin-top: 20vh;
 }
 
 .list-group {
@@ -72,14 +49,14 @@ nav .navbar-nav li a {
 
 .periodic {
   position: relative;
-  height: 200px;
+  height: 85vh;
   margin-right: -1px;
   text-shadow: none;
 }
 
 .periodic-row {
   clear: both;
-	  height: 10%;
+	  height: 9%;
 }
 
 .cell {
@@ -147,9 +124,9 @@ nav .navbar-nav li a {
   left: 0px;
   right: 0px;
   margin-top: -4px;
-  font-size: 9px;
+  font-size: 1.5vw;
   line-height: 1;
-  height: 9px;
+  height: 1.5vw;
   color: rgba(255,255,255,0.9);
 }
 
@@ -215,43 +192,12 @@ nav .navbar-nav li a {
   background-color: rgba(48, 0, 138, 1.0);
 }
 
-/* hover state positioning
-left hand column */
-/* .cell:nth-child(1) .element {
-  .transform-origin(0 50%);
-} */
-
-/* right hand column */
-/* .cell:nth-child(18) .element {
-  .transform-origin(100% 50%);
-} */
-
-/* bottom row */
-/* .periodic-row:nth-child(10) .cell .element {
-  .transform-origin(50% 100%);
-} */
-
-/* top left corner */
-/* .periodic-row:nth-child(1) .cell:nth-child(1) .element {
-  .transform-origin(0 0);
-} */
-
-/* top right corner */
-/* .periodic-row:nth-child(1) .cell:nth-child(18) .element {
-  .transform-origin(100% 0);
-} */
-
-/* bottom right corner */
-/* .periodic-row:nth-child(10) .cell:nth-child(18) .element {
-  .transform-origin(100% 100%);
-} */
-
 /* Media queries to change size of table
 small tablet portrait */
 @media (min-width: 600px) {
   .container {
     max-width: 80vw;
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
   .periodic {
     height: 460px;
@@ -265,13 +211,13 @@ small tablet portrait */
   
   .at_num,
   .at_details {
-    font-size: 20px;
+    font-size: 0.7vw;
     opacity: 1;
   }
 
   .symbol {
     margin-top: -17px;
-    font-size: 16px;
+    font-size: 1.5vw;
     font-weight: bold;
     line-height: 30px;
     height: 30px;
@@ -286,11 +232,11 @@ small tablet portrait */
     max-width: 80vw;
   }
   .periodic {
-    height: 540px;
+    height: 85vh;
   }
 
   .symbol {
-    font-size: 20px;
+    font-size: 1.5vw;
   }
 }
 
@@ -298,22 +244,22 @@ small tablet portrait */
 @media (min-width: 992px) {
   .container {
     max-width: 80vw;
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
   .periodic {
-    height: 680px;
+    height: 85vh;
   }
   
   .at_num {
-    font-size: 15px;
+    font-size: 0.7vw;
   }
 
   .at_details {
-    font-size: 10px;
+    font-size: 0.6vw;
   }
 
   .symbol {
-    font-size: 24px;
+    font-size: 1.5vw;
   }
 }
 
@@ -321,21 +267,21 @@ small tablet portrait */
 @media (min-width: 1200px) {
   .container {
     max-width: 80vw;
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
   .periodic {
-    height: 800px;
+    height: 85vh;
   }
   
   .at_num {
-    font-size: 15px;
+    font-size: 0.7vw;
   }
 
   .at_details {
-    font-size: 10px;
+    font-size: 0.6vw;
   }
 
   .symbol {
-    font-size: 30px;
+    font-size: 1.5vw;
   }
 }
