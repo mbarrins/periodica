@@ -1,15 +1,110 @@
-const ELEMENTS_URL = 'http://localhost:3000/elements'
-const USER_ID = 1
-// const tableContainer = document.getElementById('main-container')
+const ELEMENTS_URL = 'http://localhost:3000/elements';
+const USER_QUIZ_ELEMENTS_URL = 'http://localhost:3000/user_quiz_elements';
+const QUIZZES_URL = 'http://localhost:3000/quizzes';
+const QUIZ_QUESTIONS_URL = 'http://localhost:3000/quiz_questions';
+const CLASSIFICATIONS_URL = 'http://localhost:3000/classifications';
+const USER_ID = 1;
+const GROUPS = [];
 
 window.addEventListener('DOMContentLoaded', () => {
   createNavbar();
   getElements().then(elements => createLearnTable(elements));
+  getClassifications();
 })
 
-function getElements() {
-  return fetch(ELEMENTS_URL)
+function clearContainer() {
+  const container = document.querySelector('.container')
+  while (container.lastChild) {
+    container.removeChild(container.lastChild);
+  }
+  return container
+}
+
+function getElements(user_id) {
+  if (user_id) {
+    return fetch(`${ELEMENTS_URL}?user_id=${user_id}`).then(resp => resp.json())
+  } else {
+    return fetch(`${ELEMENTS_URL}`).then(resp => resp.json())
+  } 
+}
+
+function getElement(element_id, user_id) {
+  if (user_id){
+    return fetch(`${ELEMENTS_URL}/${element_id}?user_id=${user_id}`).then(resp => resp.json())
+  } else {
+    return fetch(`${ELEMENTS_URL}/${element_id}`).then(resp => resp.json())
+  }
+}
+
+function postUserElement(body) {
+  return fetch(USER_QUIZ_ELEMENTS_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    },
+    body: JSON.stringify(body)
+  }).then(resp => resp.json())
+}
+
+function deleteUserElement(user_quiz_element_id) {
+  return fetch(`${USER_QUIZ_ELEMENTS_URL}/${user_quiz_element_id}`, {
+    method: 'DELETE'
+  }).then(resp => resp.json());
+}
+
+function getQuizzes(user_id) {
+  if (user_id) {
+    return fetch(`${QUIZZES_URL}?user_id=${user_id}`).then(resp => resp.json())
+  } else {
+    return fetch(QUIZZES_URL).then(resp => resp.json())
+  }
+}
+
+function getQuiz(quiz_id) {
+  return fetch(`${QUIZZES_URL}/${quiz_id}?incl_ques=true`).then(resp => resp.json())
+}
+
+function postQuiz(body) {
+  return fetch(`${QUIZZES_URL}?incl_ques=true`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    },
+    body: JSON.stringify(body)
+  }).then(resp => resp.json())
+}
+
+function submitQuiz(quiz) {
+  return fetch(`${QUIZZES_URL}/${quiz.id}?submit_quiz=true&incl_ques=true`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    },
+    body: JSON.stringify(quiz)
+  }).then(resp => resp.json())
+}
+
+function updateUserAnswer(question, answer) {
+  return fetch(`${QUIZ_QUESTIONS_URL}/${question.id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({user_answer: answer})
+  }).then(resp => resp.json())
+}
+
+function getClassifications() {
+  return fetch(`${CLASSIFICATIONS_URL}`)
     .then(resp => resp.json())
+    .then(classifications => classifications.forEach((group) => {
+      GROUPS.push(group.name);
+      GROUPS.sort();
+    }))
 }
 
 
@@ -22,7 +117,8 @@ function createElement (element, clickFunction, type) {
   const details = document.createElement('div')
 
   if (type === 'select') {
-    cell.classList.add('cell', 'select')
+    cell.className = 'cell select'
+    if (element.selected) cell.classList.add('selected') 
   } else {
     cell.classList.add('cell')
   }
@@ -148,36 +244,41 @@ function createRow(elements, first, blank, last, clickFunction, type) {
 }
 
 function createLearnTable(elements) {
-  const container = document.querySelector('.container')
+  const container = clearContainer();
   const div = document.createElement('div')
   div.className = "periodic"
 
-  while (container.lastChild) {
-    container.removeChild(container.lastChild);
-  }
   container.appendChild(div);
 
   periodicTableLayout(elements, div, showElementDetails);
 }
 
 function createSelectTable(elements) {
-  const container = document.querySelector('.container')
+  const container = clearContainer();
   const div = document.createElement('div')
   div.className = "periodic"
 
-  while (container.lastChild) {
-    container.removeChild(container.lastChild);
-  }
   container.appendChild(div);
-
+  
   periodicTableLayout(elements, div, selectUserElement, 'select');
 }
 
 function selectUserElement(e, element, cell, user_id) {
   if (cell.classList.contains('selected')) {
-    cell.classList.remove('selected');
+    deleteUserElement(element.user_quiz_element_id)
+      .then(returnedElement => {
+        element = returnedElement
+        cell.classList.remove('selected')
+        return element;
+      })
   } else {
-    cell.classList.add('selected');
+    return postUserElement({user_id: user_id, element_id: element.id})
+      .then(userElement => {
+        element.user_quiz_element_id = userElement.id
+        element.selected = true
+        cell.classList.add('selected');
+        return element;
+      })
   }
 }
 
@@ -197,7 +298,7 @@ function periodicTableLayout(elements, div, clickFunction, type) {
       firstElements = 1
       gapNoElements = 16
       lastElements = 1
-  
+      
       div.appendChild(createRow(elements.slice(elementNum, elementNum + firstElements + lastElements),firstElements,gapNoElements,lastElements, clickFunction, type));
       elementNum += (firstElements + lastElements)
     
@@ -297,6 +398,17 @@ function createNavbar() {
   // li3.addEventListener('click', (e) => {
   //   console.log(e.target)
   // })
+  const item3 = document.createElement('li');
+  item3.textContent = 'Quiz Me!';
+  // item3
+
+  const a3 = document.createElement('a');
+  a3.href = '#';
+  a3.classList.add('nav-link');
+  a3.innerText = 'Quiz Me!';
+  a3.addEventListener('click', () => {
+    createQuiz(USER_ID);
+  })
 
   // const li4 = document.createElement('li');
   // li4.textContent = 'Link';
@@ -308,8 +420,193 @@ function createNavbar() {
   a1.append(span1)
   li1.append(a1);
   item2.append(a2);
-  ul.append(li1, item2)//, li2, li3, li4);
+  item3.append(a3);
+  ul.append(li1, item2, item3)//, li2, item3, li4);
   navDiv.append(ul)
   nav.append(brand, navDiv)
   body.insertBefore(nav, container);
+  // const li2 = document.createElement('li');
+  // li2.textContent = 'Select Elements for Quiz';
+  // li2.addEventListener('click', (e) => {
+  //   getElements(USER_ID).then(elements => createSelectTable(elements));
+  // })
+
+
+
+  // const li4 = document.createElement('li');
+  // li4.textContent = 'Quiz History';
+  // li4.addEventListener('click', () => {
+  //   displayQuizzes(USER_ID);
+  // })
+
+  // const li10 = document.createElement('li');
+  // li10.textContent = 'Link';
+  // li10.style = 'float:right';
+  // li10.addEventListener('click', (e) => {
+  //   console.log(e.target)
+  // })
+
+  // ul.append(li1, li2, li3, li4, li10);
+  // body.insertBefore(ul, container);
+}
+
+function createQuiz(user_id) {
+  postQuiz({user_id: user_id, ques_no: 10})
+    .then(quiz => {
+      getQuiz(quiz.id).then(quiz => displayQuiz(quiz))
+    })
+}
+
+function displayQuiz(quizWithQuestions) {
+  const container = clearContainer();
+  const div = document.createElement('div')
+  div.className = "quiz"
+
+  container.appendChild(div);
+
+  quizWithQuestions.quiz_questions.forEach((question, index) => {
+    div.appendChild(createQuizQuestion(question, index, quizWithQuestions));
+  })
+
+  if (quizWithQuestions.status !== 'completed') {
+    const submit = document.createElement('button')
+    submit.textContent = 'Submit'
+
+    submit.addEventListener('click', () => {
+      scoreQuiz(quizWithQuestions)
+    })
+
+    div.appendChild(submit);
+  }
+  
+  return div;
+}
+
+function scoreQuiz(quiz) {
+  submitQuiz(quiz).then(returnedQuiz => {
+    quiz = returnedQuiz
+    displayQuiz(quiz)
+  });
+}
+
+function createQuizQuestion(question, index, quiz) {
+  const div = document.createElement('div')
+  const h3 = document.createElement('h3')
+  const p = document.createElement('p')
+  const hr = document.createElement('hr')
+  let answer
+
+  
+  h3.textContent = `Question ${index+1}`
+  p.textContent = question.question_string
+
+  div.append(h3, p);
+  
+  if (typeof(question.result) !== "undefined") {
+    answer = document.createElement('input')
+    answer.readOnly = true;
+    div.appendChild(answer);
+
+    if (question.result === true) {
+      answer.classList.add('success')
+    } else {
+      answer.classList.add('error')
+      const correct = document.createElement('label')
+      correct.textContent = `  The correct answer is ${question.correct_answer}.`
+      div.appendChild(correct);
+    }    
+
+  } else {
+    switch (question.question_on) {
+      case 'atomicNumber':
+        answer = document.createElement('input')
+        if (isNaN(question.correct_answer)) {
+          answer.type = 'text'
+        } else {
+          answer.type = 'number'
+          answer.min = 1
+          answer.max = 118
+        }
+        break;
+
+      case 'symbol':
+        answer = document.createElement('input')
+        answer.type = 'text'
+        break;
+
+      case 'classification':
+        answer = document.createElement('select')
+        const option = document.createElement('option')
+        option.disabled = true
+        option.selected = true
+        option.textContent = ' -- select an option -- '
+        answer.appendChild(option);
+        
+        GROUPS.forEach((group) => {
+          const option = document.createElement('option');
+          option.textContent = group;
+          option.value = group;
+          answer.appendChild(option);
+        })
+        break;
+    }
+    answer.required = true
+    div.appendChild(answer);
+
+    answer.addEventListener('change', e => {
+      updateUserAnswer(question, answer.value)
+        .then(returnedQuestion => {
+          quiz.quiz_questions[index] = returnedQuestion
+        });
+    })    
+  }
+
+  if (question.user_answer) answer.value = question.user_answer
+
+  div.appendChild(hr);
+  
+  return div;
+  
+}
+
+function displayQuizzes() {
+  const container = clearContainer();
+  const div = document.createElement('div')
+  div.className = "quiz-list"
+
+  container.appendChild(div);
+
+  getQuizzes(USER_ID)
+    .then(quizzes => {
+      quizzes.forEach((quiz, index) => {
+        div.appendChild(createQuizInfo(quiz, index));
+      })
+    })
+}
+
+function createQuizInfo(quiz, index) {
+  const score = Math.round(quiz.correct/quiz.questions * 100**2) / 100
+  const quiz_updated = new Date(quiz.updated_at)
+
+  const div = document.createElement('div')
+  const quiz_info = document.createElement('p')
+  
+  div.appendChild(quiz_info)
+
+  quiz_info.textContent = `Quiz ${index+1}: ${quiz.questions} Questions, ${quiz.status} on ${quiz_updated.toLocaleDateString()}`
+
+  if (quiz.status === 'completed') {
+    const quiz_result = document.createElement('p')
+    quiz_result.textContent = `Score ${score}%`
+    div.appendChild(quiz_result)
+  }
+
+  const button = document.createElement('button')
+  button.textContent = (quiz.status === 'completed') ? 'Review' : 'Resume'
+  button.addEventListener('click', () => {
+    getQuiz(quiz.id).then(quizWithQuestions => displayQuiz(quizWithQuestions));
+  })
+  div.appendChild(button)
+  
+  return div
 }

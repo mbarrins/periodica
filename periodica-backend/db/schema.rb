@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(version: 2019_07_10_153649) do
     t.string "question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "quiz_field"
+    t.string "question_field"
+    t.string "answer_field"
   end
 
   create_table "quiz_questions", force: :cascade do |t|
@@ -52,6 +55,9 @@ ActiveRecord::Schema.define(version: 2019_07_10_153649) do
     t.boolean "result"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "element_id"
+    t.string "question_string"
+    t.index ["element_id"], name: "index_quiz_questions_on_element_id"
     t.index ["question_id"], name: "index_quiz_questions_on_question_id"
     t.index ["quiz_id"], name: "index_quiz_questions_on_quiz_id"
   end
@@ -91,6 +97,7 @@ ActiveRecord::Schema.define(version: 2019_07_10_153649) do
   end
 
   add_foreign_key "elements", "classifications"
+  add_foreign_key "quiz_questions", "elements"
   add_foreign_key "quiz_questions", "questions"
   add_foreign_key "quiz_questions", "quizzes"
   add_foreign_key "quizzes", "users"

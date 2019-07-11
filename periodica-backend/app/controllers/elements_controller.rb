@@ -3,15 +3,19 @@ class ElementsController < ApplicationController
 
   # GET /elements
   def index
-    @elements = Element.all
+    if params[:user_id]
+      @elements = Element.select_all(params[:user_id].to_i)
+    else
+      @elements = Element.cache_all
+    end
 
-    render json: @elements, each_serializer: ElementSerializer, user_id: params[:user_id]
+    render json: @elements
 
   end
 
   # GET /elements/1
   def show
-    render json: @element
+    render json: @element, serializer: ElementSerializer, user_id: params[:user_id]
   end
 
   private

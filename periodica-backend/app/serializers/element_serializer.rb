@@ -3,16 +3,20 @@ class ElementSerializer < ActiveModel::Serializer
       :meltingPoint, :boilingPoint, :electronegativity, 
       :atomicWeight, :classification_id
 
-  attribute :classification_name do
-    self.object.classification.name
-  end
+  def attributes(*args)
+    hash = super
+    
+    classification = self.object.classification
+    quiz_elements = self.object.user_quiz_elements
 
-  attribute :classification_description do
-    self.object.classification.description
-  end
+    hash[:classification_name] = classification.name
+    hash[:classification_description] = classification.description
+    hash[:selectec] = quiz_elements.map{|uqe| uqe.user.id}.include?(@instance_options[:user_id].to_i)
 
-  attribute :selected do
-    self.object.user_quiz_elements.map{|uqe| uqe.user.id}.include?(@instance_options[:user_id].to_i)
-  end
+    if quiz_elements.find_by(user_id: @instance_options[:user_id].to_i)
+      hash[:user_quiz_element_id] = quiz_elements.find_by(user_id: @instance_options[:user_id].to_i).id
+    end
 
+    hash
+  end
 end
