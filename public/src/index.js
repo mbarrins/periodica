@@ -115,6 +115,7 @@ function signInUser(username) {
     .then(returnedUser => {
       if (returnedUser) {
         user = returnedUser
+        addUserNav();
         getElements().then(elements => createLearnTable(elements))
       } else {
         console.log('add message user does not exist, sign up')
@@ -370,13 +371,43 @@ function createNavbar() {
   nav.classList.add('navbar', 'navbar-expand-lg', 'bg-dark');
 
   const brand = document.createElement('a');
-  brand.href = '#'
+  brand.href = ''
   brand.classList.add('navbar-brand');
   brand.innerText = 'Periodica';
 
   const navDiv = document.createElement('div');
   navDiv.classList.add('collapse', 'navbar-collapse');
 
+  nav.append(brand, navDiv)
+  body.insertBefore(nav, container);
+
+  // const li2 = document.createElement('li');
+  // li2.textContent = 'Select Elements for Quiz';
+  // li2.addEventListener('click', (e) => {
+  //   getElements(user.id).then(elements => createSelectTable(elements));
+  // })
+
+
+
+  // const li4 = document.createElement('li');
+  // li4.textContent = 'Quiz History';
+  // li4.addEventListener('click', () => {
+  //   displayQuizzes(user.id);
+  // })
+
+  // const li10 = document.createElement('li');
+  // li10.textContent = 'Link';
+  // li10.style = 'float:right';
+  // li10.addEventListener('click', (e) => {
+  //   console.log(e.target)
+  // })
+
+  // ul.append(li1, li2, li3, li4, li10);
+  // body.insertBefore(ul, container);
+}
+
+function addUserNav() {
+  const navDiv = document.querySelector('.collapse.navbar-collapse')
 
   const ul = document.createElement('ul');
   ul.classList.add('navbar-nav', 'ml-auto')
@@ -391,7 +422,6 @@ function createNavbar() {
   const span1 = document.createElement('span');
   span1.classList.add('sr-only');
   span1.innerHTML = '(current)';
-
 
   const item2 = document.createElement('li');
   item2.classList.add('nav-item', 'nav-link')
@@ -426,31 +456,6 @@ function createNavbar() {
   // item3.append(a3);
   ul.append(li1, item2, item3)//, li2, item3, li4);
   navDiv.append(ul)
-  nav.append(brand, navDiv)
-  body.insertBefore(nav, container);
-  // const li2 = document.createElement('li');
-  // li2.textContent = 'Select Elements for Quiz';
-  // li2.addEventListener('click', (e) => {
-  //   getElements(user.id).then(elements => createSelectTable(elements));
-  // })
-
-
-
-  // const li4 = document.createElement('li');
-  // li4.textContent = 'Quiz History';
-  // li4.addEventListener('click', () => {
-  //   displayQuizzes(user.id);
-  // })
-
-  // const li10 = document.createElement('li');
-  // li10.textContent = 'Link';
-  // li10.style = 'float:right';
-  // li10.addEventListener('click', (e) => {
-  //   console.log(e.target)
-  // })
-
-  // ul.append(li1, li2, li3, li4, li10);
-  // body.insertBefore(ul, container);
 }
 
 function createQuiz(user_id) {
