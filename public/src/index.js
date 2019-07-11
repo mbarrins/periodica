@@ -8,7 +8,8 @@ const GROUPS = [];
 
 window.addEventListener('DOMContentLoaded', () => {
   createNavbar();
-  getElements().then(elements => createLearnTable(elements));
+  // getElements().then(elements => createLearnTable(elements));  
+  createLogIn();
   getClassifications();
 })
 
@@ -599,4 +600,112 @@ function createQuizInfo(quiz, index) {
   div.appendChild(button)
   
   return div
+}
+
+function createLogIn() {
+  const container = clearContainer();
+  const columns = document.createElement('div')
+  const form = document.createElement('form');
+  const column = document.createElement('column')
+  const h1 = document.createElement('h1');
+  const username = createInput('username', 'Enter your username', 'Username');
+  const div = document.createElement('div')
+
+  div.appendChild(createButton('submit', 'Sign In'))
+
+  h1.textContent = 'Sign In';
+
+  form.addEventListener('submit', () => {
+    event.preventDefault();
+    console.log('submit')
+    // fetch user details - if exists show home page
+    // if doesn't add message user does not exist
+    // please check or sign up
+  })
+
+  const signUp = document.createElement('p')
+  const br = document.createElement('br')
+
+  signUp.textContent = 'Not registered? Sign up here.'
+  signUp.className = 'nav-link'
+
+  signUp.addEventListener('click', () => {
+    event.preventDefault();
+    console.log('Sign Up')
+    // fetch user details - if exists show home page
+    // if doesn't add message user does not exist
+    // please check or sign up
+  })
+
+
+  column.append(username, div);
+  form.append(column, br, signUp);
+  columns.append(h1, form)
+  container.appendChild(columns);
+}
+
+function createInput(name, placeholder, label_name) {
+  const field = document.createElement('div')
+  const fieldLabel = document.createElement('div')
+  const label = document.createElement('label')
+  const fieldBody = document.createElement('div')
+  const control = document.createElement('div')
+  const input = document.createElement('input')
+
+  field.className = 'field is-horizontal'
+  fieldLabel.className = 'field-label'
+  fieldBody.className = 'field-body'
+
+  label.className = 'label'
+  label.textContent = label_name
+  label.for = name
+  fieldLabel.appendChild(label)
+
+  control.className = 'control'
+
+  input.className = 'input'
+  input.placeholder = placeholder
+  input.type = 'text'
+  input.id = name
+  input.name = name
+  input.required = true
+
+  control.appendChild(input)
+  fieldBody.appendChild(control)
+
+  field.append(fieldLabel, fieldBody)
+
+  return field;
+
+}
+
+function createButton(type, text) {
+  const field = document.createElement('div')
+  const fieldLabel = document.createElement('div')
+  const fieldBody = document.createElement('div')
+  const fieldButton = document.createElement('div')
+  const control = document.createElement('control')
+  const button = document.createElement('button');
+
+  field.className = 'field'
+  fieldLabel.className = 'field-label'
+  fieldBody.className = 'field-body'
+  fieldButton.className = 'field'
+  control.className = 'control'
+
+  button.className = 'button is-link'
+  button.type = type
+  button.textContent = text
+
+  control.appendChild(button);
+  fieldButton.appendChild(control);
+  fieldBody.appendChild(fieldButton)
+
+  field.append(fieldLabel, fieldBody);
+
+  return field
+}
+
+function createSignUp() {
+
 }
