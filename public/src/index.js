@@ -129,6 +129,17 @@ function signInUser(username) {
     })
 }
 
+function patchUser(user_id, body) {
+  return fetch(`${USERS_URL}/${user_id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  })
+    .then(resp => resp.json())
+}
+
 function displayErrorMessage(errorMessage){
   const h1 = document.querySelector('h1')
   const div = h1.parentNode
@@ -146,8 +157,9 @@ function displayErrorMessage(errorMessage){
 
 function logInUser(returnedUser) {
   user = returnedUser
-  addUserNav();
+  displayErrorMessage('Please wait. Page loading...');
   getElements().then(elements => createLearnTable(elements))
+  addUserNav();
 
   return user;
 }
@@ -417,94 +429,155 @@ function createNavbar() {
   const container = document.querySelector('.container')
 
   const nav = document.createElement('nav');
-  nav.classList.add('navbar', 'navbar-expand-lg', 'bg-dark');
+  nav.classList.add('navbar', 'is-dark', 'is-spaced');
+  nav.style = 'min-height: 100px'
+
+  const brandDiv = document.createElement('div')
+  brandDiv.className = 'navbar-brand'
 
   const brand = document.createElement('a');
-  brand.href = ''
-  brand.classList.add('navbar-brand');
+  brand.classList.add('navbar-item');
   brand.innerText = 'Periodica';
 
+  brandDiv.appendChild(brand);
+
   const navDiv = document.createElement('div');
-  navDiv.classList.add('collapse', 'navbar-collapse');
+  navDiv.classList.add('navbar-menu');
 
-  nav.append(brand, navDiv)
+  nav.append(brandDiv, navDiv)
   body.insertBefore(nav, container);
+}
 
-  // const li2 = document.createElement('li');
-  // li2.textContent = 'Select Elements for Quiz';
-  // li2.addEventListener('click', (e) => {
-  //   getElements(user.id).then(elements => createSelectTable(elements));
-  // })
+function removeUserNav() {
+  const navDiv = document.querySelector('.navbar-menu')
 
-
-
-  // const li4 = document.createElement('li');
-  // li4.textContent = 'Quiz History';
-  // li4.addEventListener('click', () => {
-  //   displayQuizzes(user.id);
-  // })
-
-  // const li10 = document.createElement('li');
-  // li10.textContent = 'Link';
-  // li10.style = 'float:right';
-  // li10.addEventListener('click', (e) => {
-  //   console.log(e.target)
-  // })
-
-  // ul.append(li1, li2, li3, li4, li10);
-  // body.insertBefore(ul, container);
+  while (navDiv.lastChild) {
+    navDiv.removeChild(navDiv.lastChild)
+  }
 }
 
 function addUserNav() {
-  const navDiv = document.querySelector('.collapse.navbar-collapse')
+  const navDiv = document.querySelector('.navbar-menu')
 
-  const ul = document.createElement('ul');
-  ul.classList.add('navbar-nav', 'ml-auto')
+  const navStart = document.createElement('div')
+  navStart.className = 'navbar-start'
 
-  const li1 = document.createElement('li');
-  li1.classList.add('nav-item', 'nav-link', 'active');
-  li1.innerText = 'Home';
-  li1.addEventListener('click', (e) => {
+  const navEnd = document.createElement('div')
+  navEnd.className = 'navbar-end'
+
+  const home = document.createElement('a');
+  home.classList.add('navbar-item');
+  home.innerText = 'Home';
+  home.addEventListener('click', (e) => {
     getElements().then(elements => createLearnTable(elements));
   })
+  
+  const quiz = document.createElement('div');
+  quiz.classList.add('navbar-item', 'has-dropdown', 'is-hoverable')
 
-  const span1 = document.createElement('span');
-  span1.classList.add('sr-only');
-  span1.innerHTML = '(current)';
+  const quizTop = document.createElement('a')
+  quizTop.classList.add('navbar-link')
+  quizTop.innerText = 'Quizzes';
 
-  const item2 = document.createElement('li');
-  item2.classList.add('nav-item', 'nav-link')
-  item2.innerText = 'Test Elements';
-  item2.addEventListener('click', (e) => {
-    getElements(user.id).then(elements => createSelectTable(elements));
-  })
+  const quizDiv = document.createElement('div')
+  quizDiv.className = 'navbar-dropdown'
 
-  // const li3 = document.createElement('li');
-  // // li3.classList.add('')
-  // li3.textContent = 'Learn Mode';
-  // li3.addEventListener('click', (e) => {
-  //   console.log(e.target)
-  // })
-  const item3 = document.createElement('li');
-  item3.classList.add('nav-item', 'nav-link');
-  item3.innerText = 'Quiz Me!';
-  item3.addEventListener('click', () => {
+  const quizMenu1 = document.createElement('a')
+  quizMenu1.classList.add('navbar-item', 'has-text-black')
+  quizMenu1.textContent = 'Create New Quiz'
+
+  quizMenu1.addEventListener('click', (e) => {
     createQuiz(user.id);
   })
 
-  // const li4 = document.createElement('li');
-  // li4.textContent = 'Link';
-  // li4.style = 'float:right';
-  // li4.addEventListener('click', (e) => {
-  //   console.log(e.target)
+  const quizMenu2 = document.createElement('a')
+  quizMenu2.classList.add('navbar-item', 'has-text-black')
+  quizMenu2.textContent = 'View Quiz History'
+
+  quizMenu2.addEventListener('click', (e) => {
+    displayQuizzes();
+  })
+
+  const divider = document.createElement('div')
+  divider.className = 'navbar-divider'
+
+  const quizMenu3 = document.createElement('a')
+  quizMenu3.classList.add('navbar-item', 'has-text-black')
+  quizMenu3.textContent = 'Select Elements for Quiz'
+
+  quizMenu3.addEventListener('click', (e) => {
+    getElements(user.id).then(elements => createSelectTable(elements));
+  })
+
+  // const quizMenu4 = document.createElement('a')
+  // quizMenu4.classList.add('navbar-item', 'has-text-black')
+  // quizMenu4.textContent = 'Other Quiz Settings'
+
+  // quizMenu4.addEventListener('click', (e) => {
+  //   console.log('OTHER QUIZ SETTINGS')
   // })
 
-  // a1.append(span1)
-  li1.append(span1);
-  // item2.append(a2);
-  // item3.append(a3);
-  ul.append(li1, item2, item3)//, li2, item3, li4);
-  navDiv.append(ul)
+  quizDiv.append(quizMenu1, quizMenu2, divider, quizMenu3)
+  // quizDiv.append(quizMenu1, quizMenu2, divider, quizMenu3, quizMenu4)
+  quiz.append(quizTop, quizDiv)
+
+  const userMenu = document.createElement('div');
+  userMenu.classList.add('navbar-item', 'has-dropdown', 'is-hoverable')
+
+  const userTop = document.createElement('a')
+  userTop.classList.add('navbar-link')
+  userTop.innerText = 'User';
+
+  const userDiv = document.createElement('div')
+  userDiv.className = 'navbar-dropdown'
+
+  const userMenu1 = document.createElement('a')
+  userMenu1.classList.add('navbar-item', 'has-text-black')
+  userMenu1.textContent = 'User Details'
+
+  userMenu1.addEventListener('click', (e) => {
+    createUpdateUserDetails();
+  })
+
+  // const userMenu2 = document.createElement('a')
+  // userMenu2.classList.add('navbar-item', 'has-text-black')
+  // userMenu2.textContent = 'View Quiz History'
+
+  // userMenu2.addEventListener('click', (e) => {
+  //   displayQuizzes();
+  // })
+
+  // const userMenu3 = document.createElement('a')
+  // userMenu3.classList.add('navbar-item', 'has-text-black')
+  // userMenu3.textContent = 'Select Elements for Quiz'
+
+  // userMenu3.addEventListener('click', (e) => {
+  //   getElements(user.id).then(elements => createSelectTable(elements));
+  // })
+
+  // const userMenu4 = document.createElement('a')
+  // userMenu4.classList.add('navbar-item', 'has-text-black')
+  // userMenu4.textContent = 'Other Quiz Settings'
+
+  // userMenu4.addEventListener('click', (e) => {
+  //   console.log('OTHER QUIZ SETTINGS')
+  // })
+
+  // userDiv.append(userMenu1, userMenu2, userMenu3, userMenu4)
+  userDiv.append(userMenu1)
+  userMenu.append(userTop, userDiv)
+
+  const signOut = document.createElement('a');
+  signOut.classList.add('navbar-item');
+  signOut.innerText = 'Sign Out';
+  signOut.addEventListener('click', () => {
+    user = undefined;
+    removeUserNav();
+    createLogIn();
+  })
+
+  navEnd.append(home, quiz, userMenu, signOut)
+  navDiv.append(navStart,navEnd)
 }
 
 function createQuiz(user_id) {
@@ -637,9 +710,16 @@ function displayQuizzes() {
 
   getQuizzes(user.id)
     .then(quizzes => {
-      quizzes.forEach((quiz, index) => {
-        div.appendChild(createQuizInfo(quiz, index));
-      })
+      if (quizzes.length === 0) {
+        const p = document.createElement('p')
+        p.classList.add('has-text-weight-bold')
+        p.textContent = 'You do not have any quizzes.'
+        div.appendChild(p)
+      } else {
+        quizzes.forEach((quiz, index) => {
+          div.appendChild(createQuizInfo(quiz, index));
+        })
+      }
     })
 }
 
@@ -706,7 +786,7 @@ function createLogIn() {
   container.appendChild(columns);
 }
 
-function createInput(name, placeholder, label_name) {
+function createInput(name, placeholder, label_name, user_obj) {
   const field = document.createElement('div')
   const fieldLabel = document.createElement('div')
   const label = document.createElement('label')
@@ -731,6 +811,10 @@ function createInput(name, placeholder, label_name) {
   input.id = name
   input.name = name
   input.required = true
+
+  if (user_obj) {
+    input.value = user_obj[name]
+  }
 
   control.appendChild(input)
   fieldBody.appendChild(control)
@@ -768,7 +852,7 @@ function createButton(type, text) {
   return field
 }
 
-function createSubmitCancelGroup(form) {
+function createSubmitCancelGroup(cancelFunction) {
   const field = document.createElement('div')
   field.className = 'field is-grouped'
 
@@ -791,7 +875,7 @@ function createSubmitCancelGroup(form) {
   field.append(submitControl, cancelControl)
 
   cancelButton.addEventListener('click', () => {
-    createLogIn();
+    cancelFunction();
   });
 
   return field;
@@ -809,7 +893,7 @@ function createSignUp() {
   const lastName = createInput('last_name', 'Enter your last name', 'Last Name');
 
   const buttons = document.createElement('div')
-  buttons.appendChild(createSubmitCancelGroup());
+  buttons.appendChild(createSubmitCancelGroup(createLogIn));
 
   h1.textContent = 'Sign Up';
 
@@ -826,5 +910,39 @@ function createSignUp() {
   column.append(username, firstName, lastName, buttons);
   form.append(column);
   columns.append(h1, form)
+  container.appendChild(columns);
+}
+
+function createUpdateUserDetails() {
+  const container = clearContainer();
+
+  const columns = document.createElement('div')
+  const form = document.createElement('form');
+  const column = document.createElement('column')
+  const h1 = document.createElement('h1');
+  const p = document.createElement('p')
+  const username = createInput('username', 'Enter your username', 'Username', user);
+  const firstName = createInput('first_name', 'Enter your first name', 'First Name', user);
+  const lastName = createInput('last_name', 'Enter your last name', 'Last Name', user);
+
+  const buttons = document.createElement('div')
+  buttons.appendChild(createSubmitCancelGroup(createUpdateUserDetails));
+
+  h1.textContent = 'User Details';
+  p.textContent = 'To update, enter the changes below and click submit.'
+
+  form.addEventListener('submit', () => {
+    event.preventDefault();
+    const body = {
+      username: event.target[0].value,
+      first_name: event.target[1].value,
+      last_name: event.target[2].value
+    }
+    signUpUser(body);
+  })
+
+  column.append(username, firstName, lastName, buttons);
+  form.append(column);
+  columns.append(h1, p, form)
   container.appendChild(columns);
 }
