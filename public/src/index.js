@@ -639,14 +639,12 @@ function createLogIn() {
   const br = document.createElement('br')
 
   signUp.textContent = 'Not registered? Sign up here.'
-  signUp.className = 'nav-link'
+  signUp.className = 'clickable'
 
   signUp.addEventListener('click', () => {
     event.preventDefault();
     console.log('Sign Up')
-    // fetch user details - if exists show home page
-    // if doesn't add message user does not exist
-    // please check or sign up
+    createSignUp();
   })
 
 
@@ -718,6 +716,66 @@ function createButton(type, text) {
   return field
 }
 
-function createSignUp() {
+function createSubmitCancelGroup(form) {
+  const field = document.createElement('div')
+  field.className = 'field is-grouped'
 
+  const submitControl = document.createElement('p')
+  submitControl.className = 'control'
+
+  const submitButton = document.createElement('button');
+  submitButton.className = 'button is-primary'
+  submitButton.textContent = 'Submit'
+
+  const cancelControl = document.createElement('p')
+  cancelControl.className = 'control'
+
+  const cancelButton = document.createElement('a');
+  cancelButton.className = 'button is-light'
+  cancelButton.textContent = 'Cancel'
+
+  submitControl.appendChild(submitButton);
+  cancelControl.appendChild(cancelButton);
+  field.append(submitControl, cancelControl)
+
+  cancelButton.addEventListener('click', () => {
+    createLogIn();
+  });
+
+  return field;
+}
+
+function createSignUp() {
+  const container = clearContainer();
+
+  const columns = document.createElement('div')
+  const form = document.createElement('form');
+  const column = document.createElement('column')
+  const h1 = document.createElement('h1');
+  const username = createInput('username', 'Enter your username', 'Username');
+  const firstName = createInput('first_name', 'Enter your first name', 'First Name');
+  const lastName = createInput('last_name', 'Enter your last name', 'Last Name');
+
+  const buttons = document.createElement('div')
+  buttons.appendChild(createSubmitCancelGroup());
+
+  h1.textContent = 'Sign Up';
+
+  form.addEventListener('submit', () => {
+    event.preventDefault();
+    console.log('submit')
+    console.log(event.target)
+    const body = {
+      username: event.target[0].value,
+      first_name: event.target[1].value,
+      last_name: event.target[2].value
+    }
+    console.log(body)
+    // signInUser(event.target[0].value);
+  })
+
+  column.append(username, firstName, lastName, buttons);
+  form.append(column);
+  columns.append(h1, form)
+  container.appendChild(columns);
 }
