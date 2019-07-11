@@ -11,7 +11,7 @@ class Element < ApplicationRecord
 
   def self.cache_all
     Rails.cache.fetch("elements/all", expires_in: 12.hours) do
-      Element.all.map do |element|
+      Element.all.sort_by{|element| element.atomicNumber}.map do |element|
         {
           id: element.id,
           name: element.name,
@@ -30,7 +30,7 @@ class Element < ApplicationRecord
   end
 
   def self.select_all(user_id)
-    Element.all.map do |element|
+    Element.all.sort_by{|element| element.atomicNumber}.map do |element|
       quiz_elements = element.user_quiz_elements
       classification = element.classification
       
