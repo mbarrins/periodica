@@ -367,12 +367,9 @@ function createNavbar() {
   ul.classList.add('navbar-nav', 'ml-auto')
 
   const li1 = document.createElement('li');
-  li1.classList.add('nav-item', 'active')
-  const a1 = document.createElement('a');
-  a1.href = '#'
-  a1.classList.add('nav-link');
-  a1.innerText = 'Home';
-  a1.addEventListener('click', (e) => {
+  li1.classList.add('nav-item', 'nav-link', 'active');
+  li1.innerText = 'Home';
+  li1.addEventListener('click', (e) => {
     getElements().then(elements => createLearnTable(elements));
   })
 
@@ -382,13 +379,9 @@ function createNavbar() {
 
 
   const item2 = document.createElement('li');
-  item2.classList.add('nav-item')
-
-  const a2 = document.createElement('a');
-  a2.href = '#'
-  a2.classList.add('nav-link');
-  a2.innerText = 'Test Elements';
-  a2.addEventListener('click', (e) => {
+  item2.classList.add('nav-item', 'nav-link')
+  item2.innerText = 'Test Elements';
+  item2.addEventListener('click', (e) => {
     getElements().then(elements => createSelectTable(elements));
   })
 
@@ -399,14 +392,9 @@ function createNavbar() {
   //   console.log(e.target)
   // })
   const item3 = document.createElement('li');
-  item3.textContent = 'Quiz Me!';
-  // item3
-
-  const a3 = document.createElement('a');
-  a3.href = '#';
-  a3.classList.add('nav-link');
-  a3.innerText = 'Quiz Me!';
-  a3.addEventListener('click', () => {
+  item3.classList.add('nav-item', 'nav-link');
+  item3.innerText = 'Quiz Me!';
+  item3.addEventListener('click', () => {
     createQuiz(USER_ID);
   })
 
@@ -417,10 +405,10 @@ function createNavbar() {
   //   console.log(e.target)
   // })
 
-  a1.append(span1)
-  li1.append(a1);
-  item2.append(a2);
-  item3.append(a3);
+  // a1.append(span1)
+  li1.append(span1);
+  // item2.append(a2);
+  // item3.append(a3);
   ul.append(li1, item2, item3)//, li2, item3, li4);
   navDiv.append(ul)
   nav.append(brand, navDiv)

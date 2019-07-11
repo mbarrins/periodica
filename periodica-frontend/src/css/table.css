@@ -30,6 +30,12 @@ nav {
   height: 8vh;
 }
 
+.nav-item {
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+}
+
 nav .navbar-nav li a {
   float: right;
   font-size: 20px;
@@ -239,6 +245,10 @@ left hand column */
 /* Media queries to change size of table
 small tablet portrait */
 @media (min-width: 600px) {
+  .container {
+    max-width: 80vw;
+    margin-top: 3rem;
+  }
   .periodic {
     height: 460px;
     margin-right: -2px;
@@ -268,6 +278,9 @@ small tablet portrait */
 
 /* tablet landscape or small laptop */
 @media (min-width: 800px) {
+  .container {
+    max-width: 80vw;
+  }
   .periodic {
     height: 540px;
   }
@@ -279,6 +292,10 @@ small tablet portrait */
 
 /* normal screen */
 @media (min-width: 992px) {
+  .container {
+    max-width: 80vw;
+    margin-top: 3rem;
+  }
   .periodic {
     height: 680px;
   }
