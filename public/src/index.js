@@ -929,7 +929,7 @@ function createUpdateUserDetails() {
       username: event.target[0].value,
       first_name: event.target[1].value,
       last_name: event.target[2].value,
-      last_name: event.target[3].value
+      no_of_ques: event.target[3].value
     }
     
     patchUser(currentUser.id, body)
