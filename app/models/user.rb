@@ -2,17 +2,17 @@ class User < ApplicationRecord
   has_many :user_quiz_elements
   has_many :elements, through: :user_quiz_elements
   has_many :user_questions
-  has_many :questions, through: :user_questions
+  has_many :subjects, through: :user_questions
   has_many :quizzes
 
   validates :username, uniqueness: true
 
   def quiz_questions
-    self.user_questions.exists? ? self.questions : Question.all
-  end
-
-  def quiz_question_types 
-    self.quiz_questions.map{|question| question.quiz_field}.uniq
+    if self.user_questions.exists?
+      Question.all.select{|question| self.subjects.include?(question.subject)}
+    else
+      Question.all
+    end
   end
 
   def quiz_elements
@@ -23,14 +23,14 @@ class User < ApplicationRecord
     element_ques = []
 
     questions = self.quiz_questions
-    question_fields = self.quiz_question_types
+    question_fields = self.subjects
     elements = self.elements_selection(no)
     question_selection = self.ques_selection(no)
 
     elements.each_with_index do |element, index|
       question_fields_selected = question_fields.sample(question_selection[index])
-      question_fields_selected.each do |quiz_field|
-        question = questions.select{|question| question.quiz_field == quiz_field}.sample
+      question_fields_selected.each do |subject|
+        question = questions.select{|question| question.subject == subject}.sample
         element_ques << [element, question]
       end
     end
