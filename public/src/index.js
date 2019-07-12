@@ -519,7 +519,7 @@ function addUserNav() {
   quizMenu1.textContent = 'Create New Quiz'
 
   quizMenu1.addEventListener('click', (e) => {
-    createQuiz(currentUser.id);
+    createQuiz(currentUser);
   })
 
   const quizMenu2 = document.createElement('a')
@@ -613,8 +613,8 @@ function addUserNav() {
   navDiv.append(navEnd)
 }
 
-function createQuiz(user_id) {
-  postQuiz({user_id: user_id, ques_no: 10})
+function createQuiz(user) {
+  postQuiz({user_id: user.id, ques_no: user.no_of_ques})
     .then(quiz => {
       getQuiz(quiz.id).then(quiz => displayQuiz(quiz))
     })
