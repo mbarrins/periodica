@@ -29,14 +29,6 @@ function getElements(user_id) {
   } 
 }
 
-function getElement(element_id, user_id) {
-  if (user_id){
-    return fetch(`${ELEMENTS_URL}/${element_id}?user_id=${user_id}`).then(resp => resp.json())
-  } else {
-    return fetch(`${ELEMENTS_URL}/${element_id}`).then(resp => resp.json())
-  }
-}
-
 function postUserElement(body) {
   return fetch(USER_QUIZ_ELEMENTS_URL, {
     method: 'POST',
@@ -58,7 +50,7 @@ function getQuizzes(user_id) {
   if (user_id) {
     return fetch(`${QUIZZES_URL}?user_id=${user_id}`).then(resp => resp.json())
   } else {
-    return fetch(QUIZZES_URL).then(resp => resp.json())
+    return [];
   }
 }
 
@@ -108,24 +100,18 @@ function getClassifications() {
 }
 
 function getUsers(username) {
-  if (username) {
-    return fetch(`${USERS_URL}?username=${username}`)
-      .then(resp => resp.json())
-  } else {
-    return fetch(`${USERS_URL}`)
-      .then(resp => resp.json())
-  }
+  return fetch(`${USERS_URL}?username=${username}`)
+    .then(resp => resp.json())
 }
 
-function signInUser(username) {
-  getUsers(username)
-    .then(returnedUser => {
-      if (returnedUser) {
-        logInUser(returnedUser);
-      } else {
-        displayErrorMessage('That username does not exist. Please check your details or click to Sign Up below.');
-      }
-    })
+function postUser(body) {
+  return fetch(USERS_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  }).then(resp => resp.json())
 }
 
 function patchUser(user_id, body) {
@@ -137,6 +123,18 @@ function patchUser(user_id, body) {
     body: JSON.stringify(body)
   })
     .then(resp => resp.json())
+}
+
+
+function signInUser(username) {
+  getUsers(username)
+    .then(returnedUser => {
+      if (returnedUser) {
+        logInUser(returnedUser);
+      } else {
+        displayErrorMessage('That username does not exist. Please check your details or click to Sign Up below.');
+      }
+    })
 }
 
 function displayErrorMessage(errorMessage){
@@ -161,16 +159,6 @@ function logInUser(returnedUser) {
   addUserNav();
 
   return currentUser;
-}
-
-function postUser(body) {
-  return fetch(USERS_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(body)
-  }).then(resp => resp.json())
 }
 
 function signUpUser(body) {
@@ -530,7 +518,7 @@ function addUserNav() {
 
   const userMenu1 = document.createElement('a')
   userMenu1.classList.add('navbar-item', 'has-text-black')
-  userMenu1.textContent = 'User Details'
+  userMenu1.textContent = 'User Settings'
 
   userMenu1.addEventListener('click', (e) => {
     createUpdateUserDetails();
@@ -753,7 +741,7 @@ function createLogIn() {
   const form = document.createElement('form');
   const column = document.createElement('column')
   const h1 = document.createElement('h1');
-  const username = createInput('username', 'Enter your username', 'Username');
+  const username = createInput('username', 'text', 'Enter your username', 'Username');
   const div = document.createElement('div')
 
   div.appendChild(createButton('submit', 'Sign In'))
@@ -783,7 +771,7 @@ function createLogIn() {
   container.appendChild(columns);
 }
 
-function createInput(name, placeholder, label_name, user_obj) {
+function createInput(name, type, placeholder, label_name, user_obj) {
   const field = document.createElement('div')
   const fieldLabel = document.createElement('div')
   const label = document.createElement('label')
@@ -804,7 +792,7 @@ function createInput(name, placeholder, label_name, user_obj) {
 
   input.className = 'input'
   input.placeholder = placeholder
-  input.type = 'text'
+  input.type = type
   input.id = name
   input.name = name
   input.required = true
@@ -885,9 +873,9 @@ function createSignUp() {
   const form = document.createElement('form');
   const column = document.createElement('column')
   const h1 = document.createElement('h1');
-  const username = createInput('username', 'Enter your username', 'Username');
-  const firstName = createInput('first_name', 'Enter your first name', 'First Name');
-  const lastName = createInput('last_name', 'Enter your last name', 'Last Name');
+  const username = createInput('username', 'text', 'Enter your username', 'Username');
+  const firstName = createInput('first_name', 'text', 'Enter your first name', 'First Name');
+  const lastName = createInput('last_name', 'text', 'Enter your last name', 'Last Name');
 
   const buttons = document.createElement('div')
   buttons.appendChild(createSubmitCancelGroup(createLogIn));
@@ -913,27 +901,35 @@ function createSignUp() {
 function createUpdateUserDetails() {
   const container = clearContainer();
 
-  const columns = document.createElement('div')
-  const form = document.createElement('form');
-  const column = document.createElement('column')
+  const div = document.createElement('div')
   const h1 = document.createElement('h1');
+  h1.textContent = 'User Settings';
   const p = document.createElement('p')
-  const username = createInput('username', 'Enter your username', 'Username', currentUser);
-  const firstName = createInput('first_name', 'Enter your first name', 'First Name', currentUser);
-  const lastName = createInput('last_name', 'Enter your last name', 'Last Name', currentUser);
-
-  const buttons = document.createElement('div')
-  buttons.appendChild(createSubmitCancelGroup(createUpdateUserDetails));
-
-  h1.textContent = 'User Details';
   p.textContent = 'To update your details, enter the changes below and click Submit.'
 
-  form.addEventListener('submit', () => {
+  const userDiv = document.createElement('div');
+  userDiv.className = 'box'
+
+  const userForm = document.createElement('form');
+
+  const userh3 = document.createElement('h3')
+  userh3.textContent = 'User Details'
+
+  const username = createInput('username', 'text', 'Enter your username', 'Username', currentUser);
+  const firstName = createInput('first_name', 'text', 'Enter your first name', 'First Name', currentUser);
+  const lastName = createInput('last_name', 'text', 'Enter your last name', 'Last Name', currentUser);
+  const noQues = createInput('no_of_ques', 'text', 'Enter the number of questions to create for each quiz', 'Number of questions', currentUser);
+
+  const userButtons = document.createElement('div')
+  userButtons.appendChild(createSubmitCancelGroup(createUpdateUserDetails));
+
+  userForm.addEventListener('submit', () => {
     event.preventDefault();
     const body = {
       username: event.target[0].value,
       first_name: event.target[1].value,
-      last_name: event.target[2].value
+      last_name: event.target[2].value,
+      last_name: event.target[3].value
     }
     
     patchUser(currentUser.id, body)
@@ -943,8 +939,38 @@ function createUpdateUserDetails() {
       })
   })
 
-  column.append(username, firstName, lastName, buttons);
-  form.append(column);
-  columns.append(h1, p, form)
-  container.appendChild(columns);
+  userForm.append(userh3, username, firstName, lastName, noQues, userButtons);
+  userDiv.append(userForm);
+
+  const quesDiv = document.createElement('div');
+  quesDiv.className = 'box'
+
+  const quesForm = document.createElement('form');
+
+  const quesh3 = document.createElement('h3')
+  quesh3.textContent = 'Tick the types of element details you would like to be tested on'
+
+  //CREATE TICKBOXES FOR QUESTION TYPES
+
+  const quesButtons = document.createElement('div')
+  quesButtons.appendChild(createSubmitCancelGroup(createUpdateUserDetails));
+
+  quesForm.addEventListener('submit', () => {
+    event.preventDefault();
+    const body = {
+      no_of_ques: event.target[0].value
+    }
+    
+    patchUser(currentUser.id, body)
+      .then(returnedUser => {
+        currentUser = returnedUser
+        createUpdateUserDetails();
+      })
+  })
+
+  quesForm.append(quesh3, quesButtons);
+  quesDiv.append(quesForm);
+  
+  div.append(h1, p, userDiv, quesDiv)
+  container.appendChild(div);
 }
