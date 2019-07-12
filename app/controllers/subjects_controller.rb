@@ -1,4 +1,15 @@
 class SubjectsController < ApplicationController
+
+  def show
+    if params[:user_id]
+      @subject= Subject.find(params[:id]).with_user(params[:user_id])
+    else
+      @subject = Subject.find(params[:id])
+    end
+
+    render json: @subject
+  end
+
   # GET /subjects
   def index
     if params[:user_id]

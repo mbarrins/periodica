@@ -2,6 +2,24 @@ class Subject < ApplicationRecord
   has_many :user_question
   has_many :question
 
+  def with_user(user_id)
+    user = User.find(user_id)
+    user_questions = user.user_questions
+
+      hash = {
+        id: self.id,
+        field: self.field,
+        name: self.name,
+        selected: user_questions.map{|uq| uq.subject}.include?(self)
+      }
+
+      if user_questions.find_by(subject: self)
+        hash[:user_question_id] = user_questions.find_by(subject: self).id
+      end
+      
+      hash
+  end
+
   def self.all_with_user(user_id)
     user = User.find(user_id)
     user_questions = user.user_questions

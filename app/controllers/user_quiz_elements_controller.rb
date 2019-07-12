@@ -1,10 +1,6 @@
 class UserQuizElementsController < ApplicationController
-  before_action :set_user_element, only: [:show, :destroy]
-
-  def show
-    render json: @user_quiz_element
-  end
-
+  before_action :set_user_element, only: [:destroy]
+  
   # POST /user_quiz_elements
   def create
     @user_quiz_element = UserQuizElement.new(user_quiz_element_params)

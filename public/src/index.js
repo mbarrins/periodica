@@ -960,6 +960,7 @@ function createUpdateUserDetails() {
 function createUserDetailsForm() {
   const userDiv = document.createElement('div');
   userDiv.className = 'box'
+  userDiv.id = 'user-details'
 
   const userForm = document.createElement('form');
 
@@ -997,8 +998,16 @@ function createUserDetailsForm() {
 }
 
 function createQuesTypeForm() {
-  const quesDiv = document.createElement('div');
-  quesDiv.className = 'box'
+  let quesDiv = document.querySelector('#ques-types')
+  if (quesDiv) {
+    while (quesDiv.lastChild) {
+      quesDiv.removeChild(quesDiv.lastChild)
+    }
+  } else {
+    quesDiv = document.createElement('div');
+    quesDiv.className = 'box'
+    quesDiv.id = 'ques-types'
+  }
 
   const quesForm = document.createElement('form');
 
@@ -1019,7 +1028,10 @@ function createQuesTypeForm() {
         input.value = type.id
         input.checked = type.selected
         input.addEventListener('change', () => {
-          type = selectUserQuestion(input, type, currentUser)
+          selectUserQuestion(input, type, currentUser)
+            .then(response => {
+              createQuesTypeForm();
+            })
         })
 
         text = document.createTextNode(`  ${type.name}`)
@@ -1028,31 +1040,21 @@ function createQuesTypeForm() {
         quesForm.appendChild(div, document.createElement('br'));
     })
   })
+
   quesDiv.append(quesForm);
 
   return quesDiv;
 }
 
 function selectUserQuestion(input, type, user) {
-  // debugger
   if (type.selected) {
-    console.log('DELETE')
-    deleteUserQuestion(type.user_question_id)
+    return deleteUserQuestion(type.user_question_id)
       .then(response => {
-        if (response.message)
-          delete type.user_question_id
-          type.selected = false
-          input.checked = type.selected
-        return type;
+        if (!response.message) {
+          displayErrorMessage(response.error.join('\r\n'));
+        }
       })
   } else {
-    console.log({user_id: user.id, subject_id: type.id})
     return postUserQuestion({user_id: user.id, subject_id: type.id})
-      .then(userQuestion => {
-        type.user_question_id = userQuestion.id
-        type.selected = true
-        input.checked = type.selected
-        return type;
-      })
   }
 } 
