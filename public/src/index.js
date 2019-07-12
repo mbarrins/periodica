@@ -4,13 +4,17 @@ const QUIZZES_URL = 'http://localhost:3000/quizzes';
 const QUIZ_QUESTIONS_URL = 'http://localhost:3000/quiz_questions';
 const CLASSIFICATIONS_URL = 'http://localhost:3000/classifications';
 const USERS_URL = 'http://localhost:3000/users';
+const SUBJECTS_URL = 'http://localhost:3000/subjects';
+const USER_QUESTIONS_URL = 'http://localhost:3000/user_questions';
 let currentUser;
 const GROUPS = [];
+const QUESTION_TYPES = [];
 
 window.addEventListener('DOMContentLoaded', () => {
   createNavbar();
   createLogIn();
   getClassifications();
+  getQuestionTypes();
 })
 
 function clearContainer() {
@@ -125,6 +129,35 @@ function patchUser(user_id, body) {
     .then(resp => resp.json())
 }
 
+function getQuestionTypes(user_id){
+  if (user_id) {
+    return fetch(`${SUBJECTS_URL}?user_id=${user_id}`).then(resp => resp.json())
+  } else {
+    return fetch(`${SUBJECTS_URL}`)
+      .then(resp => resp.json())
+      .then(questionTypes => questionTypes.forEach((type) => {
+        QUESTION_TYPES.push(type);
+        QUESTION_TYPES.sort();
+      }))
+  }
+}
+
+function postUserQuestion(body) {
+  return fetch(USER_QUESTIONS_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    },
+    body: JSON.stringify(body)
+  }).then(resp => resp.json())
+}
+
+function deleteUserQuestion(user_question_id) {
+  return fetch(`${USER_QUESTIONS_URL}/${user_question_id}`, {
+    method: 'DELETE'
+  }).then(resp => resp.json());
+}
 
 function signInUser(username) {
   getUsers(username)
@@ -907,6 +940,24 @@ function createUpdateUserDetails() {
   const p = document.createElement('p')
   p.textContent = 'To update your details, enter the changes below and click Submit.'
 
+  const columns = document.createElement('div')
+  columns.className = 'columns'
+
+  div.append(h1, p, columns)
+
+  const userColumn = document.createElement('div')
+  userColumn.className = 'column'
+  userColumn.append(createUserDetailsForm());
+
+  const quesColumn = document.createElement('div')
+  quesColumn.classList.add('column', 'is-two-fifths')
+  quesColumn.append(createQuesTypeForm());
+
+  columns.append(userColumn, quesColumn)
+  container.appendChild(div);
+}
+
+function createUserDetailsForm() {
   const userDiv = document.createElement('div');
   userDiv.className = 'box'
 
@@ -942,35 +993,66 @@ function createUpdateUserDetails() {
   userForm.append(userh3, username, firstName, lastName, noQues, userButtons);
   userDiv.append(userForm);
 
+  return userDiv;
+}
+
+function createQuesTypeForm() {
   const quesDiv = document.createElement('div');
   quesDiv.className = 'box'
 
   const quesForm = document.createElement('form');
 
   const quesh3 = document.createElement('h3')
-  quesh3.textContent = 'Tick the types of element details you would like to be tested on'
+  quesh3.textContent = 'Tick the types of quiz questions to include'
+  quesForm.append(quesh3);
 
-  //CREATE TICKBOXES FOR QUESTION TYPES
+  getQuestionTypes(currentUser.id)
+    .then(types => {
+      types.forEach((type) => {
+        const div = document.createElement('div')
+        div.className = 'field'
+        const label = document.createElement('label')
+        label.className = 'checkbox'
+        const input = document.createElement('input')
+        input.type = 'checkbox'
+        input.name = type.name
+        input.value = type.id
+        input.checked = type.selected
+        input.addEventListener('change', () => {
+          type = selectUserQuestion(input, type, currentUser)
+        })
 
-  const quesButtons = document.createElement('div')
-  quesButtons.appendChild(createSubmitCancelGroup(createUpdateUserDetails));
-
-  quesForm.addEventListener('submit', () => {
-    event.preventDefault();
-    const body = {
-      no_of_ques: event.target[0].value
-    }
-    
-    patchUser(currentUser.id, body)
-      .then(returnedUser => {
-        currentUser = returnedUser
-        createUpdateUserDetails();
-      })
+        text = document.createTextNode(`  ${type.name}`)
+        label.append(input, text);
+        div.appendChild(label)
+        quesForm.appendChild(div, document.createElement('br'));
+    })
   })
-
-  quesForm.append(quesh3, quesButtons);
   quesDiv.append(quesForm);
-  
-  div.append(h1, p, userDiv, quesDiv)
-  container.appendChild(div);
+
+  return quesDiv;
 }
+
+function selectUserQuestion(input, type, user) {
+  // debugger
+  if (type.selected) {
+    console.log('DELETE')
+    deleteUserQuestion(type.user_question_id)
+      .then(response => {
+        if (response.message)
+          delete type.user_question_id
+          type.selected = false
+          input.checked = type.selected
+        return type;
+      })
+  } else {
+    console.log({user_id: user.id, subject_id: type.id})
+    return postUserQuestion({user_id: user.id, subject_id: type.id})
+      .then(userQuestion => {
+        type.user_question_id = userQuestion.id
+        type.selected = true
+        input.checked = type.selected
+        return type;
+      })
+  }
+} 

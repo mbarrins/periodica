@@ -1,5 +1,9 @@
 class UserQuizElementsController < ApplicationController
-  before_action :set_user_elemetn, only: [:destroy]
+  before_action :set_user_element, only: [:show, :destroy]
+
+  def show
+    render json: @user_quiz_element
+  end
 
   # POST /user_quiz_elements
   def create
@@ -24,7 +28,7 @@ class UserQuizElementsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_user_elemetn
+    def set_user_element
       @user_quiz_element = UserQuizElement.find(params[:id])
     end
 
