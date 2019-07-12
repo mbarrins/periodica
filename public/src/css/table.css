@@ -29,6 +29,7 @@ body {
 }
 
 .modal-card {
+  width: 40vw;
   border-radius: 5px;
   margin-top: 12vh;
   z-index: 5;
@@ -130,13 +131,7 @@ body {
   display: none;
 }
 
-.at_num,
-.at_details {
-  position: absolute;
-  /* font-size: 2rem; */
-  color: rgba(255,255,255,0.5);
-  opacity: 0;
-}
+
 
 .at_num {
   top: 4px;
@@ -219,6 +214,12 @@ body {
 
 /* Media queries to change size of table
 small tablet portrait */
+@media (min-width: 200px) {
+  .at_num, .at_details {
+    display: none;
+  }
+}
+
 @media (min-width: 600px) {
   .container {
     max-width: 80vw;
@@ -236,8 +237,9 @@ small tablet portrait */
   
   .at_num,
   .at_details {
-    font-size: 0.7vw;
-    opacity: 1;
+    display: none;
+    /* font-size: 0.7vw;
+    opacity: 1; */
   }
 
   .symbol {
@@ -258,6 +260,10 @@ small tablet portrait */
   }
   .periodic {
     height: 85vh;
+  }
+
+  .at_num, .at_details {
+    display: none;
   }
 
   .symbol {
@@ -298,11 +304,18 @@ small tablet portrait */
     height: 85vh;
   }
   
-  .at_num {
+  .at_num, .at_details {
+    display: block;
     font-size: 0.7vw;
+    position: absolute;
+    /* font-size: 2rem; */
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
   }
 
+
   .at_details {
+    display: block;
     font-size: 0.6vw;
   }
 

@@ -237,13 +237,21 @@ function createElementDetails(element) {
 
   const aweight = document.createElement('li');
   aweight.classList.add('list-group-item');
-  aweight.innerText = `Atomic Weight: ${element.atomicWeight}`
+  aweight.innerText = `Atomic Weight: ${element.atomicWeight} AMU`
 
     const meltpoint = document.createElement('li');
     meltpoint.classList.add('list-group-item');
-    meltpoint.innerText = `Melting Point: ${element.meltingPoint}`
+    meltpoint.innerText = `Melting Point: ${element.meltingPoint} Kelvin`
 
-  properties.append(anum, aweight, meltpoint)
+    const boilpoint = document.createElement('li');
+    boilpoint.classList.add('list-group-item');
+    boilpoint.innerText = `Boiling Point: ${element.boilingPoint} Kelvin`
+
+    const electronegativity = document.createElement('li');
+    electronegativity.classList.add('list-group-item');
+    electronegativity.innerText = `Electronegativity: ${element.electronegativity}`
+
+  properties.append(anum, aweight, meltpoint, boilpoint, electronegativity);
   div.append(properties, aboutSection, details);
 
   return div;
