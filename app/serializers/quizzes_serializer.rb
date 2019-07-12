@@ -24,7 +24,7 @@ class QuizzesSerializer < ActiveModel::Serializer
         question_string: question.question_string,
         correct_answer: question.correct_answer,
         question_for: question.element.name,
-        question_on: question.question.quiz_field 
+        question_on: question.question.subject.field
       }
 
       if question.user_answer

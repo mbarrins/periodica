@@ -4,13 +4,17 @@ const QUIZZES_URL = 'http://localhost:3000/quizzes';
 const QUIZ_QUESTIONS_URL = 'http://localhost:3000/quiz_questions';
 const CLASSIFICATIONS_URL = 'http://localhost:3000/classifications';
 const USERS_URL = 'http://localhost:3000/users';
+const SUBJECTS_URL = 'http://localhost:3000/subjects';
+const USER_QUESTIONS_URL = 'http://localhost:3000/user_questions';
 let currentUser;
 const GROUPS = [];
+const QUESTION_TYPES = [];
 
 window.addEventListener('DOMContentLoaded', () => {
   createNavbar();
   createLogIn();
   getClassifications();
+  getQuestionTypes();
 })
 
 function clearContainer() {
@@ -27,14 +31,6 @@ function getElements(user_id) {
   } else {
     return fetch(`${ELEMENTS_URL}`).then(resp => resp.json())
   } 
-}
-
-function getElement(element_id, user_id) {
-  if (user_id){
-    return fetch(`${ELEMENTS_URL}/${element_id}?user_id=${user_id}`).then(resp => resp.json())
-  } else {
-    return fetch(`${ELEMENTS_URL}/${element_id}`).then(resp => resp.json())
-  }
 }
 
 function postUserElement(body) {
@@ -58,7 +54,7 @@ function getQuizzes(user_id) {
   if (user_id) {
     return fetch(`${QUIZZES_URL}?user_id=${user_id}`).then(resp => resp.json())
   } else {
-    return fetch(QUIZZES_URL).then(resp => resp.json())
+    return [];
   }
 }
 
@@ -108,24 +104,18 @@ function getClassifications() {
 }
 
 function getUsers(username) {
-  if (username) {
-    return fetch(`${USERS_URL}?username=${username}`)
-      .then(resp => resp.json())
-  } else {
-    return fetch(`${USERS_URL}`)
-      .then(resp => resp.json())
-  }
+  return fetch(`${USERS_URL}?username=${username}`)
+    .then(resp => resp.json())
 }
 
-function signInUser(username) {
-  getUsers(username)
-    .then(returnedUser => {
-      if (returnedUser) {
-        logInUser(returnedUser);
-      } else {
-        displayErrorMessage('That username does not exist. Please check your details or click to Sign Up below.');
-      }
-    })
+function postUser(body) {
+  return fetch(USERS_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  }).then(resp => resp.json())
 }
 
 function patchUser(user_id, body) {
@@ -137,6 +127,47 @@ function patchUser(user_id, body) {
     body: JSON.stringify(body)
   })
     .then(resp => resp.json())
+}
+
+function getQuestionTypes(user_id){
+  if (user_id) {
+    return fetch(`${SUBJECTS_URL}?user_id=${user_id}`).then(resp => resp.json())
+  } else {
+    return fetch(`${SUBJECTS_URL}`)
+      .then(resp => resp.json())
+      .then(questionTypes => questionTypes.forEach((type) => {
+        QUESTION_TYPES.push(type);
+        QUESTION_TYPES.sort();
+      }))
+  }
+}
+
+function postUserQuestion(body) {
+  return fetch(USER_QUESTIONS_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    },
+    body: JSON.stringify(body)
+  }).then(resp => resp.json())
+}
+
+function deleteUserQuestion(user_question_id) {
+  return fetch(`${USER_QUESTIONS_URL}/${user_question_id}`, {
+    method: 'DELETE'
+  }).then(resp => resp.json());
+}
+
+function signInUser(username) {
+  getUsers(username)
+    .then(returnedUser => {
+      if (returnedUser) {
+        logInUser(returnedUser);
+      } else {
+        displayErrorMessage('That username does not exist. Please check your details or click to Sign Up below.');
+      }
+    })
 }
 
 function displayErrorMessage(errorMessage){
@@ -161,16 +192,6 @@ function logInUser(returnedUser) {
   addUserNav();
 
   return currentUser;
-}
-
-function postUser(body) {
-  return fetch(USERS_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(body)
-  }).then(resp => resp.json())
 }
 
 function signUpUser(body) {
@@ -545,7 +566,7 @@ function addUserNav() {
 
   const userMenu1 = document.createElement('a')
   userMenu1.classList.add('navbar-item', 'has-text-black')
-  userMenu1.textContent = 'User Details'
+  userMenu1.textContent = 'User Settings'
 
   userMenu1.addEventListener('click', (e) => {
     createUpdateUserDetails();
@@ -768,7 +789,7 @@ function createLogIn() {
   const form = document.createElement('form');
   const column = document.createElement('column')
   const h1 = document.createElement('h1');
-  const username = createInput('username', 'Enter your username', 'Username');
+  const username = createInput('username', 'text', 'Enter your username', 'Username');
   const div = document.createElement('div')
 
   div.appendChild(createButton('submit', 'Sign In'))
@@ -798,7 +819,7 @@ function createLogIn() {
   container.appendChild(columns);
 }
 
-function createInput(name, placeholder, label_name, user_obj) {
+function createInput(name, type, placeholder, label_name, user_obj) {
   const field = document.createElement('div')
   const fieldLabel = document.createElement('div')
   const label = document.createElement('label')
@@ -819,7 +840,7 @@ function createInput(name, placeholder, label_name, user_obj) {
 
   input.className = 'input'
   input.placeholder = placeholder
-  input.type = 'text'
+  input.type = type
   input.id = name
   input.name = name
   input.required = true
@@ -900,9 +921,9 @@ function createSignUp() {
   const form = document.createElement('form');
   const column = document.createElement('column')
   const h1 = document.createElement('h1');
-  const username = createInput('username', 'Enter your username', 'Username');
-  const firstName = createInput('first_name', 'Enter your first name', 'First Name');
-  const lastName = createInput('last_name', 'Enter your last name', 'Last Name');
+  const username = createInput('username', 'text', 'Enter your username', 'Username');
+  const firstName = createInput('first_name', 'text', 'Enter your first name', 'First Name');
+  const lastName = createInput('last_name', 'text', 'Enter your last name', 'Last Name');
 
   const buttons = document.createElement('div')
   buttons.appendChild(createSubmitCancelGroup(createLogIn));
@@ -928,27 +949,54 @@ function createSignUp() {
 function createUpdateUserDetails() {
   const container = clearContainer();
 
-  const columns = document.createElement('div')
-  const form = document.createElement('form');
-  const column = document.createElement('column')
+  const div = document.createElement('div')
   const h1 = document.createElement('h1');
+  h1.textContent = 'User Settings';
   const p = document.createElement('p')
-  const username = createInput('username', 'Enter your username', 'Username', currentUser);
-  const firstName = createInput('first_name', 'Enter your first name', 'First Name', currentUser);
-  const lastName = createInput('last_name', 'Enter your last name', 'Last Name', currentUser);
-
-  const buttons = document.createElement('div')
-  buttons.appendChild(createSubmitCancelGroup(createUpdateUserDetails));
-
-  h1.textContent = 'User Details';
   p.textContent = 'To update your details, enter the changes below and click Submit.'
 
-  form.addEventListener('submit', () => {
+  const columns = document.createElement('div')
+  columns.className = 'columns'
+
+  div.append(h1, p, columns)
+
+  const userColumn = document.createElement('div')
+  userColumn.className = 'column'
+  userColumn.append(createUserDetailsForm());
+
+  const quesColumn = document.createElement('div')
+  quesColumn.classList.add('column', 'is-two-fifths')
+  quesColumn.append(createQuesTypeForm());
+
+  columns.append(userColumn, quesColumn)
+  container.appendChild(div);
+}
+
+function createUserDetailsForm() {
+  const userDiv = document.createElement('div');
+  userDiv.className = 'box'
+  userDiv.id = 'user-details'
+
+  const userForm = document.createElement('form');
+
+  const userh3 = document.createElement('h3')
+  userh3.textContent = 'User Details'
+
+  const username = createInput('username', 'text', 'Enter your username', 'Username', currentUser);
+  const firstName = createInput('first_name', 'text', 'Enter your first name', 'First Name', currentUser);
+  const lastName = createInput('last_name', 'text', 'Enter your last name', 'Last Name', currentUser);
+  const noQues = createInput('no_of_ques', 'text', 'Enter the number of questions to create for each quiz', 'Number of questions', currentUser);
+
+  const userButtons = document.createElement('div')
+  userButtons.appendChild(createSubmitCancelGroup(createUpdateUserDetails));
+
+  userForm.addEventListener('submit', () => {
     event.preventDefault();
     const body = {
       username: event.target[0].value,
       first_name: event.target[1].value,
-      last_name: event.target[2].value
+      last_name: event.target[2].value,
+      no_of_ques: event.target[3].value
     }
     
     patchUser(currentUser.id, body)
@@ -958,8 +1006,70 @@ function createUpdateUserDetails() {
       })
   })
 
-  column.append(username, firstName, lastName, buttons);
-  form.append(column);
-  columns.append(h1, p, form)
-  container.appendChild(columns);
+  userForm.append(userh3, username, firstName, lastName, noQues, userButtons);
+  userDiv.append(userForm);
+
+  return userDiv;
 }
+
+function createQuesTypeForm() {
+  let quesDiv = document.querySelector('#ques-types')
+  if (quesDiv) {
+    while (quesDiv.lastChild) {
+      quesDiv.removeChild(quesDiv.lastChild)
+    }
+  } else {
+    quesDiv = document.createElement('div');
+    quesDiv.className = 'box'
+    quesDiv.id = 'ques-types'
+  }
+
+  const quesForm = document.createElement('form');
+
+  const quesh3 = document.createElement('h3')
+  quesh3.textContent = 'Tick the types of quiz questions to include'
+  quesForm.append(quesh3);
+
+  getQuestionTypes(currentUser.id)
+    .then(types => {
+      types.forEach((type) => {
+        const div = document.createElement('div')
+        div.className = 'field'
+        const label = document.createElement('label')
+        label.className = 'checkbox'
+        const input = document.createElement('input')
+        input.type = 'checkbox'
+        input.name = type.name
+        input.value = type.id
+        input.checked = type.selected
+        input.addEventListener('change', () => {
+          selectUserQuestion(input, type, currentUser)
+            .then(response => {
+              createQuesTypeForm();
+            })
+        })
+
+        text = document.createTextNode(`  ${type.name}`)
+        label.append(input, text);
+        div.appendChild(label)
+        quesForm.appendChild(div, document.createElement('br'));
+    })
+  })
+
+  quesDiv.append(quesForm);
+
+  return quesDiv;
+}
+
+function selectUserQuestion(input, type, user) {
+  if (type.selected) {
+    return deleteUserQuestion(type.user_question_id)
+      .then(response => {
+        if (!response.message) {
+          displayErrorMessage(response.error.join('\r\n'));
+        }
+      })
+  } else {
+    return postUserQuestion({user_id: user.id, subject_id: type.id})
+  }
+} 

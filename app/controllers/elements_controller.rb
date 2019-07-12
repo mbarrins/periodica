@@ -10,7 +10,6 @@ class ElementsController < ApplicationController
     end
 
     render json: @elements
-
   end
 
   # GET /elements/1
@@ -19,8 +18,10 @@ class ElementsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_element
-      @element = Element.find(params[:id])
-    end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_element
+    @element = Element.find(params[:id])
+  end
+
 end

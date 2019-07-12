@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update]
+  before_action :set_user, only: [:update]
 
   # GET /users
   def index
@@ -11,11 +11,6 @@ class UsersController < ApplicationController
 
     render json: @users
 
-  end
-
-  # GET /users/1
-  def show
-    render json: @user
   end
 
   # POST /users
@@ -43,6 +38,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:username, :first_name, :last_name)
+      params.require(:user).permit(:username, :first_name, :last_name, :no_of_ques)
     end
 end

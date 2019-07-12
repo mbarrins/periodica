@@ -53,12 +53,20 @@ end
 #     # puts elements.inspect
 # end
 
+subject = [
+    {field: 'atomicNumber', name: 'Atomic Number'},
+    {field: 'classification', name: 'Group'},
+    {field: 'symbol', name: 'Symbol'}
+]
+
+subject.each{|subject| Subject.create(subject)}
+
 questions = [
-    {question: 'What is the atomic number for XXFIELDXX?', quiz_field: 'atomicNumber', question_field: 'name', answer_field: 'atomicNumber'},
-    {question: 'Which element has an atomic number of XXFIELDXX?', quiz_field: 'atomicNumber', question_field: 'atomicNumber', answer_field: 'name'},
-    {question: 'Which element has the symbol: XXFIELDXX?', quiz_field: 'symbol', question_field: 'symbol', answer_field: 'name'},
-    {question: 'What is the symbol for XXFIELDXX?', quiz_field: 'symbol', question_field: 'name', answer_field: 'symbol'},
-    {question: "Which group does XXFIELDXX belong to?", quiz_field: 'classification', question_field: 'name', answer_field: 'classification_name'}
+    {question: 'What is the atomic number for XXFIELDXX?', subject: Subject.find_by(field: 'atomicNumber'), question_field: 'name', answer_field: 'atomicNumber'},
+    {question: 'Which element has an atomic number of XXFIELDXX?', subject: Subject.find_by(field: 'atomicNumber'), question_field: 'atomicNumber', answer_field: 'name'},
+    {question: 'Which element has the symbol: XXFIELDXX?', subject: Subject.find_by(field: 'symbol'), question_field: 'symbol', answer_field: 'name'},
+    {question: 'What is the symbol for XXFIELDXX?', subject: Subject.find_by(field: 'symbol'), question_field: 'name', answer_field: 'symbol'},
+    {question: "Which group does XXFIELDXX belong to?", subject: Subject.find_by(field: 'classification'), question_field: 'name', answer_field: 'classification_name'}
 ]
 
 questions.each{|question| Question.create(question)}
