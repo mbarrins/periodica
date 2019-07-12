@@ -15,6 +15,10 @@ class User < ApplicationRecord
     end
   end
 
+  def subject_types
+    self.subjects.empty? ? Subject.all : self.subjects
+  end
+
   def quiz_elements
     self.user_quiz_elements.exists? ? self.elements : Element.all
   end
@@ -23,7 +27,7 @@ class User < ApplicationRecord
     element_ques = []
 
     questions = self.quiz_questions
-    question_fields = self.subjects
+    question_fields = self.subject_types
     elements = self.elements_selection(no)
     question_selection = self.ques_selection(no)
 
