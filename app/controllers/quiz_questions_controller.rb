@@ -1,21 +1,5 @@
 class QuizQuestionsController < ApplicationController
-  before_action :set_history, only: [:show, :update, :destroy]
-
-  # GET /quiz_questions
-  def index
-    if params[:quiz_id]
-      @quiz_questions = QuizQuestion.where(quiz_id: params[:quiz_id])
-    else
-      @quiz_questions = QuizQuestion.all
-    end
-
-    render json: @quiz_questions, each_serializer: QuizQuestionsSerializer
-  end
-
-  # GET /quiz_questions/1
-  def show
-    render json: @quiz_question, serializer: QuizQuestionsSerializer
-  end
+  before_action :set_question, only: [:update]
 
   # PATCH/PUT /quiz_questions/1
   def update
@@ -28,7 +12,7 @@ class QuizQuestionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_history
+    def set_question
       @quiz_question = QuizQuestion.find(params[:id])
     end
 
