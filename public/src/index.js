@@ -1,4 +1,4 @@
-const BASE_URL = 'https://http://localhost:3000'
+const BASE_URL = 'https://periodica-project.herokuapp.com'
 const ELEMENTS_URL = `${BASE_URL}/elements`;
 const USER_QUIZ_ELEMENTS_URL = `${BASE_URL}/user_quiz_elements`;
 const QUIZZES_URL = `${BASE_URL}/quizzes`;
