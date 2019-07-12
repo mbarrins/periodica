@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :elements, only: [:show, :index]
+  resources :elements, only: [:index]
   resources :classifications, only: [:index]
   resources :quiz_questions
   resources :user_quiz_elements
