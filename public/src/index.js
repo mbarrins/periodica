@@ -282,20 +282,12 @@ function showElementDetails(e, element) {
 
   const div = createElementDetails(element);
 
- 
-  if (element.imgurl != null) {
-    cardBody.append(div);
-    imageCard.append(image);
-    header.append(elementName, close);
-    card.append(header, imageCard, cardBody);
-    modal.appendChild(card);
-    body.appendChild(modal);
-  } else {
-    cardBody.append(div);
-    imageCard.append(image);
-    header.append(elementName, close);
-    card.append(header, cardBody);
-  }
+  cardBody.append(div);
+  imageCard.append(image);
+  header.append(elementName, close);
+  card.append(header, imageCard, cardBody);
+  modal.appendChild(card);
+  body.appendChild(modal);
 
   // // When the user clicks on <span> (x), remove the modal
   close.onclick = function () {
