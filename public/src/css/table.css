@@ -29,7 +29,32 @@ body {
 }
 
 .modal-card {
-  margin-top: 20vh;
+  border-radius: 5px;
+  margin-top: 12vh;
+  z-index: 5;
+}
+
+.image-card {
+  border-radius: 5px;
+  padding: 20px;
+  z-index: 0;
+}
+
+.element-image:hover {
+  cursor: pointer;
+  transform: scale(0.96);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.element-image {
+  border-image: linear-gradient(rgba(160, 168, 255, 0.5), rgba(180, 180, 255, 0.5)) 27;
+  border-radius: 25px;
+  max-height: 40vh;
+  padding: 1px;
+  object-fit: cover;
+  z-index: 10;
+  box-shadow: 0 6px 20px 0 rgba(100, 100, 100, 0.5);
+  transition: 0.45s;
 }
 
 .list-group {

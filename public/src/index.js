@@ -239,7 +239,11 @@ function createElementDetails(element) {
   aweight.classList.add('list-group-item');
   aweight.innerText = `Atomic Weight: ${element.atomicWeight}`
 
-  properties.append(anum, aweight)
+    const meltpoint = document.createElement('li');
+    meltpoint.classList.add('list-group-item');
+    meltpoint.innerText = `Melting Point: ${element.meltingPoint}`
+
+  properties.append(anum, aweight, meltpoint)
   div.append(properties, aboutSection, details);
 
   return div;
@@ -263,8 +267,11 @@ function showElementDetails(e, element) {
   elementName.classList.add('modal-card-title');
   elementName.innerText = element.name;
 
+  const imageCard = document.createElement('div');
+  imageCard.classList.add('card', 'image-card');
+
   const image = document.createElement('img');
-  image.classList.add('modal-card-image');
+  image.classList.add('card-image-top', 'element-image');
   image.src = element.imgurl;
 
   const close = document.createElement('button');
@@ -275,12 +282,20 @@ function showElementDetails(e, element) {
 
   const div = createElementDetails(element);
 
-  cardBody.append(div);
-  header.append(elementName, close);
-  card.append(header, image, cardBody);
-  modal.appendChild(card);
-
-  body.appendChild(modal);
+ 
+  if (element.imgurl != null) {
+    cardBody.append(div);
+    imageCard.append(image);
+    header.append(elementName, close);
+    card.append(header, imageCard, cardBody);
+    modal.appendChild(card);
+    body.appendChild(modal);
+  } else {
+    cardBody.append(div);
+    imageCard.append(image);
+    header.append(elementName, close);
+    card.append(header, cardBody);
+  }
 
   // // When the user clicks on <span> (x), remove the modal
   close.onclick = function () {

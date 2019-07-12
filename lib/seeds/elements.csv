@@ -2,87 +2,87 @@
 Hydrogen,H,1,1.00794,Alkali Metals,14.01,20.28,2.2,Hydrogen is the lightest element in the periodic table and it constitutes roughly 75% of all baryonic mass in the observable universe making it the most abundant substance that we know of. It is what non-remnant stars use as fuel to keep the fusion reactions within their cores going for billions of years.,https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hydrogen_discharge_tube.jpg/1920px-Hydrogen_discharge_tube.jpg
 Helium,He,2,4.002602,Noble Gases,,4.22,,"Helium is a colorless, odorless, tasteless, non-toxic, inert and monatomic gas, the first in the group of noble gases. It is the second lightest of all elements and has the lowest boiling point. It is the second most abundant element in the observable universe making its mass more than 12 times the mass of all the heavier elements combined.",https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Helium_discharge_tube.jpg/1920px-Helium_discharge_tube.jpg
 Lithium,Li,3,6.941,Alkali Metals,453.69,1560,0.98,"Lithium is a silvery-white alkali metal, and under standard conditions, it is the lightest metal and the lights amongst the solid elements. Like all Alkali Metals, it is highly reactive and flammable and it must be stored in mineral oil.",https://www.worldatlas.com/r/w728-h425-c728x425/upload/29/a9/cd/limetal.jpg
-Beryllium,Be,4,9.012182,Alkaline Earth Metals,1560,2742,1.57,,https://www.uewhealth.com/wp-content/uploads/2017/05/beryllium.jpg
-Boron,B,5,10.8111,Metalloids,2349,4200,2.04,,https://upload.wikimedia.org/wikipedia/commons/1/19/Boron_R105.jpg
-Carbon,C,6,12.0107,Other Non-Metals,3800,4300,2.55,,
-Nitrogen,N,7,14.00672,Other Non-Metals,63.15,77.36,3.04,,
-Oxygen,O,8,15.9994,Other Non-Metals,54.36,90.2,3.44,,
-Fluorine,F,9,18.9984032,Halogens,53.53,85.03,3.98,,
-Neon,Ne,10,20.1797,Noble Gases,24.56,27.07,,,
-Sodium,Na,11,22.98977,Alkali Metals,370.87,1156,0.93,,
-Magnesium,Mg,12,24.305,Alkaline Earth Metals,923,1363,1.31,,
-Aluminum,Al,13,26.981,Post-Transition Metals,933.47,2792,1.61,,
-Silicon,Si,14,28.0855,Metalloids,1687,3538,1.9,,
-Phosphorus,P,15,30.973762,Other Non-Metals,317.3,550,2.19,,
-Sulfur,S,16,32.066,Other Non-Metals,388.36,717.87,2.58,,
-Chlorine,Cl,17,35.453,Halogens,171.6,239.11,3.16,,
-Argon,Ar,18,39.948,Noble Gases,83.8,87.3,,,
-Potassium,K,19,39.0983,Alkali Metals,336.53,1032,0.82,,
-Calcium,Ca,20,40.078,Alkaline Earth Metals,1115,1757,1,,
-Scandium,Sc,21,44.955912,Transition Metals,1814,3109,1.36,,
-Titanium,Ti,22,47.867,Transition Metals,1941,3560,1.54,,
-Vanadium,V,23,50.9415,Transition Metals,2183,3680,1.63,,
-Chromium,Cr,24,51.9961,Transition Metals,2180,2944,1.66,,
-Manganese,Mn,25,54.938049,Transition Metals,1519,2334,1.55,,
-Iron,Fe,26,55.845,Transition Metals,1811,3134,1.83,,
-Cobalt,Co,27,58.9332,Transition Metals,1768,3200,1.88,,
-Nickel,Ni,28,58.6934,Transition Metals,1728,3186,1.91,,
-Copper,Cu,29,63.546,Transition Metals,1357.77,2835,1.9,,
-Zinc,Zn,30,65.409,Transition Metals,692.88,1180,1.65,,
-Gallium,Ga,31,69.723,Post-Transition Metals,302.9146,2673,1.81,,
-Germanium,Ge,32,72.631,Metalloids,1211.4,3106,2.01,,
-Arsenic,As,33,74.9216,Metalloids,1090,887,2.18,,
-Selenium,Se,34,78.96,Other Non-Metals,453,958,2.55,,
-Bromine,Br,35,79.904,Halogens,265.8,332,2.96,,
-Krypton,Kr,36,83.798,Noble Gases,115.79,119.93,3,,
-Rubidium,Rb,37,85.4678,Alkali Metals,312.46,961,0.82,,
-Strontium,Sr,38,87.62,Alkaline Earth Metals,1050,1655,0.95,,
-Yttrium,Y,39,88.90585,Transition Metals,1799,3609,1.22,,
-Zirconium,Zr,40,91.224,Transition Metals,2128,4682,1.33,,
-Niobium,Nb,41,92.90638,Transition Metals,2750,5017,1.6,,
-Molybdenum,Mo,42,95.94,Transition Metals,2896,4912,2.16,,
-Technetium,Tc,43,98,Transition Metals,2430,4538,1.9,,
-Ruthenium,Ru,44,101.07,Transition Metals,2607,4423,2.2,,
-Rhodium,Rh,45,102.9055,Transition Metals,2237,3968,2.28,,
-Palladium,Pd,46,106.42,Transition Metals,1828.05,3236,2.2,,
-Silver,Ag,47,107.8682,Transition Metals,1234.93,2435,1.93,,
-Cadmium,Cd,48,112.411,Transition Metals,594.22,1040,1.69,,
-Indium,In,49,114.818,Post-Transition Metals,429.75,2345,1.78,,
-Tin,Sn,50,118.71,Post-Transition Metals,505.08,2875,1.96,,
-Antimony,Sb,51,121.76,Metalloids,903.78,1860,2.05,,
-Tellurium,Te,52,127.6,Metalloids,722.66,1261,2.1,,
-Iodine,I,53,126.90447,Halogens,386.85,457.4,2.66,,
-Xenon,Xe,54,131.29,Noble Gases,161.4,165.03,2.6,,
-Cesium,Cs,55,132.90545,Alkali Metals,301.59,944,0.79,,
-Barium,Ba,56,137.327,Alkaline Earth Metals,1000,2170,0.89,,
-Lanthanum,La,57,138.90547,Lanthanides,1193,3737,1.1,,
-Cerium,Ce,58,140.116,Lanthanides,1068,3716,1.12,,
-Praseodymium,Pr,59,140.90765,Lanthanides,1208,3793,1.13,,
-Neodymium,Nd,60,144.242,Lanthanides,1297,3347,1.14,,
-Promethium,Pm,61,145,Lanthanides,1315,3273,1.13,,
-Samarium,Sm,62,150.36,Lanthanides,1345,2067,1.17,,
-Europium,Eu,63,151.964,Lanthanides,1099,1802,1.2,,
-Gadolinium,Gd,64,157.25,Lanthanides,1585,3546,1.2,,
-Terbium,Tb,65,158.92535,Lanthanides,1629,3503,1.2,,
-Dysprosium,Dy,66,162.5,Lanthanides,1680,2840,1.22,,
-Holmium,Ho,67,164.93032,Lanthanides,1734,2993,1.23,,
-Erbium,Er,68,167.259,Lanthanides,1802,3141,1.24,,
-Thulium,Tm,69,168.93421,Lanthanides,1818,2223,1.25,,
-Ytterbium,Yb,70,173.054,Lanthanides,1097,1469,1.1,,
-Lutetium,Lu,71,174.9668,Lanthanides,1925,3675,1.27,,
-Hafnium,Hf,72,178.49,Transition Metals,2506,4876,1.3,,
-Tantalum,Ta,73,180.9479,Transition Metals,3290,5731,1.5,,
-Tungsten,W,74,183.84,Transition Metals,3695,5828,2.36,,
-Rhenium,Re,75,186.207,Transition Metals,3459,5869,1.9,,
-Osmium,Os,76,190.23,Transition Metals,3306,5285,2.2,,
-Iridium,Ir,77,192.217,Transition Metals,2719,4701,2.2,,
-Platinum,Pt,78,195.078,Transition Metals,2041.4,4098,2.28,,
-Gold,Au,79,196.96655,Transition Metals,1337.33,3129,2.54,,
-Mercury,Hg,80,200.59,Transition Metals,234.43,629.88,2,,
-Thallium,Tl,81,204.3833,Post-Transition Metals,577,1746,1.62,,
-Lead,Pb,82,207.2,Post-Transition Metals,600.61,2022,1.87,,
-Bismuth,Bi,83,208.9804,Post-Transition Metals,544.7,1837,2.02,,
-Polonium,Po,84,209,Metalloids,527,1235,2,,
+Beryllium,Be,4,9.012182,Alkaline Earth Metals,1560,2742,1.57,"Beryllium is a relatively rare element in the universe, usually occurring as a product of the spallation of larger atomic nuclei that have collided with cosmic rays. It is a divalent element which only occurs naturally in combination with other elements in minerals.",https://www.uewhealth.com/wp-content/uploads/2017/05/beryllium.jpg
+Boron,B,5,10.8111,Metalloids,2349,4200,2.04,"Produced entirely by Cosmic day spallation and supernovae and not by stellar nucleosynthesis, it is a low abundance elements in the solar system and within Earth's crust.",https://upload.wikimedia.org/wikipedia/commons/1/19/Boron_R105.jpg
+Carbon,C,6,12.0107,Other Non-Metals,3800,4300,2.55,"Carbon is the 15th most abundant element in Earth's crust and the 4th most abundant in the observable universe by mass after hydrogen, helium and oxygen. Bring the second most abundant element in the human body by mass, it is arguably one of the most important elements, its abundance, its rich spectrum of organic compounds and its peculiar ability to form polymers at Earthly temperatures enables this element to serve as a common element amongst all known life.",https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Glassy_carbon_and_a_1cm3_graphite_cube_HP68-79.jpg/1280px-Glassy_carbon_and_a_1cm3_graphite_cube_HP68-79.jpg
+Nitrogen,N,7,14.00672,Other Non-Metals,63.15,77.36,3.04,"Nitrogen is a fairly common element in the observable universe. At standard temperature and pressure, two atom of Nitrogen bind to form dinitrogen, a colorless and orderless diatomic gas which forms about 78% of Earth's atmosphere. Nitrogen also occurs in all life as we know it, primarily in amino acids, in the nucleic acids and in adenosine triphosphate (ATP) molecules making it the fourth most abundant element in the human body by mass.",https://www.thoughtco.com/thmb/SgyVceyt9XKMWAxNBSBlzovZbO8=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/close-up-of-liquid-nitrogen-being-poured-in-container-667755357-57f502f23df78c690fc10040.jpg
+Oxygen,O,8,15.9994,Other Non-Metals,54.36,90.2,3.44,,https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Liquid_oxygen_in_a_beaker_4.jpg/800px-Liquid_oxygen_in_a_beaker_4.jpg
+Fluorine,F,9,18.9984032,Halogens,53.53,85.03,3.98,,https://cdn.thinglink.me/api/image/517901279251398657/1240/10/scaletowidth
+Neon,Ne,10,20.1797,Noble Gases,24.56,27.07,,,https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Neon_discharge_tube.jpg/1920px-Neon_discharge_tube.jpg
+Sodium,Na,11,22.98977,Alkali Metals,370.87,1156,0.93,,https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Na_%28Sodium%29.jpg/1280px-Na_%28Sodium%29.jpg
+Magnesium,Mg,12,24.305,Alkaline Earth Metals,923,1363,1.31,,https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CSIRO_ScienceImage_2893_Crystalised_magnesium.jpg/1280px-CSIRO_ScienceImage_2893_Crystalised_magnesium.jpg
+Aluminum,Al,13,26.981,Post-Transition Metals,933.47,2792,1.61,,https://upload.wikimedia.org/wikipedia/commons/5/5d/Aluminium-4.jpg
+Silicon,Si,14,28.0855,Metalloids,1687,3538,1.9,,https://upload.wikimedia.org/wikipedia/commons/e/e9/SiliconCroda.jpg
+Phosphorus,P,15,30.973762,Other Non-Metals,317.3,550,2.19,,https://assets.2ser.com/wp-content/aws/uploads/2017/10/23203321/3EThHMgPNfTivnpqknP82Kq8-660x368.jpeg
+Sulfur,S,16,32.066,Other Non-Metals,388.36,717.87,2.58,,https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Sulfur-sample.jpg/1280px-Sulfur-sample.jpg
+Chlorine,Cl,17,35.453,Halogens,171.6,239.11,3.16,,https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Chlorine_liquid_in_an_ampoule.jpg/1024px-Chlorine_liquid_in_an_ampoule.jpg
+Argon,Ar,18,39.948,Noble Gases,83.8,87.3,,,https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Argon_discharge_tube.jpg/1920px-Argon_discharge_tube.jpg
+Potassium,K,19,39.0983,Alkali Metals,336.53,1032,0.82,,https://upload.wikimedia.org/wikipedia/commons/a/a4/Potassium-2.jpg
+Calcium,Ca,20,40.078,Alkaline Earth Metals,1115,1757,1,,https://upload.wikimedia.org/wikipedia/commons/9/96/Calcium_unter_Argon_Schutzgasatmosph%C3%A4re.jpg
+Scandium,Sc,21,44.955912,Transition Metals,1814,3109,1.36,,https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Scandium_sublimed_dendritic_and_1cm3_cube.jpg/1920px-Scandium_sublimed_dendritic_and_1cm3_cube.jpg
+Titanium,Ti,22,47.867,Transition Metals,1941,3560,1.54,,https://upload.wikimedia.org/wikipedia/commons/d/db/Titan-crystal_bar.JPG
+Vanadium,V,23,50.9415,Transition Metals,2183,3680,1.63,,https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Vanadium_etched.jpg/1024px-Vanadium_etched.jpg
+Chromium,Cr,24,51.9961,Transition Metals,2180,2944,1.66,,https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Chromium_crystals_and_1cm3_cube.jpg/1920px-Chromium_crystals_and_1cm3_cube.jpg
+Manganese,Mn,25,54.938049,Transition Metals,1519,2334,1.55,,https://www.worldatlas.com/r/w728-h425-c728x425/upload/7a/52/e3/shutterstock-1017654601.jpg
+Iron,Fe,26,55.845,Transition Metals,1811,3134,1.83,,https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Iron_electrolytic_and_1cm3_cube.jpg/1920px-Iron_electrolytic_and_1cm3_cube.jpg
+Cobalt,Co,27,58.9332,Transition Metals,1768,3200,1.88,,https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Kobalt_electrolytic_and_1cm3_cube.jpg/1920px-Kobalt_electrolytic_and_1cm3_cube.jpg
+Nickel,Ni,28,58.6934,Transition Metals,1728,3186,1.91,,https://upload.wikimedia.org/wikipedia/commons/5/57/Nickel_chunk.jpg
+Copper,Cu,29,63.546,Transition Metals,1357.77,2835,1.9,,https://upload.wikimedia.org/wikipedia/commons/f/f0/NatCopper.jpg
+Zinc,Zn,30,65.409,Transition Metals,692.88,1180,1.65,,https://upload.wikimedia.org/wikipedia/commons/f/f9/Zinc_fragment_sublimed_and_1cm3_cube.jpg
+Gallium,Ga,31,69.723,Post-Transition Metals,302.9146,2673,1.81,,https://upload.wikimedia.org/wikipedia/commons/9/92/Gallium_crystals.jpg
+Germanium,Ge,32,72.631,Metalloids,1211.4,3106,2.01,,https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Polycrystalline-germanium.jpg/1024px-Polycrystalline-germanium.jpg
+Arsenic,As,33,74.9216,Metalloids,1090,887,2.18,,https://upload.wikimedia.org/wikipedia/commons/8/8b/Native_arsenic.jpg
+Selenium,Se,34,78.96,Other Non-Metals,453,958,2.55,,https://upload.wikimedia.org/wikipedia/commons/4/47/SeBlackRed.jpg
+Bromine,Br,35,79.904,Halogens,265.8,332,2.96,,https://miro.medium.com/max/648/1*Vr8K3gUIHstHdChB2eWFtQ.jpeg
+Krypton,Kr,36,83.798,Noble Gases,115.79,119.93,3,,https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Krypton_discharge_tube.jpg/1920px-Krypton_discharge_tube.jpg
+Rubidium,Rb,37,85.4678,Alkali Metals,312.46,961,0.82,,https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Rb5.JPG/1280px-Rb5.JPG
+Strontium,Sr,38,87.62,Alkaline Earth Metals,1050,1655,0.95,,https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Strontium_destilled_crystals.jpg/1920px-Strontium_destilled_crystals.jpg
+Yttrium,Y,39,88.90585,Transition Metals,1799,3609,1.22,,https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Yttrium_sublimed_dendritic_and_1cm3_cube.jpg/1920px-Yttrium_sublimed_dendritic_and_1cm3_cube.jpg
+Zirconium,Zr,40,91.224,Transition Metals,2128,4682,1.33,,https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Zirconium_crystal_bar_and_1cm3_cube.jpg/1280px-Zirconium_crystal_bar_and_1cm3_cube.jpg
+Niobium,Nb,41,92.90638,Transition Metals,2750,5017,1.6,,https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Niobium_crystals_and_1cm3_cube.jpg/1920px-Niobium_crystals_and_1cm3_cube.jpg
+Molybdenum,Mo,42,95.94,Transition Metals,2896,4912,2.16,,https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Molybdenum_crystaline_fragment_and_1cm3_cube.jpg/1920px-Molybdenum_crystaline_fragment_and_1cm3_cube.jpg
+Technetium,Tc,43,98,Transition Metals,2430,4538,1.9,,https://upload.wikimedia.org/wikipedia/en/8/89/Technetium.jpg
+Ruthenium,Ru,44,101.07,Transition Metals,2607,4423,2.2,,https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Ruthenium_a_half_bar.jpg/1920px-Ruthenium_a_half_bar.jpg
+Rhodium,Rh,45,102.9055,Transition Metals,2237,3968,2.28,,https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Rhodium_powder_pressed_melted.jpg/1920px-Rhodium_powder_pressed_melted.jpg
+Palladium,Pd,46,106.42,Transition Metals,1828.05,3236,2.2,,https://upload.wikimedia.org/wikipedia/commons/d/d7/Palladium_%2846_Pd%29.jpg
+Silver,Ag,47,107.8682,Transition Metals,1234.93,2435,1.93,,https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Silver_crystal.jpg/1280px-Silver_crystal.jpg
+Cadmium,Cd,48,112.411,Transition Metals,594.22,1040,1.69,,https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Cadmium-crystal_bar.jpg/1920px-Cadmium-crystal_bar.jpg
+Indium,In,49,114.818,Post-Transition Metals,429.75,2345,1.78,,https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Indium.jpg/1280px-Indium.jpg
+Tin,Sn,50,118.71,Post-Transition Metals,505.08,2875,1.96,,https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Tin-2.jpg/1024px-Tin-2.jpg
+Antimony,Sb,51,121.76,Metalloids,903.78,1860,2.05,,https://upload.wikimedia.org/wikipedia/commons/5/5c/Antimony-4.jpg
+Tellurium,Te,52,127.6,Metalloids,722.66,1261,2.1,,https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Tellurium2.jpg/1024px-Tellurium2.jpg
+Iodine,I,53,126.90447,Halogens,386.85,457.4,2.66,,https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Sample_of_iodine.jpg/1920px-Sample_of_iodine.jpg
+Xenon,Xe,54,131.29,Noble Gases,161.4,165.03,2.6,,https://upload.wikimedia.org/wikipedia/commons/d/d7/Xenon_discharge_tube.jpg
+Cesium,Cs,55,132.90545,Alkali Metals,301.59,944,0.79,,https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Cesium.jpg/1280px-Cesium.jpg
+Barium,Ba,56,137.327,Alkaline Earth Metals,1000,2170,0.89,,https://upload.wikimedia.org/wikipedia/commons/1/16/Barium_unter_Argon_Schutzgas_Atmosph%C3%A4re.jpg
+Lanthanum,La,57,138.90547,Lanthanides,1193,3737,1.1,,https://upload.wikimedia.org/wikipedia/commons/8/8c/Lanthanum-2.jpg
+Cerium,Ce,58,140.116,Lanthanides,1068,3716,1.12,,https://upload.wikimedia.org/wikipedia/commons/0/0d/Cerium2.jpg
+Praseodymium,Pr,59,140.90765,Lanthanides,1208,3793,1.13,,https://upload.wikimedia.org/wikipedia/commons/c/c7/Praseodymium.jpg
+Neodymium,Nd,60,144.242,Lanthanides,1297,3347,1.14,,https://upload.wikimedia.org/wikipedia/commons/b/ba/Neodymium2.jpg
+Promethium,Pm,61,145,Lanthanides,1315,3273,1.13,,https://upload.wikimedia.org/wikipedia/commons/b/ba/Neodymium2.jpg
+Samarium,Sm,62,150.36,Lanthanides,1345,2067,1.17,,https://upload.wikimedia.org/wikipedia/commons/8/88/Samarium-2.jpg
+Europium,Eu,63,151.964,Lanthanides,1099,1802,1.2,,https://upload.wikimedia.org/wikipedia/commons/6/6a/Europium.jpg
+Gadolinium,Gd,64,157.25,Lanthanides,1585,3546,1.2,,https://upload.wikimedia.org/wikipedia/commons/d/d1/Gadolinium-4.jpg
+Terbium,Tb,65,158.92535,Lanthanides,1629,3503,1.2,,https://upload.wikimedia.org/wikipedia/commons/9/9a/Terbium-2.jpg
+Dysprosium,Dy,66,162.5,Lanthanides,1680,2840,1.22,,https://upload.wikimedia.org/wikipedia/commons/a/a8/Dy_chips.jpg
+Holmium,Ho,67,164.93032,Lanthanides,1734,2993,1.23,,https://upload.wikimedia.org/wikipedia/commons/0/0a/Holmium2.jpg
+Erbium,Er,68,167.259,Lanthanides,1802,3141,1.24,,https://www.thoughtco.com/thmb/R8OAkQhQqoxwT7kWoZ_QCOPQgBs=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Erbium-5b6b2822c9e77c005042bbc8.jpg
+Thulium,Tm,69,168.93421,Lanthanides,1818,2223,1.25,,https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Thulium_sublimed_dendritic_and_1cm3_cube.jpg/220px-Thulium_sublimed_dendritic_and_1cm3_cube.jpg
+Ytterbium,Yb,70,173.054,Lanthanides,1097,1469,1.1,,https://upload.wikimedia.org/wikipedia/commons/c/ce/Ytterbium-3.jpg
+Lutetium,Lu,71,174.9668,Lanthanides,1925,3675,1.27,,https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Lutetium_sublimed_dendritic_and_1cm3_cube.jpg/220px-Lutetium_sublimed_dendritic_and_1cm3_cube.jpg
+Hafnium,Hf,72,178.49,Transition Metals,2506,4876,1.3,,https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Hf-crystal_bar.jpg/1920px-Hf-crystal_bar.jpg
+Tantalum,Ta,73,180.9479,Transition Metals,3290,5731,1.5,,https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Tantalum_single_crystal_and_1cm3_cube.jpg/1920px-Tantalum_single_crystal_and_1cm3_cube.jpg
+Tungsten,W,74,183.84,Transition Metals,3695,5828,2.36,,https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Wolfram_evaporated_crystals_and_1cm3_cube.jpg/1920px-Wolfram_evaporated_crystals_and_1cm3_cube.jpg
+Rhenium,Re,75,186.207,Transition Metals,3459,5869,1.9,,https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rhenium_single_crystal_bar_and_1cm3_cube.jpg/1920px-Rhenium_single_crystal_bar_and_1cm3_cube.jpg
+Osmium,Os,76,190.23,Transition Metals,3306,5285,2.2,,https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Osmium_crystals.jpg/220px-Osmium_crystals.jpg
+Iridium,Ir,77,192.217,Transition Metals,2719,4701,2.2,,https://upload.wikimedia.org/wikipedia/commons/a/a8/Iridium-2.jpg
+Platinum,Pt,78,195.078,Transition Metals,2041.4,4098,2.28,,https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Platinum_crystals.jpg/1280px-Platinum_crystals.jpg
+Gold,Au,79,196.96655,Transition Metals,1337.33,3129,2.54,,https://upload.wikimedia.org/wikipedia/commons/d/d7/Gold-crystals.jpg
+Mercury,Hg,80,200.59,Transition Metals,234.43,629.88,2,,https://ichemepresident.files.wordpress.com/2014/09/liquid-mercury-e1408545320177.jpg?w=825&h=510&crop=1
+Thallium,Tl,81,204.3833,Post-Transition Metals,577,1746,1.62,,https://upload.wikimedia.org/wikipedia/commons/b/bb/Thallium_pieces_in_ampoule.jpg
+Lead,Pb,82,207.2,Post-Transition Metals,600.61,2022,1.87,,https://upload.wikimedia.org/wikipedia/commons/e/e6/Lead_electrolytic_and_1cm3_cube.jpg
+Bismuth,Bi,83,208.9804,Post-Transition Metals,544.7,1837,2.02,,https://upload.wikimedia.org/wikipedia/commons/e/ef/Bismuth_crystals_and_1cm3_cube.jpg
+Polonium,Po,84,209,Metalloids,527,1235,2,,https://upload.wikimedia.org/wikipedia/en/6/66/Polonium.jpg
 Astatine,At,85,210,Halogens,null,500,2.2,,
 Radon,Rn,86,222,Noble Gases,202,211.3,2.2,,
 Francium,Fr,87,223,Alkali Metals,300,950,0.7,,
