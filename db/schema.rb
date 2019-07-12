@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_12_082206) do
+ActiveRecord::Schema.define(version: 2019_07_12_100543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,9 +42,10 @@ ActiveRecord::Schema.define(version: 2019_07_12_082206) do
     t.string "question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "quiz_field"
-    t.string "question_field"
     t.string "answer_field"
+    t.string "question_field"
+    t.bigint "subject_id"
+    t.index ["subject_id"], name: "index_questions_on_subject_id"
   end
 
   create_table "quiz_questions", force: :cascade do |t|
@@ -70,12 +71,19 @@ ActiveRecord::Schema.define(version: 2019_07_12_082206) do
     t.index ["user_id"], name: "index_quizzes_on_user_id"
   end
 
-  create_table "user_questions", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "question_id"
+  create_table "subjects", force: :cascade do |t|
+    t.string "field"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_user_questions_on_question_id"
+  end
+
+  create_table "user_questions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "subject_id"
+    t.index ["subject_id"], name: "index_user_questions_on_subject_id"
     t.index ["user_id"], name: "index_user_questions_on_user_id"
   end
 
@@ -98,11 +106,12 @@ ActiveRecord::Schema.define(version: 2019_07_12_082206) do
   end
 
   add_foreign_key "elements", "classifications"
+  add_foreign_key "questions", "subjects"
   add_foreign_key "quiz_questions", "elements"
   add_foreign_key "quiz_questions", "questions"
   add_foreign_key "quiz_questions", "quizzes"
   add_foreign_key "quizzes", "users"
-  add_foreign_key "user_questions", "questions"
+  add_foreign_key "user_questions", "subjects"
   add_foreign_key "user_questions", "users"
   add_foreign_key "user_quiz_elements", "elements"
   add_foreign_key "user_quiz_elements", "users"
