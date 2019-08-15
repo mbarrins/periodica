@@ -1,24 +1,14 @@
-# README
+# Periodica
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A periodic table learning site that includes a Ruby-on-Rails API backend with a Javascript frontend. Click on each element to learn more and then create some quizzes to test your knowledge on all or a personal selection of elements.
 
-Things you may want to cover:
 
-* Ruby version
+Demo
 
-* System dependencies
+You can see a running version of the application at [https://https://periodica-project.herokuapp.com/](https://periodica-project.herokuapp.com/).
 
-* Configuration
 
-* Database creation
+Authors
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Maija Barrins](https://github.com/mbarrins)   
+[Aaron Summers](https://github.com/aaron-summers) 
